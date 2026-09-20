@@ -1,0 +1,133 @@
+<div
+  id="modal-pesos-virreinales"
+  class="macuquina-modal-overlay active"
+  onclick="closeModalPesosOuter(event)"
+>
+  <div class="macuquina-modal-content">
+    <!-- BOTÓN DE CIERRE (X) -->
+    <button class="macuquina-modal-close" onclick="closeModalPesos()">
+      &times;
+    </button>
+
+    <!-- ENCABEZADO -->
+    <h2 class="macuquina-modal-title">
+      Conversor Virreinal de Oro (Pre-Felipe V)
+    </h2>
+    <p class="macuquina-modal-subtitle">
+      Equivalencias en gramos (g) y kilogramos (kg)
+    </p>
+
+    <!-- CUERPO / FORMULARIO -->
+    <div class="macuquina-modal-body">
+      <!-- MARCO -->
+      <div class="macuquina-input-group">
+        <label for="mod-marco">Marco</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-marco"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOro('marco')"
+          />
+          <span class="macuquina-unit-label">x 230.0465 =</span>
+          <div class="macuquina-res-box" id="res-mod-marco">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-marco"></small>
+      </div>
+
+      <!-- CASTELLANO -->
+      <div class="macuquina-input-group">
+        <label for="mod-castellano">Castellano</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-castellano"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOro('castellano')"
+          />
+          <span class="macuquina-unit-label">x 4.60093 =</span>
+          <div class="macuquina-res-box" id="res-mod-castellano">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-castellano"></small>
+      </div>
+
+      <!-- TOMÍN -->
+      <div class="macuquina-input-group">
+        <label for="mod-tomin">Tomín</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-tomin"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOro('tomin')"
+          />
+          <span class="macuquina-unit-label">x 0.57510 =</span>
+          <div class="macuquina-res-box" id="res-mod-tomin">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-tomin"></small>
+      </div>
+
+      <!-- GRANO Y TOTAL COMBINADO -->
+      <div class="macuquina-input-group-row">
+        <!-- GRANO -->
+        <div class="macuquina-input-group">
+          <label for="mod-grano">Grano</label>
+          <div class="macuquina-input-wrapper">
+            <input
+              type="number"
+              id="mod-grano"
+              min="0"
+              step="any"
+              placeholder="0"
+              oninput="calcularModalOro('grano')"
+            />
+            <span class="macuquina-unit-label">x 0.04792 =</span>
+            <div class="macuquina-res-box" id="res-mod-grano">0.0000 g</div>
+          </div>
+          <small class="macuquina-error" id="error-mod-grano"></small>
+        </div>
+
+        <!-- TOTAL COMBINADO -->
+        <div class="macuquina-total-group">
+          <label>Total Combinado</label>
+          <div class="macuquina-total-box" id="res-mod-total">0.0000 g</div>
+        </div>
+      </div>
+
+      <!-- CUADRO INFORMATIVO DE EQUIVALENCIAS DE ORO -->
+      <div class="macuquina-info-card">
+        <p class="macuquina-info-highlight">1 grano de oro = 0,04792 gramos</p>
+        <div class="macuquina-info-grid">
+          <span>1 marco (50 castellanos) = 230,0465 g</span>
+          <span>1 castellano (8 tomines) = 4,60093 g</span>
+          <span>1 tomín (12 granos) = 0,57510 g</span>
+          <span>1 grano = 0,04792 g</span>
+        </div>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="macuquina-actions">
+        <button
+          type="button"
+          class="macuquina-btn-secondary"
+          onclick="limpiarConversor()"
+        >
+          Limpiar
+        </button>
+        <button
+          type="button"
+          class="macuquina-btn-primary"
+          onclick="closeModalPesos()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

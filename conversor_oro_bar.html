@@ -1,0 +1,43 @@
+<!-- ================================================== -->
+<!-- 1. BARRA DE ICONOS FLOTANTE (CONVERSOR DE ORO)     -->
+<!-- ================================================== -->
+<div class="macuquina-floating-bar macuquina-floating-bar-oro">
+  <!-- Módulo 1: Peso en Unidades de Oro Virreinal -->
+  <button
+    class="macuquina-icon-btn"
+    onclick="openModalOro()"
+    title="Conversión de Pesos/Castellanos de Oro Virreinal a Gramos"
+  >
+    <img
+      src="assets/ico/barraoro (1).png"
+      alt="Pesos de Oro"
+      class="icono-barra-flotante"
+    />
+  </button>
+
+  <!-- Módulo 2: Fineza y Quilataje del Oro (Quirates y Granos) -->
+  <button
+    class="macuquina-icon-btn"
+    title="Conversión de Quilates/Fineza del Oro"
+    onclick="cargarModalDesdeArchivo('conversor_oro1.html', 'fineza_oro')"
+  >
+    <img
+      src="assets/ico/icono-macuquina.ico"
+      alt="Quilates de Oro"
+      class="icono-barra-flotante"
+    />
+  </button>
+
+  <!-- Módulo 3: Grano de Ley de Oro -->
+  <button
+    class="macuquina-icon-btn"
+    title="Conversión de Grano de Ley de Oro"
+    onclick="cargarModalDesdeArchivo('conversor_oro2.html', 'grano_ley_oro')"
+  >
+    <img
+      src="assets/ico/barraoro (11).png"
+      alt="Grano de Ley de Oro"
+      class="icono-barra-flotante"
+    />
+  </button>
+</div>

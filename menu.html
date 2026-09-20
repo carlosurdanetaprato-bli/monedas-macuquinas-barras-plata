@@ -1,0 +1,55 @@
+<nav class="tabs-nav">
+  <a href="inicio.html" class="tab-btn" data-page="Inicio">Inicio</a>
+  <a href="ponencias.html" class="tab-btn" data-page="ponencias">Ponencias</a>
+  <a href="articulos.html" class="tab-btn" data-page="articulos">Artículos</a>
+  <a href="capsulas.html" class="tab-btn" data-page="capsulas"
+    >Cápsula Videos</a
+  >
+  <a href="notas.html" class="tab-btn" data-page="notas">Notas</a>
+  <a href="capsula_fotos.html" class="tab-btn" data-page="galeria"
+    >Cápsula de Fotos</a
+  >
+  <a href="equivalencias.html" class="tab-btn" data-page="equivalencias"
+    >Equivalencias</a
+  >
+  <a href="gabinete.html" class="tab-btn" data-page="gabinete">Gabinete</a>
+  <a href="libros.html" class="tab-btn" data-page="libros">Libros</a>
+  <a href="metrologia.html" class="tab-btn" data-page="metrologia"
+    >Metrológia Monetaria
+  </a>
+  <a href="ordenanzas.html" class="tab-btn" data-page="ordenanzas"
+    >Ordenanzas Monetarias</a
+  >
+  <a href="reconocimientos.html" class="tab-btn" data-page="reconocimientos"
+    >Reconocimientos</a
+  >
+</nav>
+
+<!-- Modal del Buscador -->
+<div
+  id="modal-buscador"
+  class="search-modal-overlay"
+  onclick="closeSearchOuter(event)"
+>
+  <div class="search-modal-content">
+    <button class="search-modal-close" onclick="closeSearchModal()">
+      &times;
+    </button>
+
+    <div class="search-header">
+      <input
+        type="text"
+        id="input-busqueda"
+        placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..."
+        oninput="ejecutarBusqueda()"
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="resultados-busqueda" class="search-results-list">
+      <p class="search-placeholder">
+        Escribe una palabra clave para buscar en todo el sitio.
+      </p>
+    </div>
+  </div>
+</div>

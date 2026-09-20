@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cápsulas de Video - Monedas Macuquinas</title>
+    <link rel="icon" href="assets/img/img (5).png" type="image/png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-overlay"></div>
+
+      <div class="titulo-central">
+        <span class="palabra-izq">Monedas</span>
+        <div class="moneda-destacada">
+          <img
+            src="assets/img/img (8).png"
+            alt="Moneda Macuquina Colonial"
+            class="img-centro"
+          />
+        </div>
+        <span class="palabra-der">Macuquinas</span>
+      </div>
+
+      <div class="subtitulo-plata">
+        <span class="conector">y</span> Barras de Plata
+      </div>
+
+      <!-- CONTENEDOR DE REDES Y CONTACTO -->
+<div class="header-social-container">
+  <a href="https://www.youtube.com/@monedasmacuquinas1334" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-icon">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+  <a href="https://www.facebook.com/share/1CDSmrzFka/" target="_blank" title="Facebook" class="social-icon">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="https://www.facebook.com/groups/709702355717720/?ref=share_group_link&rdid=qqiqkrFI4WMKcYMn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1Dg4VxXbLm%2F#" target="_blank" title="Comunidad" class="social-icon">
+    <i class="fa-solid fa-users"></i>
+  </a>
+
+  <!-- Enlace modificado: reemplazado mailto por la función del modal -->
+  <a href="javascript:void(0)" onclick="openEmailModal()" title="Contacto" class="social-icon">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <!-- Botón del Buscador -->
+  <button class="tab-btn btn-search-trigger" onclick="openSearchModal()" title="Buscar en el sitio">
+    🔍 <span>Buscar</span>
+  </button>
+</div>
+
+<!-- MODAL DEL BUSCADOR INTEGRADO -->
+<div id="modal-buscador" class="search-modal-overlay" onclick="closeSearchOuter(event)">
+  <div class="search-modal-content">
+    <button type="button" class="search-modal-close" onclick="closeSearchModal()">&times;</button>
+    
+    <div class="search-header">
+      <input 
+        type="text" 
+        id="input-busqueda" 
+        placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..." 
+        oninput="ejecutarBusqueda()"
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="resultados-busqueda" class="search-results-list">
+      <p class="search-placeholder">Escribe una palabra clave para buscar en todo el sitio.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE SELECCIÓN DE CORREO -->
+<div id="modal-contacto-email" class="modal-email-overlay" onclick="closeEmailOuter(event)">
+  <div class="modal-email-card">
+    <button type="button" class="search-modal-close" onclick="closeEmailModal()">&times;</button>
+    
+    <h3>Contacto vía Correo</h3>
+    <p>Selecciona tu proveedor de correo para enviar un mensaje a <strong>monedasmacuquinas@yahoo.com</strong>:</p>
+
+    <div class="opciones-email-grid">
+      <!-- Gmail Web -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option gmail">
+        <i class="fa-brands fa-google"></i>
+        <span>Gmail</span>
+      </a>
+
+      <!-- Outlook / Hotmail Web -->
+      <a href="https://outlook.live.com/mail/0/deeplink/compose?to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option outlook">
+        <i class="fa-brands fa-microsoft"></i>
+        <span>Outlook / Hotmail</span>
+      </a>
+
+      <!-- Yahoo Mail Web (Parámetro corregido: src=mailto) -->
+      <a href="https://mail.yahoo.com/d/compose-message?to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option yahoo">
+        <i class="fa-brands fa-yahoo"></i>
+        <span>Yahoo Mail</span>
+      </a>
+
+      <!-- Aplicación Predeterminada del sistema (Outlook Desktop, Mail de Apple, Thunderbird, etc.) -->
+      <a href="mailto:monedasmacuquinas@yahoo.com" class="btn-email-option default">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Aplicación del sistema</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="carrusel-header">
+        <div class="carrusel-track">
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (28).jpg" alt="Nota 1" />
+          <img src="assets/img/img (29).jpg" alt="Nota 2" />
+          <img src="assets/img/img (40).jpg" alt="Nota 1" />
+          <img src="assets/img/img (20).jpg" alt="Nota 1" />
+          <img src="assets/img/img (21).jpg" alt="Nota 1" />
+          <img src="assets/img/img (22).jpg" alt="Nota 1" />
+          <img src="assets/img/img (23).jpg" alt="Nota 1" />
+          <img src="assets/img/img (24).jpg" alt="Nota 1" />
+          <img src="assets/img/img (25).jpg" alt="Nota 1" />
+          <img src="assets/img/img (26).jpg" alt="Nota 1" />
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (2).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (2).png" alt="Nota 2" />
+          <img src="assets/img/img (32).jpg" alt="Nota 1" />
+          <img src="assets/img/img (33).jpg" alt="Nota 1" />
+          <img src="assets/img/img (34).jpg" alt="Nota 1" />
+          <img src="assets/img/img (35).jpg" alt="Nota 1" />
+          <img src="assets/img/img (36).jpg" alt="Nota 1" />
+          <img src="assets/img/img (37).jpg" alt="Nota 1" />
+          <img src="assets/img/img (38).jpg" alt="Nota 1" />
+          <img src="assets/img/img (39).jpg" alt="Nota 1" />
+        </div>
+      </div>
+
+      <div id="menu-container"></div>
+    </header>
+
+
+    <div id="menu-container"></div>
+
+    <main class="capsulas-page">
+      <header class="gabinete-header">
+        <h2>Cápsulas Numismáticas en Video</h2>
+        <p>
+          Aprende de manera didáctica los secretos, fraudes y metodologías de
+          las acuñaciones macuquinas coloniales.
+        </p>
+      </header>
+
+      <section class="video-grid" id="video-grid-container"></section>
+
+       <!-- BOTÓN DE RETORNO AL HOME -->
+      <div class="container-regresar-home">
+        <a href="inicio.html" class="btn-regresar-home"
+          >← Volver al Panel Principal</a
+        >
+      </div>
+    </main>
+<!-- Inicio Botón Flotante Principal -->
+<button id="fab-conversores-btn" class="fab-conversores-trigger" onclick="toggleModalConversores()" title="Abrir Conversores">
+  <span class="fab-icon">⚖️</span>
+</button>
+
+<!-- Modal Contenedor de las Barras -->
+<div id="modal-conversores-wrapper" class="modal-conversores-overlay" onclick="closeModalConversoresOuter(event)">
+  <div class="modal-conversores-content">
+    <button class="modal-conversores-close" onclick="toggleModalConversores()">&times;</button>
+    <h3 class="modal-conversores-title">Menús de Conversión</h3>
+    
+    <!-- Aquí nav_footer.js inyectará automáticamente las 3 barras -->
+    <div id="conversor-flotante-dinamico" class="modal-conversores-bars-container"></div>
+  </div>
+</div>
+<!-- Fin Botón Flotante Principal -->
+
+    <footer></footer>
+    <!-- Cargar base de datos de búsqueda -->
+<script src="assets/js/datos-busqueda.js"></script>
+
+<!-- Cargar funciones JS generales -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/nav-footer.js"></script>
+<script src="assets/js/ponencias.js"></script>
+  </body>
+</html>

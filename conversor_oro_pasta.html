@@ -1,0 +1,43 @@
+<!-- SECCIÓN 5: CONVERSOR DE BARRAS A MONEDAS (BARRAS EN SU PROPIA SECCIÓN) -->
+<h4 class="subtitulo-menu-barra">Conversor de Lingotes a Monedas</h4>
+<div class="macuquina-floating-bar barras-medina-floating-bar">
+  <!-- Botón 1: Pragmática Medina del Campo -->
+  <button
+    type="button"
+    class="macuquina-icon-btn"
+    title="Conversión Pragmática Medina del Campo"
+    onclick="
+      cargarModalExterno(
+        'conversor3.html',
+        'pre',
+        'Pragmática de Medina del Campo',
+      )
+    "
+  >
+    <img
+      src="assets/ico/rara.png"
+      alt="Medina del Campo"
+      class="icono-barra-flotante"
+    />
+  </button>
+
+  <!-- Botón 2: Legislación Monetaria Borbónica -->
+  <button
+    type="button"
+    class="macuquina-icon-btn"
+    title="Conversión Legislación Borbónica"
+    onclick="
+      cargarModalExterno(
+        'conversor3.html',
+        'post',
+        'Legislación Monetaria Borbónica',
+      )
+    "
+  >
+    <img
+      src="assets/ico/oro.png"
+      alt="Legislación Borbónica"
+      class="icono-barra-flotante"
+    />
+  </button>
+</div>

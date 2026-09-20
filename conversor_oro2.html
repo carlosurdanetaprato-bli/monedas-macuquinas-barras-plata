@@ -1,0 +1,144 @@
+<div
+  id="modal-fineza-oro"
+  class="macuquina-modal-overlay active"
+  onclick="closeModalFinezaOuter(event)"
+>
+  <div class="macuquina-modal-content">
+    <!-- BOTÓN DE CIERRE (X) -->
+    <button class="macuquina-modal-close" onclick="closeModalFineza()">
+      &times;
+    </button>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <h2 class="macuquina-modal-title">Fineza del Oro Virreinal</h2>
+    <p class="macuquina-modal-subtitle">
+      Cálculo de ley en milésimas (‰) por Quilates y Granos
+    </p>
+
+    <div class="macuquina-modal-body">
+      <!-- ==========================================
+           SECCIÓN A: QUILATES Y GRANOS
+           ========================================== -->
+      <div class="macuquina-info-card" style="text-align: left; margin-top: 0">
+        <p
+          class="macuquina-info-highlight"
+          style="margin-bottom: 12px; text-align: left"
+        >
+          A) Cálculo por Quilates y Granos
+        </p>
+
+        <div class="macuquina-modal-body">
+          <!-- QUILATES -->
+          <div class="macuquina-input-group">
+            <label for="mod-f2-quilates">Quilates (Máx. 24)</label>
+            <div class="macuquina-input-wrapper">
+              <input
+                type="number"
+                id="mod-f2-quilates"
+                min="0"
+                max="24"
+                step="any"
+                placeholder="0"
+                oninput="calcularFinezaA()"
+              />
+              <span class="macuquina-unit-label">x 41.6667 ‰ =</span>
+              <div class="macuquina-res-box" id="res-f2-quilates">0.0000 ‰</div>
+            </div>
+            <small class="macuquina-error" id="error-f2-quilates"></small>
+          </div>
+
+          <!-- GRANOS Y TOTAL A EN FILA DOBLE -->
+          <div class="macuquina-input-group-row">
+            <!-- GRANOS (A) -->
+            <div class="macuquina-input-group">
+              <label for="mod-f2-granos-a">Granos (Máx. 3)</label>
+              <div class="macuquina-input-wrapper">
+                <input
+                  type="number"
+                  id="mod-f2-granos-a"
+                  min="0"
+                  max="3.99"
+                  step="any"
+                  placeholder="0"
+                  oninput="calcularFinezaA()"
+                />
+                <span class="macuquina-unit-label">x 10.4167 ‰ =</span>
+                <div class="macuquina-res-box" id="res-f2-granos-a">
+                  0.0000 ‰
+                </div>
+              </div>
+              <small class="macuquina-error" id="error-f2-granos-a"></small>
+            </div>
+
+            <!-- TOTAL COMBINADO A -->
+            <div class="macuquina-total-group">
+              <label>Fineza Total (A)</label>
+              <div class="macuquina-total-box" id="res-f2-total-a">
+                0.0000 ‰
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           SECCIÓN B: SOLO GRANOS
+           ========================================== -->
+      <div
+        class="macuquina-info-card"
+        style="text-align: left; margin-top: 5px"
+      >
+        <p
+          class="macuquina-info-highlight"
+          style="margin-bottom: 12px; text-align: left"
+        >
+          B) Cálculo Directo en Granos
+        </p>
+
+        <div class="macuquina-input-group-row">
+          <!-- GRANOS (B) -->
+          <div class="macuquina-input-group">
+            <label for="mod-f2-granos-b">Granos de Ley (Máx. 96)</label>
+            <div class="macuquina-input-wrapper">
+              <input
+                type="number"
+                id="mod-f2-granos-b"
+                min="0"
+                max="96"
+                step="any"
+                placeholder="0"
+                oninput="calcularFinezaB()"
+              />
+              <span class="macuquina-unit-label">x 10.4167 ‰ =</span>
+            </div>
+            <small class="macuquina-error" id="error-f2-granos-b"></small>
+          </div>
+
+          <!-- TOTAL COMBINADO B -->
+          <div class="macuquina-total-group">
+            <label>Fineza Total (B)</label>
+            <div class="macuquina-total-box" id="res-f2-total-b">0.0000 ‰</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="macuquina-actions">
+        <button
+          type="button"
+          class="macuquina-btn-secondary"
+          onclick="limpiarConversorOro2()"
+        >
+          Limpiar
+        </button>
+        <button
+          type="button"
+          class="macuquina-btn-primary"
+          onclick="closeModalFineza()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

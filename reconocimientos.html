@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trayectoria y Reconocimientos | Monedas Macuquinas</title>
+    <link rel="icon" href="assets/img/img (5).png" type="image/png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tus estilos base -->
+    <link rel="stylesheet" href="assets/css/reconocimientos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-overlay"></div>
+
+      <div class="titulo-central">
+        <span class="palabra-izq">Monedas</span>
+        <div class="moneda-destacada">
+          <img
+            src="assets/img/img (8).png"
+            alt="Moneda Macuquina Colonial"
+            class="img-centro"
+          />
+        </div>
+        <span class="palabra-der">Macuquinas</span>
+      </div>
+
+      <div class="subtitulo-plata">
+        <span class="conector">y</span> Barras de Plata
+      </div>
+
+      <!-- CONTENEDOR DE REDES Y CONTACTO -->
+      <div class="header-social-container">
+        <a
+          href="https://www.youtube.com/@monedasmacuquinas1334"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="YouTube"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1CDSmrzFka/"
+          target="_blank"
+          title="Facebook"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/groups/709702355717720/?ref=share_group_link&rdid=qqiqkrFI4WMKcYMn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1Dg4VxXbLm%2F#"
+          target="_blank"
+          title="Comunidad"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <!-- Enlace modificado: reemplazado mailto por la función del modal -->
+        <a
+          href="javascript:void(0)"
+          onclick="openEmailModal()"
+          title="Contacto"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- Botón del Buscador -->
+        <button
+          class="tab-btn btn-search-trigger"
+          onclick="openSearchModal()"
+          title="Buscar en el sitio"
+        >
+          🔍 <span>Buscar</span>
+        </button>
+      </div>
+
+      <!-- MODAL DEL BUSCADOR INTEGRADO -->
+      <div
+        id="modal-buscador"
+        class="search-modal-overlay"
+        onclick="closeSearchOuter(event)"
+      >
+        <div class="search-modal-content">
+          <button
+            type="button"
+            class="search-modal-close"
+            onclick="closeSearchModal()"
+          >
+            &times;
+          </button>
+
+          <div class="search-header">
+            <input
+              type="text"
+              id="input-busqueda"
+              placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..."
+              oninput="ejecutarBusqueda()"
+              autocomplete="off"
+            />
+          </div>
+
+          <div id="resultados-busqueda" class="search-results-list">
+            <p class="search-placeholder">
+              Escribe una palabra clave para buscar en todo el sitio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE REDES Y CONTACTO -->
+      <div class="header-social-container">
+        <a
+          href="https://www.youtube.com/@monedasmacuquinas1334"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="YouTube"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1CDSmrzFka/"
+          target="_blank"
+          title="Facebook"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/groups/709702355717720/?ref=share_group_link&rdid=qqiqkrFI4WMKcYMn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1Dg4VxXbLm%2F#"
+          target="_blank"
+          title="Comunidad"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <!-- Enlace modificado: reemplazado mailto por la función del modal -->
+        <a
+          href="javascript:void(0)"
+          onclick="openEmailModal()"
+          title="Contacto"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- Botón del Buscador -->
+        <button
+          class="tab-btn btn-search-trigger"
+          onclick="openSearchModal()"
+          title="Buscar en el sitio"
+        >
+          🔍 <span>Buscar</span>
+        </button>
+      </div>
+
+      <!-- MODAL DEL BUSCADOR INTEGRADO -->
+      <div
+        id="modal-buscador"
+        class="search-modal-overlay"
+        onclick="closeSearchOuter(event)"
+      >
+        <div class="search-modal-content">
+          <button
+            type="button"
+            class="search-modal-close"
+            onclick="closeSearchModal()"
+          >
+            &times;
+          </button>
+
+          <div class="search-header">
+            <input
+              type="text"
+              id="input-busqueda"
+              placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..."
+              oninput="ejecutarBusqueda()"
+              autocomplete="off"
+            />
+          </div>
+
+          <div id="resultados-busqueda" class="search-results-list">
+            <p class="search-placeholder">
+              Escribe una palabra clave para buscar en todo el sitio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL DE SELECCIÓN DE CORREO -->
+      <div
+        id="modal-contacto-email"
+        class="modal-email-overlay"
+        onclick="closeEmailOuter(event)"
+      >
+        <div class="modal-email-card">
+          <button
+            type="button"
+            class="search-modal-close"
+            onclick="closeEmailModal()"
+          >
+            &times;
+          </button>
+
+          <h3>Contacto vía Correo</h3>
+          <p>
+            Selecciona tu proveedor de correo para enviar un mensaje a
+            <strong>monedasmacuquinas@yahoo.com</strong>:
+          </p>
+
+          <div class="opciones-email-grid">
+            <!-- Gmail Web -->
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option gmail"
+            >
+              <i class="fa-brands fa-google"></i>
+              <span>Gmail</span>
+            </a>
+
+            <!-- Outlook / Hotmail Web -->
+            <a
+              href="https://outlook.live.com/mail/0/deeplink/compose?to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option outlook"
+            >
+              <i class="fa-brands fa-microsoft"></i>
+              <span>Outlook / Hotmail</span>
+            </a>
+
+            <!-- Yahoo Mail Web (Parámetro corregido: src=mailto) -->
+            <a
+              href="https://mail.yahoo.com/d/compose-message?to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option yahoo"
+            >
+              <i class="fa-brands fa-yahoo"></i>
+              <span>Yahoo Mail</span>
+            </a>
+
+            <!-- Aplicación Predeterminada del sistema (Outlook Desktop, Mail de Apple, Thunderbird, etc.) -->
+            <a
+              href="mailto:monedasmacuquinas@yahoo.com"
+              class="btn-email-option default"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span>Aplicación del sistema</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carrusel-header">
+        <div class="carrusel-track">
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (28).jpg" alt="Nota 1" />
+          <img src="assets/img/img (29).jpg" alt="Nota 2" />
+          <img src="assets/img/img (40).jpg" alt="Nota 1" />
+          <img src="assets/img/img (20).jpg" alt="Nota 1" />
+          <img src="assets/img/img (21).jpg" alt="Nota 1" />
+          <img src="assets/img/img (22).jpg" alt="Nota 1" />
+          <img src="assets/img/img (23).jpg" alt="Nota 1" />
+          <img src="assets/img/img (24).jpg" alt="Nota 1" />
+          <img src="assets/img/img (25).jpg" alt="Nota 1" />
+          <img src="assets/img/img (26).jpg" alt="Nota 1" />
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (2).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (2).png" alt="Nota 2" />
+          <img src="assets/img/img (32).jpg" alt="Nota 1" />
+          <img src="assets/img/img (33).jpg" alt="Nota 1" />
+          <img src="assets/img/img (34).jpg" alt="Nota 1" />
+          <img src="assets/img/img (35).jpg" alt="Nota 1" />
+          <img src="assets/img/img (36).jpg" alt="Nota 1" />
+          <img src="assets/img/img (37).jpg" alt="Nota 1" />
+          <img src="assets/img/img (38).jpg" alt="Nota 1" />
+          <img src="assets/img/img (39).jpg" alt="Nota 1" />
+        </div>
+      </div>
+
+      <div id="menu-container"></div>
+    </header>
+
+    <header class="header-reconocimientos">
+      <div class="header-overlay">
+        <h1>Salón de Reconocimientos Académicos</h1>
+        <p>
+          Diplomas y distinciones otorgadas a lo largo de una trayectoria
+          dedicada al estudio y ponencia de las monedas macuquinas, barras de
+          plata y tesoros del Galeón de Atocha.
+        </p>
+      </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL DE DIPLOMAS -->
+    <main class="galeria-diplomas-container">
+      <div class="grid-diplomas">
+        <!-- Diploma 1: Ponencia Macuquinas -->
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (1).jpeg"
+              alt="I Expo Seminarios Numismáticos TACNA"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>I Expo Seminarios Numismáticos TACNA</h3>
+            <p class="diploma-fecha">Tacna, 21 y 22 de Febrero del 2015</p>
+            <p class="diploma-desc">
+              "Certificado que se otorga al Grupo Numismático Monedas
+              Macuquinas, Por su participación en el 9 Expo Seminarios
+              Numismáticos TACNA - PERÚ, que se realizó en el Teatro Municipal
+              de la ciudad de Tacna".
+            </p>
+          </div>
+        </article>
+
+        <!-- Diploma 2: Barras de Plata -->
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (2).jpeg"
+              alt="Convención Numismática Internacional Arica 2015"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>Convención Numismática Internacional Arica 2015</h3>
+            <p class="diploma-fecha">Arica, 5 de Julio de 2015</p>
+            <p class="diploma-desc">
+              "Diploma que se le otorga al Grupo Macuquinas Por su destacada
+              participación en las Mesas Culturales de la Convención Numismática
+              Internacional Arica 2015, organizada por la Asociación Numismática
+              de Arica.
+            </p>
+          </div>
+        </article>
+
+        <!-- Diploma 3: Barras de Oro -->
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (3).jpeg"
+              alt="IV Ciclo de Conferencias Preliminares AREQUIPA 2018"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>IV Ciclo de Conferencias Preliminares AREQUIPA 2018</h3>
+            <p class="diploma-fecha">Arica, 03 de Octubre del 2017.</p>
+            <p class="diploma-desc">
+              "El Comité Internacional Arequipa 2018 otorga el presente
+              reconocimiento al GRUPO NUMISMÁTICO MONEDAS MACUQUINAS, Por su
+              valiosa colaboración en la realización del IV Ciclo de
+              Conferencias Preliminares AREQUIPA 2018, evento realizado en el
+              Auditorio de la Biblioteca Municipal de Arica - Chile".
+            </p>
+          </div>
+        </article>
+
+        <!-- Puedes copiar desde aquí para agregar más diplomas en el futuro -->
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (4).jpeg"
+              alt="III Expo Seminarios Numismáticos LIMA"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>III Expo Seminarios Numismáticos LIMA</h3>
+            <p class="diploma-fecha">Lima 29 y 30 de Mayo del 2016</p>
+            <p class="diploma-desc">
+              Certificado de Reconocimiento Otorgado al Grupo Monedas
+              Macuquinas, por su participación en el III Expo Seminarios
+              Numismáticos LIMA 2016. que se realizó en el Hotel Jose Antonio
+              Deluxe Miraflores.
+            </p>
+          </div>
+        </article>
+
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (5).jpeg"
+              alt="II Expo Seminarios Numismáticos LIMA"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>"II Expo Seminarios Numismáticos LIMA</h3>
+            <p class="diploma-fecha">LiMA, 24 y 25 dE OCTUbRE dEl 2015.</p>
+            <p class="diploma-desc">
+              Certificado de participacion otorgado al Grupo Numismátíco Monedas
+              Macuquínas por su participación como expositor en el II Expo
+              Seminarios Numismáticos LIMA 2015, oprganizado por Peruvian
+              Banknotes Service en la ciudad de Lima.
+            </p>
+          </div>
+        </article>
+
+        <article class="card-diploma">
+          <div class="diploma-img-wrapper">
+            <img
+              src="assets/img/diploma (6).jpeg"
+              alt="II Exposición numismática en homenaje a Tacna"
+              class="diploma-thumb"
+              onclick="abrirModal(this.src, this.alt)"
+            />
+          </div>
+          <div class="diploma-info">
+            <h3>"II Exposición numismática en homenaje a Tacna";</h3>
+            <p class="diploma-fecha">Tacna, 26 de Agosto del 2017.</p>
+            <p class="diploma-desc">
+              El Comité Internacional Arequipa 2018 otorga el presente
+              reconocimiento al GRUPO NUMISMÁTICO MONEDAS MACUQUINAS, Por su
+              valiosa colaboración en la realización del II Ciclo de
+              Conferencias Preliminares AREQUIPA 2018, durante la "II Exposición
+              numismática en homenaje a Tacna"; evento realizado en el Auditorio
+              de la Biblioteca Pública de Tacna.
+            </p>
+          </div>
+        </article>
+        <!-- Fin del bloque copiable -->
+      </div>
+
+      <!-- BOTÓN DE RETORNO AL HOME -->
+      <div class="container-regresar-home">
+        <a href="inicio.html" class="btn-regresar-home"
+          >← Volver al Panel Principal</a
+        >
+      </div>
+    </main>
+
+    <!-- Inicio Botón Flotante Principal -->
+    <button
+      id="fab-conversores-btn"
+      class="fab-conversores-trigger"
+      onclick="toggleModalConversores()"
+      title="Abrir Conversores"
+    >
+      <span class="fab-icon">⚖️</span>
+    </button>
+
+    <!-- Modal Contenedor de las Barras -->
+    <div
+      id="modal-conversores-wrapper"
+      class="modal-conversores-overlay"
+      onclick="closeModalConversoresOuter(event)"
+    >
+      <div class="modal-conversores-content">
+        <button
+          class="modal-conversores-close"
+          onclick="toggleModalConversores()"
+        >
+          &times;
+        </button>
+        <h3 class="modal-conversores-title">Menús de Conversión</h3>
+
+        <!-- Aquí nav_footer.js inyectará automáticamente las 3 barras -->
+        <div
+          id="conversor-flotante-dinamico"
+          class="modal-conversores-bars-container"
+        ></div>
+      </div>
+    </div>
+    <!-- Fin Botón Flotante Principal -->
+
+    <!-- VENTANA FLOTANTE (MODAL) PARA VER LOS DIPLOMAS EN GRANDE -->
+    <div id="modal-visor" class="modal-visor" onclick="cerrarModal()">
+      <span class="modal-cerrar">&times;</span>
+      <img class="modal-contenido" id="img-modal-target" />
+      <div id="modal-caption"></div>
+    </div>
+
+    <!-- INCLUSIÓN DEL FOOTER QUE YA MANEJAS -->
+    <!-- Puedes pegar aquí tu bloque <footer class="footer-content"> ... </footer> -->
+
+    <!-- SCRIPT PARA EL FUNCIONAMIENTO INTERACTIVO DEL VISOR -->
+    <script>
+      function abrirModal(src, alt) {
+        const modal = document.getElementById("modal-visor");
+        const modalImg = document.getElementById("img-modal-target");
+        const captionText = document.getElementById("modal-caption");
+
+        modal.style.display = "flex";
+        modalImg.src = src;
+        captionText.innerHTML = alt;
+      }
+
+      function cerrarModal() {
+        document.getElementById("modal-visor").style.display = "none";
+      }
+    </script>
+    <footer id="footer-container"></footer>
+
+    <!-- Cargar base de datos de búsqueda -->
+    <script src="assets/js/datos-busqueda.js"></script>
+
+    <!-- Cargar funciones JS generales -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-footer.js"></script>
+    <script src="assets/js/ponencias.js"></script>
+  </body>
+</html>

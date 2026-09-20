@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monedas Macuquinas | Inicio</title>
+    <link rel="icon" href="assets/img/img (5).png" type="image/png" />
+    <link rel="icon" type="image/png" href="assets/img/img (5).png" />
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+   <header class="main-header">
+  <div class="header-overlay"></div>
+
+  <div class="titulo-central">
+    <span class="palabra-izq">Monedas</span>
+    <div class="moneda-destacada">
+      <img
+        src="assets/img/img (8).png"
+        alt="Moneda Macuquina Colonial"
+        class="img-centro"
+      />
+    </div>
+    <span class="palabra-der">Macuquinas</span>
+  </div>
+
+  <div class="subtitulo-plata">
+    <span class="conector">y</span> Barras de Plata
+  </div>
+
+  <!-- CONTENEDOR DE REDES Y CONTACTO -->
+<div class="header-social-container">
+  <a href="https://www.youtube.com/@monedasmacuquinas1334" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-icon">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+  <a href="https://www.facebook.com/share/1CDSmrzFka/" target="_blank" title="Facebook" class="social-icon">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="https://www.facebook.com/groups/709702355717720/?ref=share_group_link&rdid=qqiqkrFI4WMKcYMn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1Dg4VxXbLm%2F#" target="_blank" title="Comunidad" class="social-icon">
+    <i class="fa-solid fa-users"></i>
+  </a>
+
+  <!-- Enlace modificado: reemplazado mailto por la función del modal -->
+  <a href="javascript:void(0)" onclick="openEmailModal()" title="Contacto" class="social-icon">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <!-- Botón del Buscador -->
+  <button class="tab-btn btn-search-trigger" onclick="openSearchModal()" title="Buscar en el sitio">
+    🔍 <span>Buscar</span>
+  </button>
+</div>
+
+<!-- MODAL DEL BUSCADOR INTEGRADO -->
+<div id="modal-buscador" class="search-modal-overlay" onclick="closeSearchOuter(event)">
+  <div class="search-modal-content">
+    <button type="button" class="search-modal-close" onclick="closeSearchModal()">&times;</button>
+    
+    <div class="search-header">
+      <input 
+        type="text" 
+        id="input-busqueda" 
+        placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..." 
+        oninput="ejecutarBusqueda()"
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="resultados-busqueda" class="search-results-list">
+      <p class="search-placeholder">Escribe una palabra clave para buscar en todo el sitio.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE SELECCIÓN DE CORREO -->
+<div id="modal-contacto-email" class="modal-email-overlay" onclick="closeEmailOuter(event)">
+  <div class="modal-email-card">
+    <button type="button" class="search-modal-close" onclick="closeEmailModal()">&times;</button>
+    
+    <h3>Contacto vía Correo</h3>
+    <p>Selecciona tu proveedor de correo para enviar un mensaje a <strong>monedasmacuquinas@yahoo.com</strong>:</p>
+
+    <div class="opciones-email-grid">
+      <!-- Gmail Web -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option gmail">
+        <i class="fa-brands fa-google"></i>
+        <span>Gmail</span>
+      </a>
+
+      <!-- Outlook / Hotmail Web -->
+      <a href="https://outlook.live.com/mail/0/deeplink/compose?to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option outlook">
+        <i class="fa-brands fa-microsoft"></i>
+        <span>Outlook / Hotmail</span>
+      </a>
+
+      <!-- Yahoo Mail Web (Parámetro corregido: src=mailto) -->
+      <a href="https://mail.yahoo.com/d/compose-message?to=monedasmacuquinas@yahoo.com" target="_blank" rel="noopener noreferrer" class="btn-email-option yahoo">
+        <i class="fa-brands fa-yahoo"></i>
+        <span>Yahoo Mail</span>
+      </a>
+
+      <!-- Aplicación Predeterminada del sistema (Outlook Desktop, Mail de Apple, Thunderbird, etc.) -->
+      <a href="mailto:monedasmacuquinas@yahoo.com" class="btn-email-option default">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Aplicación del sistema</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class="carrusel-header">
+    <div class="carrusel-track">
+      <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+      <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+      <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+      <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+      <img src="assets/img/img (17).jpg" alt="Nota 5" />
+      <img src="assets/img/img (1).png" alt="Nota 6" />
+      <img src="assets/img/img (28).jpg" alt="Nota 1" />
+      <img src="assets/img/img (29).jpg" alt="Nota 2" />
+      <img src="assets/img/img (40).jpg" alt="Nota 1" />
+      <img src="assets/img/img (20).jpg" alt="Nota 1" />
+      <img src="assets/img/img (21).jpg" alt="Nota 1" />
+      <img src="assets/img/img (22).jpg" alt="Nota 1" />
+      <img src="assets/img/img (23).jpg" alt="Nota 1" />
+      <img src="assets/img/img (24).jpg" alt="Nota 1" />
+      <img src="assets/img/img (25).jpg" alt="Nota 1" />
+      <img src="assets/img/img (26).jpg" alt="Nota 1" />
+      <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+      <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+      <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+      <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+      <img src="assets/img/img (17).jpg" alt="Nota 5" />
+      <img src="assets/img/img (1).png" alt="Nota 6" />
+      <img src="assets/img/img (2).jpeg" alt="Nota 1" />
+      <img src="assets/img/img (2).png" alt="Nota 2" />
+      <img src="assets/img/img (32).jpg" alt="Nota 1" />
+      <img src="assets/img/img (33).jpg" alt="Nota 1" />
+      <img src="assets/img/img (34).jpg" alt="Nota 1" />
+      <img src="assets/img/img (35).jpg" alt="Nota 1" />
+      <img src="assets/img/img (36).jpg" alt="Nota 1" />
+      <img src="assets/img/img (37).jpg" alt="Nota 1" />
+      <img src="assets/img/img (38).jpg" alt="Nota 1" />
+      <img src="assets/img/img (39).jpg" alt="Nota 1" />
+    </div>
+  </div>
+
+  <div id="menu-container"></div>
+</header>
+
+    <main class="container">
+      <section id="inicio" class="content-section">
+        <div class="hero">
+          <h1>Monedas Macuquinas: Arte e Historia Colonial</h1>
+          <p>
+            Descubre la fascinante historia de las primeras piezas acuñadas a
+            golpe de martillo en el Nuevo Mundo, un testimonio clave del
+            comercio global de los siglos XVI al XVIII.
+          </p>
+        </div>
+
+        <article class="info-box">
+          <h2>¿Qué es una moneda Macuquina?</h2>
+          <p>
+            El término <strong>"macuquina"</strong> deriva de la raíz de la
+            palabra quechua <em>makay</em>, cuyo significado es "golpear", o de
+            <em>makakuna</em>, entendida como "hechas a mano". Esta denominación
+            se emplea para designar las monedas de plata y oro manufacturadas de
+            forma artesanal mediante golpes de martillo en las cecas
+            establecidas en el Virreinato del Perú.
+          </p>
+          <img
+            src="assets/img/img (79).jpg"
+            alt="Proceso de acuñación a martillo colonial"
+            class="responsive-img"
+          />
+          <p>
+            El uso histórico de este término se encuentra ampliamente
+            documentado en diversos registros del libro titulado
+            <strong
+              >“Razón de las cédulas y órdenes dirigidas a la Real Casa de
+              Moneda de Lima”</strong
+            >, donde aparece de manera recurrente en documentos oficiales de la
+            época. Entre los ejemplos más representativos pueden citarse los
+            siguientes:
+          </p>
+
+          <p>
+            📖 <strong>Documento número 23:</strong>
+            <em
+              >“Rl órden de 7 de agosto de 776 para que los ensayadores no
+              llevasen(?) bocado de las barras de macuquinas”</em
+            >.
+          </p>
+          <p>
+            📖 <strong>Documento número 27:</strong>
+            <em
+              >“Decreto para que se entreguen a los oficiales Rls 50(mil) ps</em
+            >. En moneda menuda del nuevo cuño en cuenta de macuquinas o de
+            barras que se les hubiesen con el fin con ….”. En el encabezado de
+            este mismo documento se registra el siguiente texto: “Exmo, Sr. Uno
+            de los asuntos que justamente merecen la atención de este superior
+            gobierno es abastecer la ciudad y el reyno de moneda menuda del
+            nuevo cuño de retrato que se subrogue en lugar de la antigua
+            macuquina que se ha recojido y ha de continuar recojiendo hasta su
+            total extinción.”
+          </p>
+          <p>
+            📖 <strong>Documento número 31:</strong>
+            <em
+              >“Decrto del Superior gobierno de 14 de enero de 77 remitiendo a
+              la superintendencia el libro con que se …</em
+            >. van las partidas de monedas de plata macuquina.”.
+          </p>
+          <p>
+            📖 <strong>Documento número 33:</strong>
+            <em
+              >“Los oficiales Rls. Son acrhedores al pago de las cantidades
+              q(u)e depositan en la Real Casa de moneda ya sean provenidas de
+              barras de quintos pertenecientes a S.M. sea de la moneda macuquina
+              que se su Rl orn entregan para la de nueva fábrica,”
+            </em>
+          </p>
+          <p>
+            📖 <strong>Documento número 82:</strong>
+            <em
+              >“Documento N° 82. A lápiz 399. En las Reales caxas de esta
+              capital se acaba de hacer el recuento de la moneda macuquina o
+              cortada que allí existe de resultas del anual del corte o tanteo
+              que tiene el REY mandado se haga en todos los ramos de de su Rl.”
+            </em>
+          </p>
+
+          <p>
+            Hacienda en el último dia de cada año; y componiendo esta la
+            cantidad de ciento cincuenta y ocho mil trescientos quarenta y un
+            peso y dos Rs. Y estando yo para mandar que se pase a esa Rl. Casa
+            de moneda a fin de que reciba el nuevo cuño y se restituya quanto
+            antes al giro útil que conviene a favor del Rey y de la causa
+            pública me dira V.S. si hay inconveniente en que se ponga en su
+            tesorería para dar la orden necesaria respecto de no componer esta
+            moned la cantiad de doscientos mil pesos que es la de estilo en
+            estas comisiones con atención al contrato que hai para su (f.1 a)
+            reamonedación.” Documento número 83: “Otro del mismo Sr. Sobre el
+            mismo asunto y que da orden a los oficiales Reales para que empiecen
+            a enviar los 200 (mil) ps de plata macuquina a esta Rl casa y Reales
+            Aduana para que executen lo mismo con la que hubiese existente.”
+          </p>
+        </article>
+
+        <article class="info-box">
+          <h2>
+            "El Gran Escudo de los Habsburgo impreso de las monedas macuquinas,
+            según la pragmática de la nueva estampa"
+          </h2>
+
+          <img
+            src="assets/img/descripcionmoneda.png"
+            alt="El Gran Escudo de los Habsburgo"
+            class="responsive-img img-ampliable" 
+          />
+          <p>
+            La impronta de la denominada «Nueva Estampa» fue establecida por
+            Felipe II en noviembre de 1566 mediante una reforma que introdujo
+            una nueva iconografía monetaria. A partir de entonces, las monedas
+            presentaron en el anverso el gran escudo de la Casa de Habsburgo,
+            integrado por los escusones representativos de los distintos
+            dominios de la Monarquía Hispánica y acompañado por la leyenda con
+            el nombre del monarca. Este diseño predominó hasta mediados del
+            siglo XVII, cuando, a raíz del grave fraude monetario descubierto en
+            la ceca de Potosí, se dispuso una modificación de la iconografía. En
+            consecuencia, se reemplazó el diseño tradicional, mientras que el
+            reverso continuó mostrando los cuarteles de Castilla y León
+            separados por una cruz.
+          </p>
+        </article>
+
+ <article class="info-box">
+          <h2>
+            "Metrologia de las monedas macuquinas, según la pragmática de la nueva estampa"</h2>
+          <p>Las ordenanzas promulgadas en Medina del Campo en 1497 por los Reyes Católicos establecieron que la ley de la moneda de plata debía ser de 11 dineros y 4 granos, equivalente a una fineza de 930,554 milésimas. Asimismo, fijaron una talla de 67 reales por marco castellano, lo que significa que de un marco de 230,0465 g debían acuñarse 67 monedas de un real, correspondiendo a cada una un peso teórico de 3,4335 g. En consecuencia, la moneda de 8 reales debía alcanzar un peso de 27,468g, conforme a los parámetros metrológicos establecidos por dicha normativa.</p>
+
+          <img
+            src="assets/img/monedagramos.png"
+            alt="Monedas en Gramos y Dineros"
+            class="responsive-img img-ampliable" 
+          />
+
+        <h3> "Equivalencia de los pesos monetarios coloniales en el sistema métrico actual"</h3>
+
+              <img
+            src="assets/img/Monedametrico.png"
+            alt="Monedas Metrica Actual"
+            class="responsive-img img-ampliable" 
+          />
+    
+
+          <h3> "Monedas relacionadas con los monarcas de la epoca"</h3>
+
+              <img
+            src="assets/img/monedamonarca.png"
+            alt="Monedas de Monarcas"
+            class="responsive-img img-ampliable" 
+          />
+
+          <h3> "Nuevo Régimen Monetario establecido en las Reforma Monetaria de <strong>Felipe V</strong>"</h3>
+          <p>Las ordenanzas que dispusieron el cese definitivo de la acuñación de monedas a martillo se enmarcaron dentro del amplio proceso de reformas monetarias impulsadas por el monarca Felipe V, señalando los inconvenientes atribuidos a este tipo de numerario, cuyas imperfecciones de manufactura y vulnerabilidades inherentes comprometían la uniformidad, seguridad y confiabilidad de la moneda circulante. La magnitud de estos problemas se veía acrecentada por la extensa circulación de estas piezas tanto en los territorios de la Monarquía Hispánica como en los circuitos comerciales de alcance global. </p>
+
+
+          <p>En este contexto, las ordenanzas promulgadas el 9 de junio de 1728 bajo el título “Ley, peso y estampa y otras circunstancias con que se ha de labrar las monedas de oro y plata en los Reynos de España y de las Indias” constituyen una fuente de especial relevancia para comprender las motivaciones que sustentaron la reforma monetaria. Sus disposiciones permiten advertir las principales deficiencias que las autoridades reales atribuían al sistema tradicional de acuñación, resultando particularmente significativo que el texto normativo inicie su exposición destacando las irregularidades observadas en la producción monetaria de las distintas casas de moneda.
+
+          <p>Este pasaje revela que la Corona había sido informada de reiteradas deficiencias en los procesos de acuñación, las cuales eran atribuidas por ministros y operarios a contingencias propias de las labores de fabricación. Sin embargo, la incorporación de esta observación en los párrafos iniciales de la disposición evidencia que dichas irregularidades eran consideradas por las autoridades como un problema estructural de considerable importancia. En consecuencia, tales deficiencias fueron interpretadas como una manifestación de las limitaciones inherentes al sistema de acuñación a martillo, constituyendo uno de los principales argumentos que justificaron la adopción de reformas orientadas a incrementar el control técnico de la producción monetaria y a asegurar una mayor uniformidad en la moneda emitida en los dominios hispánicos . A partir de este diagnóstico, la normativa identificó diversas causas que explicaban los inconvenientes asociados a esta técnica de fabricación monetaria, al tiempo que estableció una serie de medidas correctivas destinadas a subsanar tales deficiencias. Entre ellas, pueden distinguirse tres problemáticas fundamentales, así como las soluciones propuestas por la Corona para su resolución.</p> 
+
+          <p>Prácticas abusivas y negligencias administrativas en la ceca
+      En el siglo XVII de dichas ordenanzas se señalaba que las talegas, es decir, los saquitos destinados al transporte de mil pesos en monedas de distintas denominaciones —aunque integrados mayoritariamente por piezas de ocho reales— debían alcanzar, según lo dispuesto por la normativa, un peso de 119 marcos, 3 onzas, 1 ochava y 4 tomines.  No obstante, se advertía que dichas cantidades se encontraban por debajo del peso reglamentario, resultando, por tanto, febles: “[…] labrándose en la de México de la ley de diez dineros y veintidós granos o poco más, y que en el peso ha correspondido la talega de mil pesos a 117 marcos y dos onzas a poco más, debiendo pesar cada mil pesos ajustados al dineral de 67 reales de plata por marco 119 marcos y tres onzas largas y que la moneda que se ha labrado en la Casa de Potosí ha tenido la ley de once dineros o poco más, que las talegas de mil pesos suelen pesar 116 marcos, 113 y 114 y algunas veces menos, y que en las moneda menuda de a dos reales de plata, de reales sencillos y de medios reales es grande el abuso, no teniendo justo motivo para ello y conviniendo corregir éstos descuidos y excesos […]”.</p>
+
+      <p>Una vez recibida esta ordenanza por el virrey del Perú, se dispuso la fiscalización de las monedas emitidas en la Casa de Moneda de Lima mediante la verificación del peso de diversas denominaciones. Para ello, fueron examinados varios marcos de moneda, según consta en la documentación de la época: “[…] cinco efpecies de Moneda de la partida que eftaba para librafe, y pufieron 50 marcos de pefos grueffos, y 25 de cada una de las demás monedas […] ”. Los resultados obtenidos permitieron constatar la existencia de numerario feble, corroborando las preocupaciones expresadas por las autoridades metropolitanas. A modo de ejemplo, los cincuenta marcos de monedas de ocho reales produjeron un total de 423 pesos, cuando, conforme al peso legal establecido, debieron equivaler aproximadamente a 418 pesos. Del mismo modo, las monedas de un real, reducidas a su equivalencia en pesos de ocho reales, totalizaron 215 pesos, pese a que, de acuerdo con los parámetros reglamentarios, debieron representar cerca de 209 pesos.</p>
+
+      <h3> "Vulnerabilidad de la moneda macuquina al cercén y a la falsificación"</h3>
+
+       <img
+            src="assets/img/monedavulnerable.jpeg"
+            alt="Vulnerabilidad de la moneda"
+            class="responsive-img"
+          />
+
+      <p>Otro de los problemas asociados a este tipo de acuñaciones era su notable vulnerabilidad al cercén, práctica mediante la cual se recortaban pequeñas porciones de metal de los cantos de las monedas con el propósito de obtener un beneficio ilícito en plata. Esta situación fue señalada por el ensayador Cristóbal Cano Melgarejo, quien, tras la fiscalización de las monedas producidas en la Casa de Moneda de Lima y la comprobación de que una parte de ellas se encontraba feble, fue condenado, junto con otros funcionarios de la ceca, a pena de prisión. No obstante, debido a la necesidad de mantener la continuidad de la producción monetaria, el ensayador cumplió su condena dentro de las propias instalaciones de la Casa de Moneda.</p>
+
+      <p>Entre los argumentos esgrimidos en su defensa figuraba precisamente la frecuente extracción de las piezas de mejor peso y ley por parte de particulares y comerciantes, quienes retenían las monedas más ajustadas y dejaban en circulación aquellas de menor calidad. En este sentido, señalaba que “[…] porque corrientemente avia noticia de aver muchas perfonas que cercenan la Monedas, y también las entrefacan, pesandolas, para valerfe de aquellas que eftan mas grueffas, y puntuales al pefo, y es en tanto grado efte exceffo, que ha llegado efte confeffante a ver muchas Monedas dobles, no solo cercenadas por el canto, fino fachada una foleadura por encima de las mifmas armas […]” </p>
+
+      <p>Sin embargo, esta problemática no constituía una novedad para las autoridades de la Monarquía. De hecho, las propias ordenanzas reconocían explícitamente las debilidades inherentes a la moneda macuquina, al señalar que “[…], y que por no tener buena estampa, ni ser de figura redonda con un cordoncillo al canto las que se labran en Indias, están muy sujetas al cercén y a la falsificación.” Esta observación resulta particularmente relevante, pues evidencia que las deficiencias físicas y técnicas de estas acuñaciones eran ampliamente conocidas por las autoridades metropolitanas, las cuales identificaban en la irregularidad de su forma y en la ausencia de elementos de seguridad en el canto factores que facilitaban tanto el cercén como las falsificaciones.</p>
+
+      <h3> La emigración de moneda macuquina hacia los territorios fronterizos de la Monarquía Hispánica</h3>
+
+      <img
+            src="assets/img/monedamigratoria.jpeg"
+            alt="La emigración de moneda macuquina"
+            class="responsive-img"
+          />
+
+      <p>Debido a su elevado contenido de plata, equivalente a una ley de once dineros y cuatro granos de pureza (930,555 milésimas de fino), así como a su adecuado peso, la moneda acuñada en los dominios hispánicos gozaba de una notable aceptación en los mercados internacionales. Esta circunstancia provocó que el numerario fuese ampliamente demandado por comerciantes extranjeros, favoreciendo su extracción de los territorios de la Monarquía y dificultando su posterior retorno a la circulación local, así también lo señalo el ensayador Cano Melgarejo  “[…] fuera de que en aquel Reyno ha avido fiempre quienes fe aplican a entrefacar, y apartar Monedas, quedandofe con las fuertes, y ajuftadas, y expendiendo las menos ajustadas, y febles: y con mas frecuencia fe repitió efto en el tiempo que duró el Comercio con los Francefes, los quales procediendo con aquel eftudio, fepararon, y llevaron de efte Reyno muchos millones de Monedas ajuftadas, y fuertes: y es muy factible, que fe continúe lo mifmo con las que fe conducen por tierra firme á efte Reyno, dexando folo aquellas de menos ajufte, y pefo […]”.</p>
+
+      <p> La preocupación de las autoridades por este fenómeno queda reflejada en las disposiciones reformistas de la época, las cuales reconocían que la alta ley de la moneda española constituía un incentivo para su exportación hacia otros Estados. En este sentido, se señalaba que “[…] para cuya reducción concurren también las consideraciones de que, no siendo de mejor ley que las de otros Estados, con quienes más comercian mis vasallos, serán menos apetecidas y buscadas para extraerlas, y que hallándose ya el oro en la ley de 22 quilates y poniéndose la plata en la de once dineros […]”.</p>
+
+      <h3>Las soluciones propuestas para las deficiencias de la moneda macuquina</h3>
+
+      <p>La ordenanza hacía referencia expresa a los diversos problemas asociados a este tipo de amonedación, razón por la cual sus distintos capítulos establecían una serie de medidas destinadas a corregir tales deficiencias. En particular, respecto de los problemas derivada a la problemática de la emigración de las monedas hacia mercados extranjeros, la ordenanza dispuso una serie de medidas orientadas a disminuir el atractivo que el numerario hispánico ejercía fuera de los dominios de la Monarquía. Para ello, se establecieron modificaciones tanto en la ley como en el peso de las monedas. Respecto de la reducción del título de fineza, el capítulo primero ordenaba que: “Primeramente, es mi voluntad que toda la moneda de plata, que en adelante se labrare en mis Casas de Moneda de estos Reinos y de los de Indias, ya sea por cuenta de mi Real Hacienda o por la de particulares, tenga la ley de once dineros justos […]”. Esta disposición implicaba una disminución de la pureza de la plata, quedando establecida en términos modernos en 916,666 milésimas de fino.</p>
+
+      <P> Por otra parte, la reducción del peso de las monedas se llevó a cabo mediante el aumento del número de piezas que debían acuñarse por cada marco de plata. En este sentido, el capítulo tercero disponía que: “Por lo que toca al peso o talla que han de tener las expresadas monedas, ya sean piezas gruesas o menudas, considerando que la labor y forma con que se han de ejecutar en adelante, según esta mi Ordenanza, será más prolija, costosa y detenida, mando que en lugar de los 67 reales de plata que antes de ahora salían de cada marco, se saquen en adelante 68 […]”.</P>
+
+      <P>Ambas medidas respondían a una misma finalidad económica y monetaria orientada a reducir el valor intrínseco de las monedas de plata para aproximarlo al de las acuñaciones de otros Estados europeos. Con ello se pretendía disminuir los incentivos para su extracción, fundición y exportación del numerario hispánico, limitando la constante salida de numerario de alta calidad que afectaba a los territorios de la Monarquía y favoreciendo, al mismo tiempo, una mayor permanencia de la moneda en los circuitos comerciales internos. En aplicación de estas disposiciones, la Real Casa de Moneda de Lima efectuó la primera acuñación de plata conforme al nuevo régimen metrológico el 8 de agosto de 1729, para lo cual se amonedaron 4.089 marcos y 6 onzas de plata, quedando además 537 marcos en cizalla, según consta en los registros de la ceca .</P>
+
+      <P>En lo relativo a los problemas asociados al cercén de las monedas, a la circulación de numerario feble y a la deficiente calidad de la impronta que caracterizaba a las acuñaciones macuquinas, el capítulo segundo dispuso la sustitución de los métodos tradicionales de fabricación por procedimientos mecánicos que permitieran obtener piezas uniformes, circulares y dotadas de una calidad técnica superior como elementos de seguridad en el los bordes de la moneda,  por ello  se ordenó que las monedas fueran provistas de cordoncillo o laurel en el canto con el propósito de dificultar las prácticas de cercén y falsificación y reforzar la autenticidad e integridad física del numerario.</P>
+
+      <p>La disposición señalaba expresamente que: “Todas las monedas de plata que se labraren en las Casas de estos mis Reinos y de los de Indias serán acuñadas en ingenios o molinos de agua o de sangre y de figura circular con cordoncillo o laurel al canto, para dificultar por este medio el cercen, y la falsificación. Y para que no haya variación alguna en estas, ni en las demás circunstancias de las monedas de plata, que se labraren en las Casas de estos, y de aquellos Reinos, se remitirán a todas ellas matrices de la punzonería de armas, orlas, letras y grafilas, que se ejecutarán por el Tallador de la Casa de la Corte o el que con más primor lo ejecutare, para que precisa e inviolablemente sigan los demás Talladores de todas las Casas una misma regla en el repartimiento de toda la punzonería e inscripciones, para cuya uniforme imitación se les remitirán también monedas ejecutadas […]”.</p>
+
+      <p>No obstante, la implantación de este nuevo sistema de acuñación no se produjo de manera inmediata en todas las casas de moneda. La propia disposición reconocía las dificultades materiales derivadas de la instalación de los molinos, volantes y demás instrumentos necesarios para la fabricación mecanizada del numerario. Por ello, mientras se completaba la implementación de estas innovaciones técnicas, se ordenó a las autoridades virreinales velar por el estricto cumplimiento de aquellas disposiciones que resultaran practicables, especialmente las relativas a la ley y al peso de las monedas. Asimismo, se dispuso que las piezas que continuaran acuñándose a martillo debían presentar con claridad los elementos identificativos fundamentales, tales como la fecha de emisión, la marca de la ceca y la señal del ensayador. En este sentido, el capítulo XII establecía que: “ […] y en caso que en aquellas Casas de Moneda no se pudieren disponer prontamente los molinos, volantes y lo demás que conviene para labrar moneda de figura redonda y con las demás circunstancias, conforme a las muestras y a esta Instrucción y se necesitare enviar algunos artífices, instrumentos u otras cosas de España, me lo representarán para que Yo mande dar las providencias convenientes; pero sin que en este intermedio se deje de observar lo contenido en ella en todas las demás partes que fueren practicables, y especialmente en lo que mira a la ley y peso, lo que se ha de observar inviolablemente en todas las Casas y en cualesquiera especies de monedas que se labraren por cuenta de mi Real Hacienda o por la de particulares, teniendo también especial cuidado en que las monedas de oro o de plata que en adelante se labraren de martillo, hasta que se pongan corrientes los molinos y volantes, estén bien acuñadas, de forma que se vean en ellas con claridad el año en que se hubieren labrado, la letra o armas de la Casa y la señal del Ensayador que haya despachado y dado por de ley el oro o plata de que fueren fabricadas.</p>
+
+
+        <img
+            src="assets/img/money.png"
+            alt="Monedas Money"
+            class="responsive-img" />
+            
+        </article>
+        
+<article class="info-box">
+          <h2>“La incorporación de la Casa de Moneda de Lima al control directo de la Corona ”</h2>
+
+          <p>
+           En continuidad con las ordenanzas monetarias de 1728, la Corona promulgó en Cazalla, el 16 de julio de 1730, un nuevo cuerpo normativo destinado a reorganizar las casas de moneda de la Monarquía, incorporándolas progresivamente a la administración directa de la Real Hacienda y suprimiendo el sistema de gestión particular.
+          </p>
+          
+           <p>
+          La introducción de la acuñación mecanizada en las Indias comenzó en la Real Casa de Moneda de México. No obstante, la enfermedad de su superintendente motivó que, mediante Real Cédula de 23 de septiembre de 1746, se designara a Andrés Morales y de los Ríos como superintendente de la Casa de Moneda de Lima, ordenándose previamente su traslado a México para instruirse en las técnicas de acuñación mecanizada, las ordenanzas vigentes y la organización del envío de maquinaria, herramientas y personal especializado destinados a la futura ceca limeña (Lazo García,  Carlos “Economía Colonial y Régimen Monetario Perú: Siglos XVI-XIX” Lima 1992,Tomo II, Pág. 234).
+          </p>
+
+          <p>
+          Con amplias facultades conferidas por la Corona, Morales y de los Ríos asumió el proceso de implantación de la nueva ceca mecanizada. Su toma de posesión, el 27 de mayo de 1748, contó con el respaldo del virrey José Antonio Manso de Velasco y de las principales autoridades del reino, aunque debió enfrentar la oposición de la familia Santa Cruz, titular hereditaria del oficio de tesorero, cuyos reclamos culminaron con la restitución parcial de dicho cargo en 1754. (Dargent, Eduardo “La Moneda en el Perú: 450 años de historia” Lima 2019, Pág. 158)
+          </p>
+
+          <p>
+          Como parte de este proceso, el 6 de junio de 1748 se promulgó en Lima una ordenanza que obligaba a los poseedores de oro y plata en pasta a entregarlos a la Casa de Moneda para su acuñación, garantizando el pago de su valor legítimo y prohibiendo recargos o beneficios adicionales a intermediarios. La medida, ejecutada bajo la dirección de Morales y de los Ríos, reforzó el control de la Corona sobre la producción monetaria y la circulación de metales preciosos, en concordancia con los principios establecidos por las ordenanzas de Cazalla de 1730, según los cuales toda la labor de acuñación debía realizarse exclusivamente en beneficio de la Real Hacienda.
+          </p>
+
+          <img
+            src="assets/img/img (6).jpeg"
+            alt="Balanza de la Casa de Moneda de Lima"
+            class="responsive-img"
+          />
+
+
+          <h2>“La mecanización de la Casa de Moneda de Lima ”</h2>
+
+          <p>
+           Desde el 12 de noviembre de 1746 se inició la adquisición de los terrenos destinados a la nueva Real Casa de Moneda de Lima. El proyecto, diseñado por el arquitecto Salvador de Villa, comprendía la compra de cinco solares y una residencia para el superintendente, con una inversión de 78.162 pesos. El conjunto alcanzó una superficie aproximada de 10.857 varas cuadradas (9.120 m²), sobre la cual se colocó la primera piedra el 2 de noviembre de 1748, integrándose al programa borbónico de modernización de la administración y de la producción monetaria.
+          </p>
+
+            <p>
+          La reconstrucción de la ceca, destruida por el terremoto de 1746, estuvo inicialmente bajo la dirección del maestro alarife Cristóbal de Vargas, designado por una comisión de altas autoridades virreinales. Posteriormente, con la llegada del superintendente Andrés Morales y de los Ríos, Vargas pasó a colaborar con Salvador de Villa en la ejecución de la nueva planta arquitectónica. La documentación conservada reconoce oficialmente sus servicios y registra las reclamaciones por el pago de salarios atrasados, así como litigios relativos a la propiedad de materiales recuperados del antiguo edificio ( “Razón de las cédulas y ordenes dirigidas a la Real casa de moneda de Lima que se hayan en su contaduría” Documento N 1 -folio 105).
+          </p>
+
+          <p>La obra proyectada por Salvador de Villa constituyó una de las intervenciones de ingeniería más importantes del período, pues requirió modificar el cauce del río Huatica, derivado del Rímac, para aprovechar su fuerza hidráulica en el accionamiento de los molinos de laminación, incorporando una solución tecnológica de carácter industrial al proceso de acuñación.</p>
+
+          <p>La construcción se prolongó durante varios años. Documentos de 1756 evidencian que aún se contrataban puertas y ventanas para las dependencias de la ceca, mientras que el virrey José Antonio Manso de Velasco informaba en 1761 que el edificio se hallaba prácticamente concluido, restando únicamente las viviendas del contador y del tesorero, cuya finalización esperaba para el año siguiente.</p>
+
+  <img
+            src="assets/img/Imagen1.png"
+            alt="Maquina de la Casa de Moneda de Lima"
+            class="responsive-img"
+          />
+
+ <img
+            src="assets/img/Imagen2.png"
+            alt="Maquina de la Casa de Moneda de Lima"
+            class="responsive-img"
+          />
+
+           <h2>“Las primeras acuñaciones mecanizadas en la Casa de Moneda de Lima ”</h2>
+
+          <p>
+           La introducción de la acuñación mecanizada fue posible gracias a las matrices y punzones elaborados en México por el tallador Joseph de Zúñiga, quien acompañó a Andrés Morales y de los Ríos a Lima. Con estos instrumentos se iniciaron las primeras pruebas y, el 25 de mayo de 1751, Morales remitió a España las primeras monedas de oro acuñadas mediante el sistema de volante.
+          </p>
+
+            <p>
+         Ese mismo año arribaron al Callao las matrices y punzones enviados desde Madrid; sin embargo, la humedad deterioró los destinados a la acuñación de oro, obligando a emplear los juegos traídos desde México. Esta circunstancia permitió mantener la continuidad del proceso de mecanización.
+          </p>
+
+          <p>Hacia finales de 1751 se encontraban en funcionamiento un molino y tres volantes, con los cuales comenzaron a acuñarse las primeras monedas mecanizadas de cordoncillo, inicialmente de oro y posteriormente de oro. Durante los dos años siguientes la capacidad productiva de la ceca se amplió con la incorporación de tres molinos y seis volantes adicionales, consolidándose definitivamente la transición desde la acuñación a martillo hacia la producción mecanizada.</p>
+
+ <div style="text-align: center;">
+  <p><strong>Moneda de dos escudos de oro</strong></p>
+  <p><strong>Imagen de Moneda Gentileza Víctor Urbano</strong></p>
+  <img
+    src="assets/img/Imagen3.png"
+    alt="Moneda de dos escudos de oro"
+    class="responsive-img"
+    style="display: block; margin: 0 auto;"
+  />
+</div>
+
+<p>“El Memorial Ajustado elaborado en cumplimiento del decreto de la Junta General de Comercio y Moneda de estos Reinos, con la comparecencia de las partes interesadas y de sus respectivos abogados, etc…”, constituye una fuente documental de especial relevancia para comprender las disposiciones oficiales que regularon el diseño iconográfico de la nueva moneda mecanizada o de cordoncillo. En dicho documento se menciona con precisión los elementos heráldicos y las leyendas que debían incorporarse en las emisiones monetarias destinadas a los dominios americanos, reflejando el programa político y simbólico impulsado por la Monarquía borbónica para uniformar la producción monetaria y reforzar la autoridad de la Corona mediante una iconografía común. El documento dispone expresamente lo siguiente:</p>
+
+<p>“[…] y que la plata nueva mandada labrar en Indias, y la que se labrase en estos Reynos, con el cuño de las Reales Armas de Castillos y Leones, y en medio el Escudo pequeño de las Flores de Lis, y una Granada al pie, con su inscripción: PHILIPPUS V. D. G. HISPAN. ET INDIARUM REX. Y por el reverso las dos Columnas coronadas con el PLUS ULTRA, bañándolas con unas ondas de mar, y entre ellas dos Mundos unidos con una Corona que los ciñe, y por inscripción UTRAQUE UNUM […]”.</p>
+
+<p><strong>Imagen de Moneda Gentileza Víctor Urbano</strong></p>
+  <img
+    src="assets/img/Imagen4.jpg"
+    alt="Moneda de dos escudos de oro"
+    class="responsive-img"
+    style="display: block; margin: 0 auto;"
+  />
+
+
+        </article>
+
+
+        
+
+  <!--------------------------------------------------------------------------------------------------------------- -->
+        <article class="info-box">
+          <h2>"Barra Potosina 1621"</h2>
+
+          <img
+            src="assets/img/Barra3.jpeg"
+            alt="Barra Potosina 1621»"
+            class="responsive-img img-ampliable"
+          />
+          <p>
+            Desglose de los Símbolos de los marcajes de una Barra Potosina 1621,
+            la misma fue rescatada en el pecio de Galeón Nuestra Señora de
+            Atocha (1622).
+          </p>
+
+         <!-- CONTENEDOR INTERACTIVO (OPTIMIZADO PARA BARRA2.PNG) -->
+<div class="contenedor-interactivo" id="barra-interactiva">
+  <img
+  src="assets/img/barra2.png"
+  alt="Marcajes de una Barra Potosina 1621"
+  class="responsive-img"
+  style="max-width: 100%;" 
+/>
+
+  <!-- ====================================================
+     MARCAJES INTERACTIVOS SOBRE LA BARRA DE PLATA
+     (Sección Superior)
+     ==================================================== -->
+
+<!-- 1. Marca del Maestre -->
+<div class="punto-interactivo" style="top: 30%; left: 10%;">
+  <div class="tooltip-descripcion">
+    <!-- El enlace <a> con href="#" te redirige abajo al hacer clic -->
+    <a href="#desc-maestre" style="text-decoration: none; color: inherit;">
+      <strong>Marca del Maestre de plata en el embarque (Posiblemente: Jacove de Vreder) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 2. Dueño Gasca (Monograma 'g') -->
+<div class="punto-interactivo" style="top: 45%; left: 19%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-gasca" style="text-decoration: none; color: inherit;">
+      <strong>Dueño: Gasca <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 3. Transportista Sánchez (Letras 'SS') -->
+<div class="punto-interactivo" style="top: 44%; left: 25%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-transportista" style="text-decoration: none; color: inherit;">
+      <strong>Transportista (Sánchez) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 4. Potosí Año 1621 (Sello 'P1621') -->
+<div class="punto-interactivo" style="top: 42%; left: 42%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-potosi" style="text-decoration: none; color: inherit;">
+      <strong>P = Potosí Año 1621 <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 5. Número de barra ('IIIUDCLII') -->
+<div class="punto-interactivo" style="top: 38%; left: 56%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-numero-barra" style="text-decoration: none; color: inherit;">
+      <strong>Número de Barra (N° 3652) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 6. Bocado de ensayo (Punto rojo central puro) -->
+<div class="punto-interactivo" style="top: 50%; left: 56%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-bocado" style="text-decoration: none; color: inherit;">
+      <strong>Bocado para prueba de ensaye <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 7. Valor fineza por marco ('IIUCCCLXXX') -->
+<div class="punto-interactivo" style="top: 63%; left: 49%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-fineza" style="text-decoration: none; color: inherit;">
+      <strong>Valor fineza por marco a 2380 maravedís <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 8. Ensayador Mexia -->
+<div class="punto-interactivo" style="top: 64%; left: 61%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-ensayador" style="text-decoration: none; color: inherit;">
+      <strong>Ensayador (Juan Sánchez Mejías) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 9. Sello Quinto Real 3 -->
+<div class="punto-interactivo" style="top: 50%; left: 68%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-quinto-real" style="text-decoration: none; color: inherit;">
+      <strong>Sello garantía pago del Quinto Real <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 10. Primer dueño / Transportista (Monograma 'B') -->
+<div class="punto-interactivo" style="top: 42%; left: 86%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-primer-dueno" style="text-decoration: none; color: inherit;">
+      <strong>Posiblemente puede ser: 1) Primer dueño Juan Delgado | 2) Transportista Landaverde <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+<!-- 11. Marcas de pago a cajas reales (Letra 'A') -->
+<div class="punto-interactivo" style="top: 65%; left: 79%;">
+  <div class="tooltip-descripcion">
+    <a href="#desc-marcas-fiscales" style="text-decoration: none; color: inherit;">
+      <strong>Posiblemente: Marcas que entraron como pago a las cajas reales de Potosí <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+    </a>
+  </div>
+</div>
+
+</div> <!-- Cierre del contenedor de la barra interactiva -->
+
+
+<!-- ====================================================
+     SECCIÓN DE CONTENIDO DETALLADO (Abajo en la página)
+     Cada bloque tiene un id que corresponde al href de arriba
+     ==================================================== -->
+<section class="detalle-marcas-seccion" style="margin-top: 60px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+
+  <!-- Detalle 1 -->
+  <article id="desc-maestre" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>1. Marca del Maestre de la Plata</h3>
+    <img src="assets/img/simbolo2.png" alt="Marca del Maestre de la Plata" class="responsive-img" />
+    <p>Esta marca corresponde al punzón del <strong>Maestre de la Plata</strong>, funcionario responsable de la custodia y supervisión del embarque de las barras de plata en el Galeón Nuestra Señora de Atocha. De acuerdo con la evidencia disponible, dicho cargo era desempeñado por <strong>Jacove de Vreder</strong>, cuyo punzón ha sido identificado entre los materiales recuperados del pecio, lo que permite asociar esta marca con el proceso de embarque y control del cargamento destinado a España.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 2 -->
+  <article id="desc-gasca" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>2. Marca del Propietario de la Barra: Gasca</h3>
+    <img src="assets/img/simbolo4.png" alt="Monograma de Gasca" class="responsive-img" />
+    <p>Este monograma ha sido atribuido a <strong>Gasca</strong>, quien, de acuerdo con la evidencia documental disponible, habría sido el propietario de la barra al momento de su registro en el manifiesto del <em>Galeón Nuestra Señora de Atocha</em>, previo a su embarque con destino a España.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 3 -->
+  <article id="desc-transportista" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>3. Marca del Transportista</h3>
+    <img src="assets/img/simbolo3.png" alt="Marca del transportista SS" class="responsive-img" />
+    <p>Esta marca corresponde al monograma del transportista responsable de la barra al momento de su registro en el manifiesto del Galeón <em>Nuestra Señora de Atocha</em>, previo a su embarque con destino a España. Su impronta permitía identificar a la persona encargada del traslado del metal precioso.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 4 -->
+  <article id="desc-potosi" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>4. Marca de la Caja Real y año de fabricación</h3>
+    <img src="assets/img/simbolo8.png" alt="Marca P1621" class="responsive-img" />
+    <p>Esta marca está compuesta, en primer lugar, por la letra <strong>«P»</strong>, que identifica a la Caja Real de Potosí, institución donde la barra fue registrada y sometida a los procedimientos oficiales de fundición, ensayo y control fiscal. A continuación, se consigna el año de su fabricación, correspondiente a 1621, el cual permite establecer cronológicamente el momento en que la barra fue fundida, ensayada y habilitada para su circulación comercial.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 5 -->
+  <article id="desc-numero-barra" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>5. Número de Barra (N° 3652)</h3>
+    <img src="assets/img/simbolo11.png" alt="Número de barra en caracteres romanos" class="responsive-img" />
+    <p>Corresponde al número individual asignado a cada barra de plata con el propósito de facilitar su identificación y control administrativo durante las distintas etapas de su registro y circulación. Dicho número era consignado en los libros y registros oficiales junto con otros antecedentes fundamentales, tales como el peso de la barra, su ley o fineza, y el nombre de su propietario o de la persona a cuyo nombre se encontraba registrada. Este sistema de numeración permitía individualizar cada barra, asegurar su trazabilidad y garantizar un adecuado control fiscal y contable, por ejemplo el numero asignado a la barra fue el 3652, y que sirvió en los registros del manifiesto en el embarque del <em>Galeón Nuestra Señora de Atocha</em>.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 6 -->
+  <article id="desc-bocado" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>6. Bocado para Prueba de Ensaye</h3>
+    <img src="assets/img/simbolo9.png" alt="Bocado de ensaye" class="responsive-img" />
+    <p>La barra presenta claramente la extracción de una porción de plata, conocida comúnmente como <strong>bocado</strong>, la cual era realizada por el ensayador con el propósito de efectuar la prueba de ensaye y determinar la ley o fineza del metal. El procedimiento consistía, en primer lugar, en pesar con precisión la muestra extraída; posteriormente, esta era colocada en una copela junto con una cantidad determinada de plomo. Durante el proceso de copelación, el plomo absorbía y eliminaba las impurezas y los metales no nobles presentes en la aleación, permitiendo obtener únicamente la plata fina o intrínseca. Una vez concluido el proceso, la plata resultante era nuevamente pesada y, mediante la comparación entre el peso inicial de la muestra y el peso final de la plata fina obtenida, se calculaba la ley o fineza de la barra. Este procedimiento constituía el método oficial empleado para certificar la calidad del metal antes de su registro y comercialización. Cabe señalar que, mientras en las barras de plata procedentes de Potosí la extracción del bocado se efectuaba generalmente sobre una de las caras de la barra, en las barras elaboradas en la fundición de Oruro dicha extracción se realizaba, por lo común, en uno de sus costados, diferencia que constituye un rasgo distintivo entre ambas producciones.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 7 -->
+  <article id="desc-fineza" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>7.Valor de la fineza</h3>
+    <img src="assets/img/simbolo6.png" alt="Valor de fineza en caracteres romanos" class="responsive-img" />
+    <p>Esta marca, expresada en números romanos, corresponde al valor de la fineza de la barra representado en maravedís por marco de plata. En el caso de la presente barra, dicho valor fue determinado conforme al sistema de valoración vigente en el virreinato del Perú, según el cual la plata se tasaba por el valor del marco y no mediante la indicación directa de su ley en dineros y granos. En este sistema, el marco de plata de máxima pureza era estimado en 2.380 maravedís, cifra que se utilizó de manera habitual en las fundiciones y cajas reales durante buena parte del siglo XVII.</p>
+
+    <p>Una de las referencias más tempranas que documenta este procedimiento se encuentra en la obra de Miguel Gerónimo de Santa Cruz, titulada “Libro Dorado Contador Arithmetica”, quien, en el capítulo “Que trata de la fineza, y reglas de plata”, señala que las barras de plata procedentes del virreinato del Perú eran marcadas conforme a su valor en maravedís por marco y no mediante la expresión de la ley en dineros y granos:</p>
+
+    <p>“…Esto es, en quanto de las pesas i empero en lo que es ley, se nota y numera por dineros, y por granos, aunque las barras, y planchas de plata, que traen de las Provincias del Perú, vienen ensayadas por maravedís”.
+Resulta igualmente significativo que, en la práctica ensayística del virreinato del Perú, las barras de plata de doce dineros, consideradas de la mayor pureza posible, fueran valoradas en 2.380 maravedís por marco. Hasta el presente, no se conoce ninguna barra de plata colonial peruana que presente una marca superior a dicho valor, circunstancia que coincide con la información consignada por el Ensayador Mayor del Perú, Miguel de Roxas Ruiz, en la tabla incluida en su obra “El Jardín de los ensayadores” (1639).
+No obstante, esta valoración no fue aceptada de manera unánime. El matemático Juan de Belveder, residente en la Ciudad de los Reyes, sostenía que el marco de plata de doce dineros debía estimarse en 2.400 maravedís, afirmando:
+“…que fuera delos Reynos de España vale vn marco de plata cendrada fina, 2U400 maravedis”.
+</p>
+
+<p>Sin embargo, el propio autor advertía la falta de uniformidad existente entre los ensayadores de las distintas cajas reales de Indias respecto de la valoración de la plata, al señalar:</p>
+
+<p>“…Porque la mayor parte delos Ensayadores de las caxas Reales delos Reynos delas Indias, siguen varios pareceres y opinones eblo tocante el dar valor al dinero y granos delas leyes de la plata q ensayan”.
+Frente a estas discrepancias, Miguel de Roxas Ruiz sostuvo que el verdadero valor del marco de plata de doce dineros debía fijarse en 2.376 maravedís, rechazando la valoración de 2.400 maravedís propuesta por Juan Fernando del Castillo, correo mayor de la ciudad de Murcia. Al respecto, manifestó:
+“…y q el valor de toda la plata de toda ley, es dos mil trecientos, y fetenta y feis maravedís, y no mas porque fe ajufta a la ley Real, y ella no admite condiciones, ni proposiciones arbitrarias, de los que dan a entender, que la pñata fina de doze dineros de ley, tiene de valor, dos mil y quatrocientos marauedis”.
+La controversia fue finalmente resuelta por la Corona tras el gran fraude descubierto en Potosí durante el reinado de Felipe IV, oportunidad en la que se dictaron nuevas disposiciones destinadas a uniformar el sistema de ensayo y marcación de las barras de plata en las cajas reales de Potosí y Oruro.
+</p>
+<p>Respecto del error consistente en expresar la ley de las barras en maravedís, la Recopilación de Leyes de Indias (Libro IV, Título XXII, Ley XII) dispuso:</p>
+<p>“…De haber puesto los ensayadores de las provincias del Perú la ley en las barras de plata por maravedís, se han reconocido grandes yerros, é inconvenientes, y aun lo han pretendido defender, o minorar, con la variedad, que dicen hay en saber el valor del marco de plata, reducido a maravedís siendo así, como lo es, que no se ensaya por ellos, si no por dineros, y granos que es la cuenta, que derechamente toca á los ensayadores, sin reducirla á maravedís”.
+En la ley siguiente (Libro IV, Título XXII, Ley XIII), la Corona estableció oficialmente el valor del marco de plata de doce dineros, fijándolo en 2.376 maravedís:
+“…Declaramos que el verdadero valor de la plata de doce dineros, que es la plata de toda ley, es dar a cada dinero ciento y noventa y ocho maravedís de valor, y no mas, y que consiguiente cada grano de plata de doce dineros, vale ocho maravedís y ha cuarto de maravedí, y que por esta cuenta corresponden al marco de plata de doce dineros, dos mil trecientos setenta y seis maravedís, y no dos mil trescientos y ochenta, como han introducido los ensayadores del Perú”.
+</p>
+<p>Finalmente, la misma legislación ordenó abandonar definitivamente el sistema de marcación por maravedís y establecer como única forma válida de expresar la ley de las barras la utilización de dineros, granos y medios granos, disponiendo:</p>
+<p>“…sino después de ensayada la plata, si fuere necesario: Ordenamos y mandamos, que los ensayadores en todas las barras de plata, que ensayaren, no pongan ley por maravedís, y la asienten y pongan por dineros, granos y medios granos, y para esto cada ensayador haga nuevos punzones, con números castellanos, poniendo por el dinero una D. por el grano una G. y por el medio una m pequeña, como para poner la ley de once dineros y diez y ocho granos y medio. Que se pondrán poner en esta forma XI.D.XVIII G.m y aumentando, ó disminuyendo los dineros, y grano, se ajustará la ley de cualquiera barra; y así mandamos que se cumpla, guarde y ejecute en todas las fundiciones, y por todos los ensayadores de las provincias del Perú; y de otro modo no pase, ni se admita ninguna barra de plata de los quintos reales, ni en nuestras cajas, comercio, ni en otra ninguna parte, pena de perdimiento de la barra ó barras de plata, que de otra suerte se hallaren, y de que sean tenidas por no ensayadas, y el ensayador haya perdido, y pierda el oficio”.</p>
+<a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 8 -->
+  <article id="desc-ensayador" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>8. Marca del Ensayador (Juan Sánchez Mejías)</h3>
+    <img src="assets/img/simbolo7.png" alt="Sello del Ensayador" class="responsive-img" />
+    <p>: Esta marca corresponde a la sigla o distintivo del ensayador oficial responsable de verificar la ley o fineza de la plata en la fundición de Potosí. La identificación de esta marca fue establecida por el investigador <strong>Jorge Proctor</strong>, quien logró descifrar la identidad del funcionario a partir del análisis de la documentación histórica y de las marcas presentes en las barras de plata. De acuerdo con su investigación, la sigla corresponde al ensayador <strong>Juan Sánchez Mejías</strong>, quien ejercía dichas funciones en la fundición de Potosí y que, además, desempeñó el cargo de ensayador en la Casa de Moneda de Potosí en <strong>1617</strong>. La impronta de su marca certificaba oficialmente que la barra había sido sometida al correspondiente ensayo metalúrgico y que la ley o fineza del metal había sido determinada conforme a los procedimientos establecidos por la administración de la Corona.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 9 -->
+  <article id="desc-quinto-real" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>9. Sello del quinto real o diezmo</h3>
+    <img src="assets/img/simbolo10.png" alt="Sello del Quinto Real" class="responsive-img" />
+    <p>Corresponde a la marca oficial estampada sobre las barras de plata como constancia de que se había satisfecho el pago del quinto real o, según el régimen tributario vigente, del diezmo aplicado a la producción argentífera. Durante este período, las barras pertenecientes a particulares eran marcadas con tres sellos fiscales, cuya iconografía comprendía los escusones de Castilla y León, el nombre del monarca reinante y la sigla correspondiente a la Caja Real donde había sido registrada la barra. En el caso de las barras procedentes de Potosí, la letra <strong>«P»</strong> identificaba a dicha Caja Real, mientras que la letra <strong>«S»</strong> correspondía a la inicial del apellido del ensayador <strong>Sánchez</strong>, funcionario responsable de certificar la ley o fineza del metal. La aplicación de estos sellos constituía una garantía oficial del cumplimiento de las obligaciones fiscales y de la autenticidad administrativa de la barra dentro del sistema de control ejercido por la Corona española.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 10 -->
+  <article id="desc-primer-dueno" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>10. Marca del primer propietario de la barra</h3>
+    <img src="assets/img/simbolo5.png" alt="Monograma B" class="responsive-img" />
+    <p>De acuerdo con la información publicada en la obra "Spanish Treasure Bars From New World Shipwrecks", de Alan K. Craig y Ernest J. Richards, el monograma estampado sobre la barra ha sido atribuido, de manera preliminar, a un posible propietario, Juan Delgado. No obstante, los autores advierten que dicha marca también podría corresponder al transportista Landaverde, por lo que su identificación no puede considerarse definitiva.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar a la Barra Potosina 1621</a>
+  </article>
+
+  <!-- Detalle 11 -->
+  <article id="desc-marcas-fiscales" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>11. Posibles Marcas Fiscales (Letra «A»)</h3>
+    <img src="assets/img/simbolo1.png" alt="Marcas fiscales" class="responsive-img" />
+    <p>Estas marcas no han sido identificadas de manera concluyente; sin embargo, lo planteo como hipótesis que podrían corresponder a marcas fiscales aplicadas durante el proceso de administración y control de las Cajas Reales de Potosí. Esta interpretación que hago lo fundamento en la existencia de barras de plata procedentes del pecio del <strong>Galeón Nuestra Señora de Atocha</strong> que, a diferencia de las barras pertenecientes a particulares, carecen de los monogramas remachados de sus propietarios y presentan, en cambio, letras de imprenta de considerable tamaño y bien elaborada, como la letra «A» estampada en el centro de la barra.</p>
+
+    <p>Asimismo, se observa que el <strong>Maestre de la Plata</strong>, Jacove de Vreder, marcó con la sigla «V» las barras pertenecientes a particulares, cuyo punzón fue recuperado en el pecio de 1622. No obstante, esta marca no aparece en las barras consideradas fiscales, circunstancia que podría indicar un tratamiento administrativo diferente y sugerir que algunas de ellas correspondían a los <strong>quintos reales</strong>, cuyas barras se remataron en subasta por <strong>Heritage Auctions</strong> en 2004.</p>
+
+    <p>La posible interpretación de la letra <strong>«A»</strong> como una marca quizás fiscal se encuentra un antecedente registrado por <strong>Vicente Dagnino Oliveri</strong> en su obra<em>“Correjimiento de Arica 1535-1784”</em>, documentación se menciona la existencia de barras potosinas marcadas con la letra «A», aunque sin explicar el significado de esta impronta, pero eran barras que fueron registrada en la caja real de Arica, barras fiscales, y en otro registro del mismo libro se registra la primera carta cuenta y señala  que se registra el ingreso a las arcas reales tres barras de particulares destinadas al pago del estanco y de los naipes. Sobre esta base,  planteo la hipótesis de que dicha marca pudo identificar las barras incorporadas al patrimonio fiscal como consecuencia del pago de obligaciones tributarias cuya letra “A” no esta bien elaborada como las supuestamente del pago del quinto, pero, debían ser marcadas para su registro de ingreso, y las cuales posteriormente podían ser rematadas desde los 143 pesos hasta los 147 pesos de 9 reales. En este contexto, no puede descartarse que la barra objeto de estudio hubiera sido adquirida por Gasca tras uno de estos remates. No obstante, esta interpretación debe considerarse una hipótesis de trabajo, ya que hasta el momento no existe evidencia documental que permita confirmarla de manera definitiva.</p>
+    <a href="#barra-interactiva" class="btn-regresar">⬆ Regresar Barra Potosina 1621</a>
+  </article>
+
+<h3>Galeón Nuestra Señora de Atocha</h3>
+     <img
+            src="assets/img/Galeon.png"
+            alt="Galeon Nuestra Señora de Atocha"
+            class="responsive-img"
+          />
+
+          <p>
+            El Galeón Nuestra Señora de Atocha fue uno de los navíos más importantes de la Flota de Tierra Firme de la Monarquía Hispánica durante el siglo XVII. Desempeñó la función de Almiranta de la armada, es decir, ocupó la posición de retaguardia de la flota y tuvo la responsabilidad de brindar protección militar a los restantes buques durante la travesía transatlántica. Para cumplir dicha misión estaba artillado con veinte cañones de bronce, constituyendo una pieza fundamental dentro del sistema defensivo de la Carrera de Indias.</p>
+            <p>
+            La flota zarpó del puerto de La Habana con destino a España en septiembre de 1622, transportando uno de los cargamentos de metales preciosos y mercancías más valiosos de la época colonial. Entre su carga se registraban aproximadamente 24 toneladas de plata, distribuidas en 180.000 pesos acuñados en monedas de plata, 1.038 barras de plata y alrededor de 1.200 libras de objetos de platería labrada. Asimismo, transportaba 125 lingotes y discos de oro, además de importantes productos de alto valor comercial destinados al mercado europeo, entre ellos 350 cofres de añil y 525 fardos de tabaco. La tripulación y pasajeros del galeón ascendían aproximadamente a 265 personas, entre oficiales, marineros, soldados, pasajeros y esclavos.</p>
+
+            <p>Desde el mismo siglo XVII la Corona española emprendió diversos intentos de rescate, logrando recuperar únicamente una fracción del tesoro antes de que las difíciles condiciones del lugar obligaran a abandonar las operaciones. El pecio permaneció oculto durante más de tres siglos hasta que, en el siglo XX, fue objeto de una intensa búsqueda por parte de la empresa Treasure Salvors Inc., fundada y dirigida por Mel Fisher. Las labores de exploración se iniciaron a finales de la década de 1960 y permitieron localizar, en 1973, las primeras barras de plata pertenecientes al galeón. En aquella oportunidad se recuperaron tres barras cuyos marcajes coincidían plenamente con la numeración consignada en la copia del manifiesto de carga conservado en el Archivo General de Indias, en Sevilla, hecho que constituyó una de las primeras evidencias documentales que confirmaban la identificación del pecio. Este descubrimiento representó un hito fundamental en las investigaciones arqueológicas subacuáticas que culminarían, años más tarde, con el hallazgo definitivo del tesoro del Nuestra Señora de Atocha, considerado uno de los descubrimientos más importantes en la historia de la arqueología marítima y de la numismática colonial.</p>
+</article>
+    </article>
+  
+  
+</section>
+        
+<article class="info-box">
+          <h2>Barra Colombiana</h2>
+          <p>
+            La barra colombiana presenta una ley de 7 dineros de plata y 3 dineros de cobre. Expresada en el sistema métrico actual, esta composición equivale a una fineza de 583,333 milésimas de plata y a una proporción de 416,666 milésimas de cobre en la aleación. 
+          </p>
+          <!-- Contenedor que controla el espacio de la barra girada -->
+  <img
+    src="assets/img/barracolombiana1.png"
+    alt="Barra Colombiana"
+    class="responsive-img img-ampliable"" 
+  />
+
+  <img
+    src="assets/img/Dinero.png"
+    alt="Dinero Colombiano"
+    class="responsive-img"
+     
+  />
+
+          <p><strong>"Cortesia de Jorge Becerra"</strong></p>
+        </article>
+
+<article class="info-box">
+          <h2>La Barra de Plata más Temprana de Potosí</h2>
+          <p style="text-align: left;"><strong>"Imagen de la Barra Potosina siglo XVI Cortesia de Nicolás Liakópulos Falcón"</strong></p>
+
+
+  <img
+  src="assets/img/barrapanam.png"
+  alt="Barra Potosina siglo XVI, gentileza Nikolas Liakópulos Falcón"
+  class="responsive-img img-ampliable" 
+/>
+
+ 
+          <p>
+            La barra de plata que se presenta constituye uno de los ejemplares más tempranos de procedencia potosina conocidos hasta la fecha. Fue hallada en Panamá, en las inmediaciones del Camino Real, junto al río Boquerón, lo que confirma su vinculación con la principal ruta de transporte de los metales preciosos procedentes del Virreinato del Perú durante el siglo XVI. Su hallazgo aporta una valiosa evidencia arqueológica del sistema logístico implementado por la Corona española para el traslado de la plata altoperuana hacia Europa.</p>
+<p>barras de plata producidas en los centros mineros de Oruro y Potosí eran embarcadas en el puerto de Arica y transportadas por los denominados Galeones del Mar del Sur, embarcaciones encargadas de resguardar el tráfico marítimo entre el estrecho de Magallanes y el istmo de Panamá. Desde Arica, las remesas eran conducidas hasta el puerto del Callao, donde parte de las barras y monedas se destinaban al abastecimiento de la Ciudad de los Reyes (Lima), mientras que el resto se incorporaba a las remesas procedentes de dicha capital. Posteriormente, el conjunto de caudales continuaba su navegación hacia Panamá, donde las barras y monedas eran desembarcadas para iniciar su traslado terrestre mediante recuas de mulas por el Camino Real o el Camino de Cruces hasta el puerto de Nombre de Dios, enclave que constituyó el principal punto de embarque de los metales preciosos con destino a España hasta su destrucción parcial por el corsario inglés Sir Francis Drake en 1597.</p>
+<p>La pieza analizada corresponde, hasta donde alcanza el conocimiento actual, a la barra de plata potosina más antigua conservada del siglo XVI. Su peso asciende a 7,27 kg, equivalente a 31,60230649 marcos, es decir, 31 marcos, 4 onzas, 6 ochavas, 2 tomines y 4 granos. La barra presenta una valúa de 2.100 maravedís por marco, equivalente a una ley de 10 dineros y 14½ granos, cálculo efectuado a partir de la equivalencia establecida por Carlos Lazo García entre la valúa de 2.250 maravedís y una ley de 11 dineros y 8,727272 granos.</p>
+<p>Con base en estos antecedentes metrológicos, el valor intrínseco total de la barra asciende a 147,4774303 pesos ensayados, equivalentes a 147 pesos, 3 tomines y 10 granos. El procedimiento de cálculo es el siguiente:</p>
+
+<ul>
+  <li>2.100 maravedís ÷ 450 maravedís = 4,666666667 pesos ensayados por marco.</li>
+  <li>31,60230649 marcos × 4,666666667 = 147,4774303 pesos ensayados.</li>
+  <li>La fracción decimal (0,4774303 pesos) equivale a 214,843635 maravedís, los que, divididos por 56,25 maravedís (valor correspondiente a un tomín), producen 3 tomines, quedando el remanente equivalente a 10 granos, completando así un valor total de 147 pesos, 3 tomines y 10 granos.</li>
+</ul>
+
+<p>La cuestión que surge es determinar a cuánto equivalía el valor intrínseco de esta barra expresado en pesos de ocho reales. Para ello, es necesario efectuar el cálculo considerando el peso de la barra, expresado en marcos, y el valor asignado por marco según su ley. En este caso, el símbolo grabado en la barra indica un valor de 2.100 maravedís por marco, mientras que su peso asciende a 31,60230649 marcos. En consecuencia, el valor intrínseco total de la barra equivale a 243 pesos, 7 reales y 23 maravedís, conforme al siguiente desarrollo:</p>
+
+  <ul>
+	<li>31,60230649 marcos × 2.100 maravedís = 66.365 maravedís</li>
+  <li>66.365 ÷ 272 = 243,9883 pesos  también 243 pesos 33/34 avos</li>
+	<p><u>Conversión de la fracción restante:</u></p>
+	<li>33/34 avos × 272 maravedís = 264 maravedís</li>
+	<li>264 maravedís = 7 reales y 23 maravedís</li>
+  </ul>
+<p>Por consiguiente, el valor intrínseco de la barra corresponde a 243 pesos, 7 reales y 23 maravedís, equivalencia que resulta de aplicar el valor por marco indicado en la propia pieza sobre su peso total.</p>
+
+<p>Comprobación: Peso ensayado X (450/272)
+ Es 1,6544117 la proporción x 147,4774303 = 243,988 pesos de 8 reales
+          </p>
+<p style="text-align: left;"><strong>Desglose de la Barra Potosina del siglo XVI</strong></p>
+
+ <!-- CONTENEDOR INTERACTIVO (OPTIMIZADO PARA BARRA DE JUAN DE ALVA) -->
+<div class="contenedor-interactivo" id="barra-interactiva-alva">
+  <img
+    src="assets/img/barrapanama1.png"
+    alt="Marcajes de una Barra Potosina - Juan de Alva"
+    class="responsive-img"
+    style="max-width: 100%; display: block; margin: 0 auto;" 
+  />
+
+  <!-- ====================================================
+       MARCAJES INTERACTIVOS SOBRE LA BARRA DE PLATA
+       ==================================================== -->
+
+  <!-- 1. Número de Barra (XXII) -->
+  <div class="punto-interactivo" style="top: 10%; left: 80%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-numero-barra-alva" style="text-decoration: none; color: inherit;">
+        <strong>Número de barra (N° XXII = 22) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. Marca del Ensayador (IVAN ALVA) -->
+  <div class="punto-interactivo" style="top: 20%; left: 50%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-ensayador-alva" style="text-decoration: none; color: inherit;">
+        <strong>Marca del Ensayador (Juan de Alva) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 3. Valor de Fineza (IIUC = 2100) -->
+  <div class="punto-interactivo" style="top: 20%; left: 15%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-fineza-alva" style="text-decoration: none; color: inherit;">
+        <strong>Valor de fineza (IIUC = 2100 maravedís) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 4. Bocado de prueba de ensaye -->
+  <div class="punto-interactivo" style="top: 37%; left: 88%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-bocado-alva" style="text-decoration: none; color: inherit;">
+        <strong>Bocado de prueba de ensaye <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 5. Monograma de Potosí -->
+  <div class="punto-interactivo" style="top: 80%; left: 20%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-potosi-alva" style="text-decoration: none; color: inherit;">
+        <strong>Monograma coronado de Potosí (4 improntas) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 6. Sello Caja Real -->
+  <div class="punto-interactivo" style="top: 80%; left: 60%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-caja-real-alva" style="text-decoration: none; color: inherit;">
+        <strong>Sello de la Caja Real (2 improntas) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- 7. Sello del Quinto Real -->
+  <div class="punto-interactivo" style="top: 78%; left: 87%;">
+    <div class="tooltip-descripcion">
+      <a href="#desc-quinto-real-alva" style="text-decoration: none; color: inherit;">
+        <strong>Sello del Quinto Real (Felipe II) <span style="font-size:11px; color:#8e744a;">⬇ Ver detalle</span></strong>
+      </a>
+    </div>
+  </div>
+
+</div> <!-- Cierre del contenedor de la barra interactiva -->
+
+
+<!-- ====================================================
+     SECCIÓN DE CONTENIDO DETALLADO
+     ==================================================== -->
+<section class="detalle-marcas-seccion" style="margin-top: 60px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+
+  <!-- Detalle 1: Número de Barra -->
+  <article id="desc-numero-barra-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Número de barra</h3>
+    <img src="assets/img/Pan0c.png" alt="Número de barra XXII" class="responsive-img" />
+    <p>El número de la barra corresponde al <strong>XXII</strong> en numeración romana, ejecutado mediante una escritura capital de tradición gótica, caracterizada por trazos curvilíneos y remates ensanchados en sus extremos. Esta numeración constituía el identificador individual asignado a cada barra durante el proceso de fundición y era consignada en los libros de registro de la Casa de Fundición, junto con el nombre de su propietario, su peso y su ley o fineza, permitiendo así el control administrativo e individualizado de cada pieza.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 2: Marca del Ensayador -->
+  <article id="desc-ensayador-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Marca del Ensayador</h3>
+    <img src="assets/img/Pan1c.png" alt="Marca Ensayador IVAN ALVA" class="responsive-img" />
+    <p>La marca corresponde al ensayador de turno de la Caja Real de Potosí. Su diseño consiste en un cartucho rectangular dividido en dos compartimentos: en el superior figura el nombre <strong>IVAN</strong>, grafía de época equivalente a Juan, mientras que en el inferior se lee el apellido <strong>ALVA</strong>. Esta marca identificaba al que sirvió de teniente ensayador  en las cajas reales de Potosí por Gaspar Ruiz en algunos años de la década de 1590 responsable del ensayo del metal, cuya función consistía en determinar la ley o grado de fineza de la plata contenida en la barra, certificando oficialmente su calidad metalúrgica y garantizando la exactitud del contenido de metal fino consignado en ella.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 3: Valor de la fineza -->
+  <article id="desc-fineza-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Valor de la fineza</h3>
+    <img src="assets/img/Pan2c.png" alt="Valor de fineza IIUC" class="responsive-img" />
+    <p>El valor de la ley o fineza se encuentra expresado en numeración romana mediante la inscripción <strong>IIUC</strong>, equivalente a 2100 en numeración arábiga. Se observa que las dos primeras letras I, que conforman el numeral romano II, no fueron estampadas con el mismo punzón, apreciándose diferencias morfológicas entre ambas. Ello sugiere que uno de los punzones originales pudo haberse desgastado o fracturado debido a su prolongado uso en el marcado de barras, siendo reemplazado por otro de características ligeramente distintas para continuar con el proceso de fabricación.</p>
+
+    <p>Los numerales II se encuentran separados por la letra U, signo convencional empleado en la época para indicar la unidad de millar, de modo que la combinación IIU debía interpretarse como dos mil. Este conjunto aparece inscrito dentro de un único cartucho, destinado a representar los valores correspondientes a los millares, permitiendo las distintas combinaciones numéricas hasta el máximo de IIU (2000). A continuación, en un cartucho independiente, se incorpora el numeral correspondiente a las centenas, representado en este caso por la letra C, equivalente a cien, completando así la lectura IIUC (2100).</p>
+
+    <p>Es probable que, cuando la ley de la barra superaba este valor y requería la representación de centenas adicionales, se recurriera al empleo de un punzón independiente encerrado en un cartucho propio. Un ejemplo de este sistema puede observarse en la marca de ley de una barra potosina correspondiente al período del ensayador Juan Sánchez Mejía, presentada anteriormente, donde la disposición de los cartuchos evidencia una combinación distinta para expresar un valor de fineza superior.</p>
+
+    <p>El valor de la fineza consignado para cada marco según lo marcado en la barra de 2100 maravedís corresponde a <strong>10 dineros y 14½ granos de ley</strong>, equivalentes a 254½ granos, lo que, expresado en el sistema métrico decimal, representa una ley de <strong>883,68 milésimas de fino</strong>.</p>
+
+    <p>Estas barras eran marcadas con un valor máximo de 2.380 maravedís, correspondiente al valor máximo asignado a la plata de 12 dineros de ley, esto lo corrobora la tabla publicada por el ensayador mayor del Perú, Miguel de Roxas Ruiz, en su obra <em>El Jardín de los Ensayadores (1639)</em>.</p>
+
+    <p>No obstante, esta equivalencia de marcar las barras en Perú a 2380 maravedís fue objeto de controversia entre los mercaderes, quienes sostenían que la plata marcada con 2.380 maravedís no correspondía realmente a una ley de 12 dineros, razón por la cual valoraban la plata de esta ley en 2.400 maravedís por marco. Esta discrepancia fue recogida por Juan de Arphe en su tratado <em>“Qvilatador de la Plata, Oro y Piedras”</em>, donde señala: <em>«[…] Y cada dinero 200 maravedís, Y el marco de plata fina por 2400 maravedís desta quenta que los Mercaderes traen. Nace el dezir, que las barras de 2380, no fon 12 dineros y que no ay doze dineros en ninguna plata, y otra cofas fuera de todo buen difcurfo, cuenta la verdad, como algunos quieren fufstentar, no entendiendo, que fino huviera doze dineros, no tuvieran fundamento las demás leyes de doze dineros abaxo, y que por efta ley de que voy tratando, fe mando que valieffe vn marco de once dineros, y quatro granos de ley de 2210 maravedís que fale el dinero en 198 y no mas y el grano en ocho ¼ y el marco de plata fina en 2376 […]»</em></p>
+
+    <p>Asimismo, resulta de particular interés la observación realizada por Miguel de Roxas Ruiz, quien señala que: <em>«Y porq efte Reyno del Perú efta en vfo el marcar las leyes a las Barras las letras de diez en diez, y no por vnidades, tomando por numero perfecto dos mil trecientos y ochenta maravedís […]»</em>. Esta afirmación evidencia que, en el virreinato del Perú, la marcación de la ley de las barras se efectuaba incrementando el valor en intervalos de diez maravedís por cada grano de fineza. Así, una barra con una ley de 11 dineros y 22 granos se marcaba con el valor 2U360 maravedís; otra de 11 dineros y 23 granos, con 2U370 maravedís; mientras que una barra de 12 dineros se identificaba con 2U380 maravedís, correspondiente a la ley perfecta de la plata.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 4: Bocado de prueba de ensaye -->
+  <article id="desc-bocado-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Bocado de prueba de ensaye</h3>
+    <img src="assets/img/Pan3c.png" alt="Bocado de ensaye" class="responsive-img" />
+    <p>La extracción del bocado fue realizada en el costado frontal izquierdo de la barra, en contraste con el procedimiento adoptado en épocas posteriores, cuando esta se practicaba en la zona central. Esta característica representa un importante indicador cronológico y tecnológico, al reflejar la evolución de los métodos empleados para la toma de muestras destinadas al ensayo de la ley de las barras de plata.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 5: Monograma de Potosí -->
+  <article id="desc-potosi-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Monograma de Potosí</h3>
+    <img src="assets/img/Panpan.png" alt="Monograma coronado de Potosí" class="responsive-img" />
+    <p>En la superficie de la barra se distinguen cuatro improntas de sello, todas ellas correspondientes al monograma coronado de Potosí, dispuesto en el interior de una orla. La repetición de este punzón constituye un elemento distintivo del proceso de certificación oficial de la barra, acreditando su procedencia de la Caja Real de Potosí y la validación administrativa del metal conforme a las prácticas de marcación vigentes durante el período colonial.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 6: Sello Caja Real -->
+  <article id="desc-caja-real-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Sello Caja Real</h3>
+    <img src="assets/img/panpin.png" alt="Sello Caja Real" class="responsive-img" />
+    <p>Se aprecian dos improntas correspondientes al sello de la Caja Real, cuyo diseño está constituido por una corona real enmarcada por una orla circular. Ambos sellos presentan una ejecución homogénea y forman parte del conjunto de marcas oficiales estampadas sobre la superficie de la barra.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+
+  <!-- Detalle 7: Sello del quinto real -->
+  <article id="desc-quinto-real-alva" class="marca-detalle-block" style="margin-bottom: 40px; scroll-margin-top: 30px;">
+    <h3>Sello del quinto real</h3>
+    <img src="assets/img/panpon.png" alt="Sello del Quinto Real Felipe II" class="responsive-img" />
+    <p>Se trata de la marca como testimonio del cumplimiento de las cargas fiscales exigidas por la Corona, cuya iconografía comprendía los escusones de Castilla y León, el nombre del monarca reinante que en este caso corresponde a <strong>Felipe II</strong>. Su presencia certificaba que el metal había enterado el correspondiente gravamen, ya fuese el quinto real o el diezmo aplicado a la producción argentífera, validando de este modo su incorporación al circuito comercial y administrativo del virreinato.</p>
+    <a href="#barra-interactiva-alva" class="btn-regresar">⬆ Regresar a la Barra</a>
+  </article>
+</article>
+</section>
+
+<article class="info-box">
+          <h2>"El logotipo de «Monedas Macuquinas</h2>
+
+          <img
+            src="assets/img/evolucionmoneda.png"
+            alt="El logotipo de Monedas Macuquinas"
+            class="responsive-img img-ampliable" 
+          />
+          <p>
+            <strong>El logotipo de «Monedas Macuquinas</strong> fue diseñado
+            por Bernardo Oliva Muñoz y su composición se inspira en diversas
+            improntas presentes en cospeles monetarios que circularon en los
+            territorios de la Monarquía Hispánica durante la época virreinal.
+          </p>
+          <ul>
+            <li>
+              <strong>Primer cuadrante:</strong> Primer peso de ocho reales
+              acuñado en la Casa de Moneda de Lima en 1569.
+            </li>
+            <li>
+              <strong>Segundo cuadrante:</strong> Gran escudo de los Habsburgo,
+              iconografía establecida por la pragmática conocida como la «Nueva
+              Estampa».
+            </li>
+            <li>
+              <strong>Tercer cuadrante:</strong> Columnas sobre las olas del
+              mar, motivo que sustituyó al gran escudo de los Habsburgo tras el
+              escándalo del fraude monetario ocurrido en la Casa de Moneda de
+              Potosí a mediados del siglo XVII.
+            </li>
+            <li>
+              <strong>Cuarto cuadrante:</strong> Impronta introducida con la
+              reforma monetaria destinada a la acuñación mecanizada, también
+              empleada en las monedas acuñadas a martillo por la Casa de Moneda
+              de Guatemala.
+            </li>
+          </ul>
+          <p>
+            Finalmente, en la parte superior central del logotipo se incorpora
+            el escusón de Portugal, en alusión a la unión dinástica bajo
+            <strong>Felipe II de España</strong>, quien reinó en Portugal como
+            Felipe I. Su inclusión responde a que dicho escusón formó parte del
+            gran escudo de los Habsburgo representado en diversas emisiones
+            monetarias de la época.
+          </p>
+
+          <h3>"Evolución del logotipo Monedas Macuquinas"</h3>
+          <img
+            src="assets/img/monedasspng.png"
+            alt="Evolución del logotipo Monedas Macuquinas»"
+            class="responsive-img img-ampliable" "
+          />
+        </article>
+
+        </section>
+
+
+
+<!-- Estructura del Modal (Colócala al final de la página) -->
+<div id="modal-visor" class="modal-visor">
+  <span class="modal-cerrar">&times;</span>
+  <img class="modal-contenido" id="img-modal-ampliada" alt="Vista ampliada" />
+  <div id="modal-caption" class="modal-caption"></div>
+</div>
+
+
+    </main>
+
+
+   <!-- Inicio Botón Flotante Principal -->
+<button id="fab-conversores-btn" class="fab-conversores-trigger" onclick="toggleModalConversores()" title="Abrir Conversores">
+  <span class="fab-icon">⚖️</span>
+</button>
+
+<!-- Modal Contenedor de las Barras -->
+<div id="modal-conversores-wrapper" class="modal-conversores-overlay" onclick="closeModalConversoresOuter(event)">
+  <div class="modal-conversores-content">
+    <button class="modal-conversores-close" onclick="toggleModalConversores()">&times;</button>
+    <h3 class="modal-conversores-title">Menús de Conversión</h3>
+    
+    <!-- Aquí nav_footer.js inyectará automáticamente las 3 barras -->
+    <div id="conversor-flotante-dinamico" class="modal-conversores-bars-container"></div>
+  </div>
+</div>
+<!-- Fin Botón Flotante Principal -->
+
+ 
+
+    <footer id="footer-container"></footer>
+
+<!-- Cargar base de datos de búsqueda -->
+<script src="assets/js/datos-busqueda.js"></script>
+
+<!-- Cargar funciones JS generales -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/nav-footer.js"></script>
+<script src="assets/js/ponencias.js"></script>
+</body>
+</html>

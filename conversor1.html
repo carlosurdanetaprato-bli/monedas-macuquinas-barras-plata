@@ -1,0 +1,98 @@
+<div id="modal-pesos-virreinales" class="macuquina-modal-overlay">
+  <div class="macuquina-modal-content">
+    <button class="modal-close-btn" onclick="closeModalPesos()">&times;</button>
+
+    <div class="modal-header">
+      <h2>Cálculo de la Fineza de la Plata (Virreinato)</h2>
+      <p>
+        Ingresa los valores de ley en dineros y granos para obtener la
+        proporción de plata pura equivalente en milésimas.
+      </p>
+    </div>
+
+    <div class="modal-body">
+      <!-- Grid principal de dos columnas -->
+      <div class="modal-grid-inputs">
+        <!-- Columna 1: Dinero -->
+        <div class="conversion-row">
+          <label>Dinero</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="mod-dinero"
+              placeholder="0"
+              min="0"
+              max="12"
+              oninput="calcularModalFineza()"
+            />
+            <span class="math-operator">x 83.33333 =</span>
+            <div id="res-mod-dinero" class="result-box">0.0000</div>
+          </div>
+          <div id="error-mod-dinero" class="error-container"></div>
+        </div>
+
+        <!-- Columna 2: Grano -->
+        <div class="conversion-row">
+          <label>Grano</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="mod-grano"
+              placeholder="0"
+              min="0"
+              max="24"
+              oninput="calcularModalFineza()"
+            />
+            <span class="math-operator">x 3.47222 =</span>
+            <div id="res-mod-grano" class="result-box">0.0000</div>
+          </div>
+          <div id="error-mod-grano" class="error-container"></div>
+        </div>
+      </div>
+
+      <!-- Total Combinado / Fineza Total -->
+      <div class="conversion-row total-combined-row">
+        <label class="total-label">Fineza Total (Milésimas)</label>
+        <div class="calc-fields">
+          <div class="calc-spacer"></div>
+          <div id="res-mod-total" class="result-box total-highlighted">
+            0.0000 / 1000
+          </div>
+        </div>
+      </div>
+
+      <!-- Referencia Histórica -->
+      <div class="modal-footer-ref">
+        <p class="ref-main">
+          Plata pura absoluta = 12 Dineros (1000 milésimas)
+        </p>
+        <div class="ref-grid">
+          <span>1 Dinero = 24 Granos = 83.33333 milésimas</span>
+          <span>1 Grano = 1/24 de Dinero = 3.47222 milésimas</span>
+          <span
+            >Ley típica macuquina: 11 dineros y 4 granos (916.66
+            milésimas)</span
+          >
+        </div>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="macuquina-actions">
+        <button
+          type="button"
+          class="macuquina-btn-secondary"
+          onclick="limpiarConversorFineza()"
+        >
+          Limpiar
+        </button>
+        <button
+          type="button"
+          class="macuquina-btn-primary"
+          onclick="closeModalPesos()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

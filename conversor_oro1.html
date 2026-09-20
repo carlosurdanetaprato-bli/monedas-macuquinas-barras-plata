@@ -1,0 +1,150 @@
+<div
+  id="modal-pesos-oro"
+  class="macuquina-modal-overlay active"
+  onclick="closeModalOroOuter(event)"
+>
+  <div class="macuquina-modal-content">
+    <!-- BOTÓN DE CIERRE (X) -->
+    <button class="macuquina-modal-close" onclick="closeModalOro()">
+      &times;
+    </button>
+
+    <!-- ENCABEZADO -->
+    <h2 class="macuquina-modal-title">Pesos de Oro Virreinales</h2>
+    <p class="macuquina-modal-subtitle">
+      Conversión de masa a unidades métricas (gramos)
+    </p>
+
+    <!-- CUERPO / FORMULARIO -->
+    <div class="macuquina-modal-body">
+      <!-- MARCO (No tiene límite superior) -->
+      <div class="macuquina-input-group">
+        <label for="mod-oro-marco">Marco</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-oro-marco"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOroMasa('marco')"
+          />
+          <span class="macuquina-unit-label">x 230.04650 =</span>
+          <div class="macuquina-res-box" id="res-mod-oro-marco">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-oro-marco"></small>
+      </div>
+
+      <!-- ONZA (Límite: < 8) -->
+      <div class="macuquina-input-group">
+        <label for="mod-oro-onza">Onza</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-oro-onza"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOroMasa('onza')"
+          />
+          <span class="macuquina-unit-label">x 28.75581 =</span>
+          <div class="macuquina-res-box" id="res-mod-oro-onza">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-oro-onza"></small>
+      </div>
+
+      <!-- OCHAVA (Límite: < 8) -->
+      <div class="macuquina-input-group">
+        <label for="mod-oro-ochava">Ochava</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-oro-ochava"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOroMasa('ochava')"
+          />
+          <span class="macuquina-unit-label">x 3.59448 =</span>
+          <div class="macuquina-res-box" id="res-mod-oro-ochava">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-oro-ochava"></small>
+      </div>
+
+      <!-- TOMÍN (Límite: < 6) -->
+      <div class="macuquina-input-group">
+        <label for="mod-oro-tomin">Tomín</label>
+        <div class="macuquina-input-wrapper">
+          <input
+            type="number"
+            id="mod-oro-tomin"
+            min="0"
+            step="any"
+            placeholder="0"
+            oninput="calcularModalOroMasa('tomin')"
+          />
+          <span class="macuquina-unit-label">x 0.59908 =</span>
+          <div class="macuquina-res-box" id="res-mod-oro-tomin">0.0000 g</div>
+        </div>
+        <small class="macuquina-error" id="error-mod-oro-tomin"></small>
+      </div>
+
+      <!-- GRANO Y TOTAL COMBINADO -->
+      <div class="macuquina-input-group-row">
+        <!-- GRANO (Límite: < 12) -->
+        <div class="macuquina-input-group">
+          <label for="mod-oro-grano">Grano</label>
+          <div class="macuquina-input-wrapper">
+            <input
+              type="number"
+              id="mod-oro-grano"
+              min="0"
+              step="any"
+              placeholder="0"
+              oninput="calcularModalOroMasa('grano')"
+            />
+            <span class="macuquina-unit-label">x 0.04992 =</span>
+            <div class="macuquina-res-box" id="res-mod-oro-grano">0.0000 g</div>
+          </div>
+          <small class="macuquina-error" id="error-mod-oro-grano"></small>
+        </div>
+
+        <!-- TOTAL COMBINADO -->
+        <div class="macuquina-total-group">
+          <label>Total Combinado</label>
+          <div class="macuquina-total-box" id="res-mod-oro-total">0.0000 g</div>
+        </div>
+      </div>
+
+      <!-- TARJETA INFORMATIVA INFERIOR -->
+      <div class="macuquina-info-card">
+        <p class="macuquina-info-highlight">1 grano = 0,04992 gramos</p>
+        <div class="macuquina-info-grid">
+          <span>1 marco (4608 granos) = 230,04650 g</span>
+          <span>1 onza (576 granos) = 28,75581 g</span>
+          <span>1 ochava (72 granos) = 3,59448 g</span>
+          <span>1 tomín (12 granos) = 0,59908 g</span>
+          <span>1 grano (1 grano) = 0,04992 g</span>
+        </div>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="macuquina-actions">
+        <button
+          type="button"
+          class="macuquina-btn-secondary"
+          onclick="limpiarConversorOroMasa()"
+        >
+          Limpiar
+        </button>
+        <button
+          type="button"
+          class="macuquina-btn-primary"
+          onclick="closeModalOro()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

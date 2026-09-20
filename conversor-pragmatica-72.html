@@ -1,0 +1,139 @@
+<div
+  class="macuquina-modal-overlay open conversor-secundario-modal"
+  id="modal-pasta-plata-1772"
+>
+  <div class="macuquina-modal-content">
+    <button type="button" class="modal-close-btn" onclick="closeModalPesos()">
+      &times;
+    </button>
+    <div class="modal-header">
+      <h2>Cálculo de Pasta en Plata a Reales y Pesos</h2>
+      <p>Pragmática Secreta 1772</p>
+    </div>
+
+    <div class="modal-body modal-body-grid">
+      <div class="m-row-upper">
+        <fieldset class="grupo-conversion">
+          <legend>Ingrese Peso de la Pasta</legend>
+          <div class="grid-inputs-clean">
+            <div class="campo-row">
+              <label>Marcos</label
+              ><input
+                type="number"
+                id="m72-marcos"
+                placeholder="0"
+                min="0"
+                oninput="ejecutarCalculoAutoPlata1772()"
+              />
+            </div>
+            <div class="campo-row">
+              <label>Onzas</label
+              ><input
+                type="number"
+                id="m72-onzas"
+                placeholder="0"
+                min="0"
+                oninput="ejecutarCalculoAutoPlata1772()"
+              />
+            </div>
+            <div class="campo-row">
+              <label>Ochavas</label
+              ><input
+                type="number"
+                id="m72-ochavas"
+                placeholder="0"
+                min="0"
+                oninput="ejecutarCalculoAutoPlata1772()"
+              />
+            </div>
+            <div class="campo-row">
+              <label>Tomines</label
+              ><input
+                type="number"
+                id="m72-tomines"
+                placeholder="0"
+                min="0"
+                oninput="ejecutarCalculoAutoPlata1772()"
+              />
+            </div>
+            <div class="campo-row">
+              <label>Granos</label
+              ><input
+                type="number"
+                id="m72-granos"
+                placeholder="0"
+                min="0"
+                oninput="ejecutarCalculoAutoPlata1772()"
+              />
+            </div>
+          </div>
+          <div id="m72-alerta-peso" class="error-container"></div>
+        </fieldset>
+
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <fieldset class="grupo-conversion">
+            <legend>Ingrese Fineza de la Pasta de Plata</legend>
+            <div class="grid-inputs-clean">
+              <div class="campo-row">
+                <label>Dineros</label
+                ><input
+                  type="number"
+                  id="m72-dineros"
+                  placeholder="0"
+                  min="0"
+                  oninput="ejecutarCalculoAutoPlata1772()"
+                />
+              </div>
+              <div class="campo-row">
+                <label>Granos Ley</label
+                ><input
+                  type="number"
+                  id="m72-granos-plata"
+                  placeholder="0"
+                  min="0"
+                  oninput="ejecutarCalculoAutoPlata1772()"
+                />
+              </div>
+            </div>
+            <div id="m72-alerta-ley" class="error-container"></div>
+          </fieldset>
+
+          <div class="box-desglose">
+            <p class="ref-main">Desglose de Resultados</p>
+            <div style="font-size: 0.85rem; line-height: 1.5">
+              <div>
+                Marcos en Rieles: <strong id="m72-res-rieles">0,000000</strong>
+              </div>
+              <div>
+                Total Reales: <strong id="m72-res-reales">0,000</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer-bar">
+        <div class="total-highlighted-box">
+          <span class="total-label">Resultado Total:</span>
+          <strong id="m72-res-final">0 Pesos, 0 Reales</strong>
+        </div>
+        <div class="actions-right">
+          <button
+            type="button"
+            class="btn-estilo-limpiar"
+            onclick="limpiarConversorPlata()"
+          >
+            Limpiar
+          </button>
+          <button
+            type="button"
+            class="btn-estilo-cerrar"
+            onclick="closeModalPesos()"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

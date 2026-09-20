@@ -1,0 +1,251 @@
+<!-- 2. VENTANA MODAL (PASTA A REALES Y PESOS) -->
+<div id="modal-pasta-reales" class="macuquina-modal-overlay">
+  <div
+    class="macuquina-modal-content"
+    style="max-width: 650px; width: 92%; position: relative"
+  >
+    <span
+      class="macuquina-close-btn"
+      onclick="closeModalPesos()"
+      style="
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 36px;
+        font-weight: 900;
+        color: #b38f43;
+        cursor: pointer;
+        line-height: 1;
+        transition: transform 0.2s;
+        user-select: none;
+      "
+      onmouseover="this.style.transform = 'scale(1.1)'"
+      onmouseout="this.style.transform = 'scale(1)'"
+    >
+      &times;
+    </span>
+
+    <div class="modal-header">
+      <h2>Ley Monetaria Reforma Borbónica</h2>
+      <p id="modal-pasta-subtitulo">
+        Cálculo de la pasta en plata a reales y pesos reforma borbónica
+      </p>
+    </div>
+
+    <div class="modal-body" style="padding: 10px 0">
+      <!-- Selector de Periodo Monetario (Oculto para control via JavaScript desde los iconos) -->
+      <div class="periodo-selector-container" style="display: none">
+        <label for="periodo-reforma" class="periodo-label"
+          >Periodo Monetario:</label
+        >
+        <select
+          id="periodo-reforma"
+          onchange="calcularPastaAReales()"
+          class="periodo-select"
+        >
+          <option value="pre">Pragmática de Medina del Campo</option>
+          <option value="post" selected>Legislación Monetaria Borbónica</option>
+        </select>
+      </div>
+
+      <!-- SECCIÓN 1: SUBTÍTULO -->
+      <div class="pasta-section-header">1. Peso de la Pasta</div>
+
+      <div class="pasta-inputs-grid">
+        <!-- Fila: Marcos -->
+        <div class="conversion-row">
+          <label>Marcos</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-marcos"
+              placeholder="0"
+              min="0"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 4608 =</span>
+            <div id="res-pasta-marcos" class="result-box">0 granos</div>
+          </div>
+        </div>
+
+        <!-- Fila: Onzas (Máximo 7) -->
+        <div class="conversion-row">
+          <label>Onzas</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-onzas"
+              placeholder="0"
+              min="0"
+              max="7"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 576 =</span>
+            <div id="res-pasta-onzas" class="result-box">0 granos</div>
+          </div>
+          <div id="warn-pasta-onzas" class="warning-text"></div>
+        </div>
+
+        <!-- Fila: Ochavas (Máximo 7) -->
+        <div class="conversion-row">
+          <label>Ochavas</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-ochavas"
+              placeholder="0"
+              min="0"
+              max="7"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 72 =</span>
+            <div id="res-pasta-ochavas" class="result-box">0 granos</div>
+          </div>
+          <div id="warn-pasta-ochavas" class="warning-text"></div>
+        </div>
+
+        <!-- Fila: Tomines (Máximo 5) -->
+        <div class="conversion-row">
+          <label>Tomines</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-tomines"
+              placeholder="0"
+              min="0"
+              max="5"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 12 =</span>
+            <div id="res-pasta-tomines" class="result-box">0 granos</div>
+          </div>
+          <div id="warn-pasta-tomines" class="warning-text"></div>
+        </div>
+
+        <!-- Fila: Granos (Máximo 11) -->
+        <div class="conversion-row">
+          <label>Granos</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-granos"
+              placeholder="0"
+              min="0"
+              max="11"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 1 =</span>
+            <div id="res-pasta-granos" class="result-box">0 granos</div>
+          </div>
+          <div id="warn-pasta-granos" class="warning-text"></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 2: SUBTÍTULO -->
+      <div class="pasta-section-header">2. Fineza de la Pasta</div>
+
+      <div class="pasta-inputs-grid">
+        <!-- Fila: Dineros (Máximo 12) -->
+        <div class="conversion-row">
+          <label>Dineros</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-dineros"
+              placeholder="0"
+              min="0"
+              max="12"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 24 =</span>
+            <div id="res-pasta-dineros" class="result-box">0 granos</div>
+          </div>
+        </div>
+
+        <!-- Fila: Granos Ley (Máximo 23) -->
+        <div class="conversion-row">
+          <label>Granos Ley</label>
+          <div class="calc-fields">
+            <input
+              type="number"
+              id="pasta-granos-ley"
+              placeholder="0"
+              min="0"
+              max="23"
+              oninput="
+                validarLimite(this);
+                calcularPastaAReales();
+              "
+            />
+            <span class="math-operator">x 1 =</span>
+            <div id="res-pasta-granos-ley" class="result-box">0 granos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN INFERIOR: TARJETA DE RESULTADOS + BOTONES AL FINAL -->
+      <div class="pasta-footer-container">
+        <!-- Tarjeta de resultados -->
+        <div class="pasta-res-card">
+          <div class="res-row">
+            <span>Marcos Totales:</span>
+            <strong id="res-total-marcos">0,0000 Marcos</strong>
+          </div>
+          <div class="res-row">
+            <span>Granos Ley Totales:</span>
+            <strong id="res-total-granos-ley">0 Granos</strong>
+          </div>
+          <div class="res-row">
+            <span>Marcos Monetario:</span>
+            <strong id="res-marcos-rieles">0,0000 Marcos</strong>
+          </div>
+          <div class="res-row">
+            <span>Total Reales:</span>
+            <strong id="res-total-reales">0,00 Reales</strong>
+          </div>
+          <hr class="res-divider" />
+          <div class="res-row highlight">
+            <span>Equivalencia en Pesos:</span>
+            <strong id="res-total-pesos">0 Pesos 0 Reales</strong>
+          </div>
+        </div>
+
+        <!-- Botones al final a la derecha -->
+        <div class="pasta-actions-bottom">
+          <button
+            type="button"
+            class="macuquina-btn-secondary"
+            onclick="limpiarPastaAReales()"
+          >
+            Limpiar
+          </button>
+          <button
+            type="button"
+            class="macuquina-btn-primary"
+            onclick="closeModalPesos()"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

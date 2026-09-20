@@ -1,0 +1,263 @@
+<!-- 1. BARRA DE ICONOS FLOTANTE -->
+<div class="macuquina-floating-bar">
+  <button
+    class="macuquina-icon-btn"
+    onclick="openModalPesos()"
+    title="Conversión de Pesos de Plata Virreinal a Gramos y Kilogramos"
+  >
+    <img
+      src="assets/ico/ico.ico"
+      alt="Pesos de plata"
+      class="icono-barra-flotante"
+    />
+  </button>
+  <button
+    class="macuquina-icon-btn"
+    title="Módulo 2 (Fineza de la Plata)"
+    onclick="cargarModalDesdeArchivo('conversor1.html', 'fineza')"
+  >
+    <img src="assets/ico/ico.ico" alt="Fineza" class="icono-barra-flotante" />
+  </button>
+  <button
+    class="macuquina-icon-btn"
+    title="Módulo 3 (Grano de Ley)"
+    onclick="cargarModalDesdeArchivo('conversor2.html', 'grano_ley')"
+  >
+    <img
+      src="assets/ico/ico.ico"
+      alt="Grano de Ley"
+      class="icono-barra-flotante"
+    />
+  </button>
+</div>
+
+<!-- 2. VENTANA MODAL -->
+<div id="modal-pesos-virreinales" class="macuquina-modal-overlay">
+  <style>
+    .mod2-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .mod2-input {
+      width: 130px;
+      height: 45px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1.1em;
+      color: #222;
+      outline: none;
+      background: #fafafa;
+      transition: border-color 0.2s;
+    }
+    .mod2-input:focus {
+      border-color: #3b6ca6;
+    }
+    .mod2-factor {
+      font-size: 1.15em;
+      color: #555;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .mod2-result {
+      min-width: 100px;
+      height: 45px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      background: #f0f2f5;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #222;
+      border: 1px solid #e2e8f0;
+    }
+    .info-equivalencias-box {
+      border: 1px dashed #b38f43;
+      padding: 15px;
+      border-radius: 6px;
+      background-color: #fcf9f2;
+      margin: 20px 5px;
+    }
+    .total-combined-box {
+      text-align: center;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 480px) {
+      .mod2-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .mod2-input,
+      .mod2-result {
+        width: 100%;
+        max-width: 200px;
+      }
+      .mod2-factor {
+        margin: 2px 0;
+      }
+    }
+  </style>
+
+  <div
+    class="macuquina-modal-content"
+    style="max-width: 600px; width: 92%; position: relative"
+  >
+    <span
+      class="macuquina-close-btn"
+      onclick="closeModalPesos()"
+      style="
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 36px;
+        font-weight: 900;
+        color: #b38f43;
+        cursor: pointer;
+        line-height: 1;
+        transition: transform 0.2s;
+        user-select: none;
+      "
+      onmouseover="this.style.transform = 'scale(1.1)'"
+      onmouseout="this.style.transform = 'scale(1)'"
+    >
+      &times;
+    </span>
+
+    <div class="modal-header">
+      <h2>Conversión de Grano de Ley</h2>
+      <p>
+        Ingresa el valor para obtener el resultado en milésimas de pureza al
+        instante.
+      </p>
+    </div>
+
+    <div class="modal-body" style="padding: 10px 0">
+      <div style="width: 100%; text-align: center">
+        <label
+          for="mod-granoley"
+          style="
+            display: block;
+            font-weight: bold;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #333;
+          "
+        >
+          Grano de Ley
+        </label>
+
+        <div class="mod2-container">
+          <input
+            type="number"
+            id="mod-granoley"
+            placeholder="0"
+            min="0"
+            max="288"
+            step="any"
+            oninput="calcularGranoLey()"
+            class="mod2-input"
+          />
+          <span class="mod2-factor">x 3.47222 =</span>
+          <span id="res-mod-granoley" class="mod2-result">0.0000</span>
+        </div>
+
+        <span
+          id="error-mod-granoley"
+          class="error-container"
+          style="display: block; min-height: 20px; margin-top: 12px"
+        ></span>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0" />
+
+      <div class="info-equivalencias-box">
+        <div
+          style="
+            text-align: center;
+            color: #b38f43;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+          "
+        >
+          Escala Completa: 288 Granos de Ley = Plata Pura (1000 ‰)
+        </div>
+        <div
+          style="
+            font-size: 0.82em;
+            color: #444;
+            text-align: center;
+            line-height: 1.5;
+          "
+        >
+          1 Grano de Ley = 3,47222 ‰ de pureza absoluta.<br />
+          <span style="font-size: 0.8em; color: #666; font-style: italic">
+            La plata de ley máxima se divide en 12 dineros, y cada dinero en 24
+            granos, sumando un total de 288 granos de ley.
+          </span>
+        </div>
+      </div>
+
+      <div class="total-combinado-box">
+        <span style="font-weight: 600; color: #4a5568; font-size: 1em"
+          >Total combinado:</span
+        >
+        <span
+          id="res-mod-total"
+          style="
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #b38f43;
+            margin-left: 10px;
+            letter-spacing: 0.5px;
+          "
+        >
+          0.0000 ‰
+        </span>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div
+        class="macuquina-actions"
+        style="
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-top: 20px;
+          width: 100%;
+        "
+      >
+        <button
+          type="button"
+          class="macuquina-btn-secondary"
+          onclick="limpiarConversor()"
+        >
+          Limpiar
+        </button>
+        <button
+          type="button"
+          class="macuquina-btn-primary"
+          onclick="closeModalPesos()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

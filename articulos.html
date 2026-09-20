@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/img (5).png" type="image/png" />
+    <title>Artículos - Proyecto Monedas Macuquinas</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* --- CENTRADO SEGURO DE TÍTULO Y SUBTÍTULO --- */
+      .section-title {
+        text-align: center !important;
+        margin: 40px auto 20px auto;
+        padding: 0 20px;
+        width: 100%;
+        display: block;
+      }
+
+      .section-title h1 {
+        font-size: 2.2rem;
+        color: #111;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .section-title p {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /* --- ESTRUCTURA DE ARTÍCULOS EN VERTICAL --- */
+      .articulos-container {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px; /* Espaciado elegante entre un artículo y otro */
+      }
+
+      .articulo-block {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        padding: 30px;
+        border-top: 5px solid #b38f43;
+        scroll-margin-top: 20px; /* Margen superior al hacer scroll por ID */
+      }
+
+      .articulo-titulo {
+        font-size: 1.5rem;
+        margin-top: 0;
+        color: #111;
+        line-height: 1.4;
+      }
+
+      .articulo-meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 12px;
+      }
+
+      .articulo-meta strong {
+        color: #b38f43;
+      }
+
+      /* --- PREVISUALIZACIÓN RESPONSIVA DE PDF --- */
+      .pdf-preview-container {
+        position: relative;
+        width: 100%;
+        height: 650px;
+        margin-top: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .pdf-preview-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* --- BOTÓN DE COPIAR ENLACE DE ARTÍCULO --- */
+      .btn-copiar-enlace {
+        background-color: #b38f43;
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+      }
+
+      .btn-copiar-enlace:hover {
+        background-color: #8c6f33;
+        transform: translateY(-1px);
+      }
+
+      .btn-copiar-enlace:active {
+        transform: translateY(0);
+      }
+
+      /* Optimización para pantallas móviles */
+      @media (max-width: 768px) {
+        .pdf-preview-container {
+          height: 450px;
+        }
+      }
+
+      /* --- ESPACIADO INFERIOR PARA EVITAR EL COLAPSO CON EL FOOTER --- */
+      .container-regresar-home {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 60px; /* 📌 Esto empuja el footer hacia abajo dándole "aire" a la página */
+        width: 100%;
+        display: block;
+      }
+
+      .btn-regresar-home {
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-overlay"></div>
+
+      <div class="titulo-central">
+        <span class="palabra-izq">Monedas</span>
+        <div class="moneda-destacada">
+          <img
+            src="assets/img/img (8).png"
+            alt="Moneda Macuquina Colonial"
+            class="img-centro"
+          />
+        </div>
+        <span class="palabra-der">Macuquinas</span>
+      </div>
+
+      <div class="subtitulo-plata">
+        <span class="conector">y</span> Barras de Plata
+      </div>
+
+      <!-- CONTENEDOR DE REDES Y CONTACTO -->
+      <div class="header-social-container">
+        <a
+          href="https://www.youtube.com/@monedasmacuquinas1334"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="YouTube"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1CDSmrzFka/"
+          target="_blank"
+          title="Facebook"
+          class="social-icon"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/groups/709702355717720/?ref=share_group_link&rdid=qqiqkrFI4WMKcYMn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1Dg4VxXbLm%2F#"
+          target="_blank"
+          title="Comunidad"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <!-- Enlace modificado: reemplazado mailto por la función del modal -->
+        <a
+          href="javascript:void(0)"
+          onclick="openEmailModal()"
+          title="Contacto"
+          class="social-icon"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- Botón del Buscador -->
+        <button
+          class="tab-btn btn-search-trigger"
+          onclick="openSearchModal()"
+          title="Buscar en el sitio"
+        >
+          🔍 <span>Buscar</span>
+        </button>
+      </div>
+
+      <!-- MODAL DEL BUSCADOR INTEGRADO -->
+      <div
+        id="modal-buscador"
+        class="search-modal-overlay"
+        onclick="closeSearchOuter(event)"
+      >
+        <div class="search-modal-content">
+          <button
+            type="button"
+            class="search-modal-close"
+            onclick="closeSearchModal()"
+          >
+            &times;
+          </button>
+
+          <div class="search-header">
+            <input
+              type="text"
+              id="input-busqueda"
+              placeholder="Buscar término (ej. reales, oro, ordenanza, macuquina)..."
+              oninput="ejecutarBusqueda()"
+              autocomplete="off"
+            />
+          </div>
+
+          <div id="resultados-busqueda" class="search-results-list">
+            <p class="search-placeholder">
+              Escribe una palabra clave para buscar en todo el sitio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL DE SELECCIÓN DE CORREO -->
+      <div
+        id="modal-contacto-email"
+        class="modal-email-overlay"
+        onclick="closeEmailOuter(event)"
+      >
+        <div class="modal-email-card">
+          <button
+            type="button"
+            class="search-modal-close"
+            onclick="closeEmailModal()"
+          >
+            &times;
+          </button>
+
+          <h3>Contacto vía Correo</h3>
+          <p>
+            Selecciona tu proveedor de correo para enviar un mensaje a
+            <strong>monedasmacuquinas@yahoo.com</strong>:
+          </p>
+
+          <div class="opciones-email-grid">
+            <!-- Gmail Web -->
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option gmail"
+            >
+              <i class="fa-brands fa-google"></i>
+              <span>Gmail</span>
+            </a>
+
+            <!-- Outlook / Hotmail Web -->
+            <a
+              href="https://outlook.live.com/mail/0/deeplink/compose?to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option outlook"
+            >
+              <i class="fa-brands fa-microsoft"></i>
+              <span>Outlook / Hotmail</span>
+            </a>
+
+            <!-- Yahoo Mail Web (Parámetro corregido: src=mailto) -->
+            <a
+              href="https://mail.yahoo.com/d/compose-message?to=monedasmacuquinas@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-email-option yahoo"
+            >
+              <i class="fa-brands fa-yahoo"></i>
+              <span>Yahoo Mail</span>
+            </a>
+
+            <!-- Aplicación Predeterminada del sistema (Outlook Desktop, Mail de Apple, Thunderbird, etc.) -->
+            <a
+              href="mailto:monedasmacuquinas@yahoo.com"
+              class="btn-email-option default"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span>Aplicación del sistema</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carrusel-header">
+        <div class="carrusel-track">
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (28).jpg" alt="Nota 1" />
+          <img src="assets/img/img (29).jpg" alt="Nota 2" />
+          <img src="assets/img/img (40).jpg" alt="Nota 1" />
+          <img src="assets/img/img (20).jpg" alt="Nota 1" />
+          <img src="assets/img/img (21).jpg" alt="Nota 1" />
+          <img src="assets/img/img (22).jpg" alt="Nota 1" />
+          <img src="assets/img/img (23).jpg" alt="Nota 1" />
+          <img src="assets/img/img (24).jpg" alt="Nota 1" />
+          <img src="assets/img/img (25).jpg" alt="Nota 1" />
+          <img src="assets/img/img (26).jpg" alt="Nota 1" />
+          <img src="assets/img/img (6).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (11).jpeg" alt="Nota 2" />
+          <img src="assets/img/img (12).jpeg" alt="Nota 3" />
+          <img src="assets/img/img (13).jpeg" alt="Nota 4" />
+          <img src="assets/img/img (17).jpg" alt="Nota 5" />
+          <img src="assets/img/img (1).png" alt="Nota 6" />
+          <img src="assets/img/img (2).jpeg" alt="Nota 1" />
+          <img src="assets/img/img (2).png" alt="Nota 2" />
+          <img src="assets/img/img (32).jpg" alt="Nota 1" />
+          <img src="assets/img/img (33).jpg" alt="Nota 1" />
+          <img src="assets/img/img (34).jpg" alt="Nota 1" />
+          <img src="assets/img/img (35).jpg" alt="Nota 1" />
+          <img src="assets/img/img (36).jpg" alt="Nota 1" />
+          <img src="assets/img/img (37).jpg" alt="Nota 1" />
+          <img src="assets/img/img (38).jpg" alt="Nota 1" />
+          <img src="assets/img/img (39).jpg" alt="Nota 1" />
+        </div>
+      </div>
+
+      <div id="menu-container"></div>
+    </header>
+
+    <main class="articulos-page">
+      <section class="section-title">
+        <h1>Artículos e Investigaciones Numismáticas</h1>
+        <p>
+          Explora de forma directa nuestra colección de investigaciones
+          numismáticas y estudios documentales.
+        </p>
+      </section>
+
+      <div class="articulos-container">
+        <!-- 1. LINGOTES DE ORO -->
+        <div class="articulo-block" id="lingotes-oro-santiago">
+          <h2 class="articulo-titulo">
+            Lingotes de oro a monedas en la ceca de Santiago a finales del siglo
+            XVIII (basado en un documento de libramiento)
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2025</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe src="assets/docs/lingotes oro a monedas.pdf"></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('lingotes-oro-santiago', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 2. TRES BARRAS -->
+        <div class="articulo-block" id="analisis-documento-lima-1765">
+          <h2 class="articulo-titulo">
+            Análisis teórico de un documento de libramiento de lima de 1765
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2022</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/análisis teorico de un documento.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('analisis-documento-lima-1765', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 3. CUATRO BARRAS -->
+        <div class="articulo-block" id="barras-a-monedas-lima">
+          <h2 class="articulo-titulo">
+            De barras a monedas: 4 barras presentada en la casa de monedas de
+            Lima
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2021</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/Articulo de barras a monedas leyes.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('barras-a-monedas-lima', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 4. BARRAS EN ARICA -->
+        <div class="articulo-block" id="barras-plata-cajas-reales-arica">
+          <h2 class="articulo-titulo">
+            Análisis de las barras de plata en las cajas reales de Arica
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Revista de la Asociación Numismática Boliviana - Virtud y Talento
+              # 4 - Septiembre 2024</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/barras de plata en las cajas reales de arica.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="
+              copiarEnlaceArticulo('barras-plata-cajas-reales-arica', this)
+            "
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 5. ESCUDO CORONADO -->
+        <div class="articulo-block" id="macuquina-escudo-coronado">
+          <h2 class="articulo-titulo">
+            Comparación de la primera macuquina de escudo coronado de Lima y
+            Mexico
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2014</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/Comparación de la primera macuquina de escudo coronado.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('macuquina-escudo-coronado', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 6. CARLOS II -->
+        <div class="articulo-block" id="identificando-macuquinas-carlos-ii">
+          <h2 class="articulo-titulo">
+            Identificando macuquinas limeñas de potosina a partir de Carlos II
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2014</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/identificando macuquinas limeñas de potosina.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="
+              copiarEnlaceArticulo('identificando-macuquinas-carlos-ii', this)
+            "
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 7. PRIMERAS REMESAS -->
+        <div class="articulo-block" id="primeras-remesas-arica">
+          <h2 class="articulo-titulo">
+            Análisis de las primeras remesas en la cajas reales de Arica
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2024</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/Análisis de las primeras remesas en la cajas reales.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('primeras-remesas-arica', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 8. BLANCA EN CAJAMARCA -->
+        <div class="articulo-block" id="blanca-cajamarca-peru">
+          <h2 class="articulo-titulo">Una blanca en CAJAMARCA, PERU</h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Asociación Numismática de Chile "ANUCH" Anuario 2018</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe src="assets/docs/CAJAMARCA_ PERU.pdf"></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('blanca-cajamarca-peru', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 9. TRANSICIÓN EN LIMA -->
+        <div class="articulo-block" id="transicion-casa-moneda-lima">
+          <h2 class="articulo-titulo">
+            De barras a monedas: periodo de transición de la casa de moneda de
+            Lima
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Libro Memorias Cartagena "3ra Convención Internacional de
+              Historiadores y numismática Cartagena MMXXI"</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/De Barras a Monedas Cartagena.pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('transicion-casa-moneda-lima', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 10. VELLÓN SANTO DOMINGO -->
+        <div class="articulo-block" id="moneda-vellon-santo-domingo">
+          <h2 class="articulo-titulo">
+            La moneda de vellón de 11 maravedís de Santo Domingo
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong
+              >Libro Memorias Santo Domingo "4ta Convención Internacional de
+              Historiadores y Numismática Santo Domingo MMXXIII"</strong
+            >
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/memorias-santo-domingo-2023-version-final-281-292 (1).pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="copiarEnlaceArticulo('moneda-vellon-santo-domingo', this)"
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+
+        <!-- 11. MONEDA DE ARICA -->
+        <div class="articulo-block" id="Devaluación-moneda-arica-siglo-xvii">
+          <h2 class="articulo-titulo">
+            Devaluación de la moneda de Arica durante el siglo XVII
+          </h2>
+          <div class="articulo-meta">
+            Autor: <strong>Bernardo Oliva Muñoz</strong> | Publicado en:
+            <strong>Revista Numismática de Arica</strong>
+          </div>
+          <div class="pdf-preview-container">
+            <iframe
+              src="assets/docs/Numismática de Arica - Revista - a 1 pág ba ja (3).pdf"
+            ></iframe>
+          </div>
+          <button
+            class="btn-copiar-enlace"
+            onclick="
+              copiarEnlaceArticulo('Devaluación-moneda-arica-siglo-xvii', this)
+            "
+          >
+            <i class="fa-solid fa-link"></i> Copiar enlace
+          </button>
+        </div>
+      </div>
+
+      <!-- BOTÓN DE RETORNO AL HOME -->
+      <div class="container-regresar-home">
+        <a href="inicio.html" class="btn-regresar-home"
+          >← Volver al Panel Principal</a
+        >
+      </div>
+    </main>
+
+    <!-- Inicio Botón Flotante Principal -->
+    <button
+      id="fab-conversores-btn"
+      class="fab-conversores-trigger"
+      onclick="toggleModalConversores()"
+      title="Abrir Conversores"
+    >
+      <span class="fab-icon">⚖️</span>
+    </button>
+
+    <!-- Modal Contenedor de las Barras -->
+    <div
+      id="modal-conversores-wrapper"
+      class="modal-conversores-overlay"
+      onclick="closeModalConversoresOuter(event)"
+    >
+      <div class="modal-conversores-content">
+        <button
+          class="modal-conversores-close"
+          onclick="toggleModalConversores()"
+        >
+          &times;
+        </button>
+        <h3 class="modal-conversores-title">Menús de Conversión</h3>
+
+        <!-- Aquí nav_footer.js inyectará automáticamente las 3 barras -->
+        <div
+          id="conversor-flotante-dinamico"
+          class="modal-conversores-bars-container"
+        ></div>
+      </div>
+    </div>
+    <!-- Fin Botón Flotante Principal -->
+
+    <footer id="footer-container"></footer>
+
+    <!-- Cargar base de datos de búsqueda -->
+    <script src="assets/js/datos-busqueda.js"></script>
+
+    <!-- Cargar funciones JS generales -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-footer.js"></script>
+    <script src="assets/js/ponencias.js"></script>
+
+    <!-- LÓGICA PARA COPIAR ENLACE DIRECTO AL ARTÍCULO -->
+    <script>
+      function copiarEnlaceArticulo(idArticulo, boton) {
+        const urlArticulo = `${window.location.origin}${window.location.pathname}#${idArticulo}`;
+
+        navigator.clipboard
+          .writeText(urlArticulo)
+          .then(() => {
+            const textoOriginal = boton.innerHTML;
+
+            boton.innerHTML =
+              '<i class="fa-solid fa-check"></i> ¡Enlace copiado!';
+            boton.style.backgroundColor = "#2e7d32";
+
+            setTimeout(() => {
+              boton.innerHTML = textoOriginal;
+              boton.style.backgroundColor = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Error al copiar el enlace: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,3763 @@
+/* --- Importación de Google Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght=600&family=Lora:ital,wght=0,400;0,700;1,400&display=swap");
+
+/* --- Variables de Diseño --- */
+:root {
+  --color-fondo: #fdf6e4;
+  --color-pergamino: #eaddc0;
+  --color-cuero: #3e2723;
+  --color-metal: #a69f8c;
+  --color-texto: #2c251d;
+  --color-oro-viejo: #b8860b;
+  --fuente-titulo: "Cinzel", serif;
+  --fuente-cuerpo: "Lora", serif;
+}
+html {
+  scroll-behavior: smooth; /* Hace que el salto de pantalla sea suave y elegante */
+}
+
+.marca-detalle-block {
+  scroll-margin-top: 40px; /* Evita que el título se pegue demasiado al borde superior tras el salto */
+}
+
+/* --- Estilos Globales --- */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-cuerpo);
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.tab-btn,
+.btn-pdf,
+.author,
+.subtitulo-plata {
+  /* Añadida la nueva clase aquí para asegurar la tipografía */
+  font-family: var(--fuente-titulo);
+}
+
+/* --- Header Principal (Optimizado y más bajo) --- */
+.main-header {
+  position: relative;
+  width: 100%;
+  /* Usamos min-height combinada con padding para que el contenedor se estire 
+     automáticamente si los textos y el carrusel necesitan espacio */
+  min-height: 65vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px; /* Espacio superior inicial antes del título */
+  padding-bottom: 20px; /* Espacio al final antes de pasar al contenido general */
+  overflow: hidden;
+}
+
+/* --- NUEVO: Contenedor estructural del Título y Subtítulo --- */
+.header-titulo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto; /* Colabora con flex para centrarse verticalmente */
+  margin-bottom: auto;
+  z-index: 10;
+}
+
+/* --- Bloque del Título Central (Palabras e Imagen) --- */
+.titulo-central {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 10;
+}
+
+/* Estilos para las palabras del título */
+.palabra-izq,
+.palabra-der {
+  font-family: "Georgia", serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Destacar la primera palabra con un toque dorado colonial */
+.palabra-izq {
+  color: #d4af37;
+}
+
+.palabra-der {
+  color: #ffffff;
+}
+/* --- NUEVO: Estilos elegantes para la línea "y Barras de Plata" --- */
+.subtitulo-plata {
+  font-size: 1.8rem; /* Tamaño equilibrado respecto a las palabras superiores */
+  color: #e5c158; /* Tono dorado/plata colonial */
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Espaciado sofisticado */
+  margin-top: 15px; /* Separación prudente de la moneda y textos de arriba */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.458);
+  text-align: center;
+}
+
+.subtitulo-plata {
+  font-family:
+    "Georgia", serif; /* Puedes cambiarlo por Cinzel si la tienes importada */
+  font-size: 1.8rem;
+  color: #e5c158;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 5px rgb(12, 12, 12);
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+
+  /* Estos márgenes garantizan que el carrusel no se monte encima del texto */
+  margin-top: 20px; /* Separación respecto a la moneda de arriba */
+  margin-bottom: 30px; /* Separación respecto al carrusel de abajo */
+}
+
+/* Detalle cursivo antiguo para el conector "y" */
+.subtitulo-plata .conector {
+  font-style: italic;
+  text-transform: lowercase;
+  color: #ffffff;
+  margin-right: 5px;
+}
+
+/* --- Moneda Central Giratoria --- */
+.moneda-destacada {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* Profundidad visual */
+  z-index: 5;
+}
+
+.img-centro {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: girarMoneda 8s linear infinite;
+  filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes girarMoneda {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* --- Carrusel de Imágenes --- */
+.carrusel-header {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+  border-top: 1px solid var(--color-oro-viejo);
+  border-bottom: 1px solid var(--color-oro-viejo);
+  margin-bottom: 20px;
+}
+
+.carrusel-track {
+  display: flex;
+  width: max-content;
+  gap: 0; /* Espacio estrictamente cero */
+  animation: scroll 35s linear infinite;
+}
+
+.carrusel-track img {
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  display: block; /* Evita espacios residuales del navegador */
+  filter: sepia(0.4) contrast(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Menú Sistematizado (Ubicado abajo) --- */
+#menu-container {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto; /* Lo empuja hacia la base del header */
+  padding-bottom: 15px;
+}
+
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(62, 39, 35, 0.95);
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid var(--color-oro-viejo);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tab-btn {
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 1px 12px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--color-oro-viejo);
+  border-bottom: 2px solid var(--color-oro-viejo);
+}
+
+/* 1. Asegura que el contenedor de las redes y el botón use Flexbox centrado */
+.header-social-container,
+.social-links {
+  display: flex;
+  align-items: center; /* Alinea verticalmente todos los elementos al centro */
+  gap: 12px;
+}
+
+/* 2. Nivela el botón de búsqueda con la altura de los íconos */
+.btn-buscar,
+#btn-buscar,
+.search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px; /* Ajusta esta altura según el tamaño exacto de tus íconos */
+  padding: 0 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* 3. Alineación interna del ícono y texto dentro del botón */
+.btn-buscar i,
+.search-btn i {
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+/* --- Contenido Principal --- */
+.container {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  color: var(--color-cuero);
+}
+
+/* --- Cajas de Información y Ponencias --- */
+.info-box,
+.ponencia-item {
+  background: #fffdf5;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid #d4c4a8;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.desglose-box {
+  background: #f7efe0;
+  padding: 15px;
+  border-left: 4px solid var(--color-oro-viejo);
+  margin: 15px 0;
+}
+
+.responsive-img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid var(--color-pergamino);
+}
+
+/* --- Botones --- */
+.btn-video,
+.btn-pdf {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.btn-video {
+  background: var(--color-cuero);
+  color: white;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+}
+
+.btn-pdf {
+  background: var(--color-oro-viejo);
+  color: white;
+  padding: 12px 25px;
+  font-weight: bold;
+  border: 1px solid var(--color-cuero);
+}
+
+.btn-video:hover,
+.btn-pdf:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+/* --- Contenedor flexible para texto e imagen --- */
+.desglose-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.desglose-texto {
+  flex: 1;
+}
+.desglose-img {
+  width: 150px;
+  height: auto;
+  border: 2px solid var(--color-oro-viejo);
+  background: #fff;
+  padding: 5px;
+}
+
+/* --- Optimización Responsive para Notas Históricas --- */
+
+/* Asegura que las imágenes individuales nunca superen su contenedor */
+.desglose-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto 0 auto; /* Centra la imagen si queda sola */
+}
+
+/* Comportamiento flexible para celulares */
+@media (max-width: 768px) {
+  .desglose-content {
+    display: flex;
+    flex-direction: column; /* Apila el texto y la imagen verticalmente */
+    align-items: center;
+    text-align: center;
+  }
+
+  .desglose-texto {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .desglose-texto ul {
+    display: inline-block;
+    text-align: left; /* Mantiene la lista alineada a la izquierda de forma estética */
+  }
+
+  /* Evita que el carrusel superior rompa el ancho horizontal del body */
+  .carrusel-header {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+/* --- ESTILOS DEL GABINETE (CATÁLOGO) --- */
+.gabinete-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.moneda-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.moneda-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-oro-viejo);
+}
+
+.moneda-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 10px;
+}
+
+.moneda-card h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0;
+  min-height: 45px;
+}
+
+.moneda-precio {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.iva-incluido {
+  font-size: 0.7rem;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+.btn-ver-detalle {
+  margin-top: 15px;
+  padding: 8px;
+  background: var(--color-oro-viejo);
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+/* --- ESTILOS DE LA PÁGINA DE CÁPSULAS Y VIDEOS --- */
+.capsulas-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-card {
+  background: #1a1a1a;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.video-info h3 {
+  color: #d4af37;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.video-note {
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  border-left: 3px solid #d4af37;
+  padding-left: 10px;
+}
+
+.video-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-yt-link {
+  flex: 1;
+  background: #ff0000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.btn-yt-link:hover {
+  background: #cc0000;
+}
+
+.btn-like-yt {
+  background: #2a2a2a;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-like-yt:hover {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+/* ==========================================
+   ESTILOS DE LA GALERÍA DE CAPSULA_FOTOS
+   ========================================== */
+.gallery-page {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.gallery-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-intro h1 {
+  font-size: 2.5rem;
+  color: #bfa15f;
+  margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  border-color: #bfa15f;
+}
+
+.image-box {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #000;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-box img {
+  transform: scale(1.05);
+}
+
+.item-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.item-info span {
+  font-size: 0.85rem;
+  color: #bfa15f;
+  font-weight: bold;
+}
+
+.item-info p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================
+   ESTILOS DEL MODAL INTERACTIVO (LIGHTBOX)
+   ========================================== */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lightbox-image-container {
+  max-height: 65vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-image-container img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border: 2px solid #bfa15f;
+  border-radius: 4px;
+}
+
+.lightbox-caption {
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+  background: rgba(17, 17, 17, 0.8);
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 3px solid #bfa15f;
+}
+
+#lightbox-counter {
+  font-size: 0.85rem;
+  color: #bfa15f;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#lightbox-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #bfa15f;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+  color: white;
+  font-size: 24px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.lightbox-btn:hover {
+  border-color: #bfa15f;
+  color: #bfa15f;
+  background: #000;
+}
+
+.btn-prev {
+  left: 40px;
+}
+.btn-next {
+  right: 40px;
+}
+
+/* ==========================================================================
+   ESTILOS UNIFICADOS DEL FOOTER - PROYECTO MONEDAS MACUQUINAS (OPTIMIZADO)
+   ========================================================================== */
+footer {
+  background-color: var(--color-cuero);
+  color: var(--color-pergamino);
+  padding: 40px 20px;
+  border-top: 4px solid var(--color-oro-viejo);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* Flexbox controla el centrado global de forma eficiente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CONFIGURACIÓN DE EXCEPCIÓN PARA EL FOOTER --- */
+.footer-content p {
+  text-align: center !important; /* 📌 Fuerza el centrado horizontal */
+  text-indent: 0 !important; /* 📌 Elimina por completo la sangría */
+  margin-bottom: 5px; /* Espaciado sutil entre líneas del footer */
+}
+
+.author {
+  font-size: 0.85rem;
+  color: var(--color-metal);
+}
+
+.footer-content .credits {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 10px 0 15px 0;
+  line-height: 1.6;
+}
+
+.footer-content .separator {
+  color: #555;
+  margin: 0 10px;
+  font-weight: normal;
+}
+
+.footer-content .credits strong {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.footer-content .credits strong:hover {
+  color: #d4af37;
+  cursor: default;
+}
+
+/* --- REDES SOCIALES (SELECTORES SIMPLIFICADOS) --- */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid var(--color-oro-viejo);
+
+  /* Ajustes para hacerlos perfectamente cuadrados/equilibrados */
+  width: 40px; /* Ancho fijo para el ícono */
+  height: 40px; /* Alto fijo para el ícono */
+  display: inline-flex; /* Centra el ícono adentro con Flexbox */
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px; /* Mantiene tus esquinas suavemente redondeadas */
+  font-size: 1.2rem; /* Aumentamos el tamaño del símbolo para que destaque */
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #d4af37;
+  background-color: rgba(184, 134, 11, 0.1);
+  transform: translateY(-2px);
+}
+
+/* --- BOTÓN IR AL INICIO --- */
+.footer-back-to-top {
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+/* --- BOTÓN IR AL INICIO (PERFECTAMENTE CENTRADO) --- */
+.footer-back-to-top {
+  margin-top: 15px;
+  padding-bottom: 10px;
+  width: 100%; /* Ocupa todo el ancho para permitir el centrado */
+  display: flex; /* Usamos Flexbox para alinear el botón al centro */
+  justify-content: center;
+}
+
+.btn-subir {
+  display: flex; /* Convierte el botón en un contenedor flexible */
+  align-items: center; /* Centra verticalmente el texto y la flecha */
+  justify-content: center; /* Centra horizontalmente el texto y la flecha */
+  gap: 5px; /* Define un espacio fijo y controlado entre la flecha y el texto */
+
+  color: #d4af37; /* Oro colonial */
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-subir .icono-flecha {
+  display: inline-block;
+  margin-right: 0; /* Eliminamos el margen antiguo ya que ahora lo controla 'gap' */
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   ESTILOS PARA LA SECCIÓN DE ÓRDENANZAS / METROLOGÍA MONETARIA
+   ========================================================================== */
+.ordenanzas-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ordenanzas-page .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ordenanzas-page .section-title h1 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.ordenanzas-page .section-title p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.pdf-grid-container {
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  gap: 40px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pdf-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 750px; /* Altura ideal de lectura cómoda en formato de lista */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+  border-color: #d4af37;
+}
+
+.pdf-header {
+  padding: 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.pdf-header h2 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.pdf-header p {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pdf-viewer {
+  width: 100%;
+  flex-grow: 1; /* Permite al visor ocupar todo el espacio disponible */
+  background-color: #2b2b2b;
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-footer {
+  padding: 15px;
+  text-align: center;
+  background-color: #111;
+  border-top: 1px solid #2a2a2a;
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #222;
+  border: 1px solid #d4af37;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.btn-download:hover:not(.disabled) {
+  background-color: #d4af37;
+  color: #000000;
+}
+
+.btn-download.disabled {
+  border-color: #444;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.download-container-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   ESTILOS CRÍTICOS PARA EL MODAL EMERGENTE DE CONTACTO 
+   ========================================================================== */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* Permite scroll vertical interno si es necesario */
+  padding: 20px;
+}
+
+.custom-modal.modal-open {
+  display: flex !important;
+}
+
+.modal-wrapper {
+  position: relative;
+  background: #ffffff;
+  width: 90%;
+  max-width: 850px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-top: 5px solid #b38f43;
+  animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  max-height: calc(100vh - 40px); /* Evita desborde vertical externo */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto; /* Scroll dentro del cuerpo del modal */
+  width: 100%;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+  color: #b38f43;
+}
+
+/* Subsecciones del modal (Información y Formulario) */
+.modal-info-side {
+  flex: 1 1 350px;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info-side h2 {
+  font-size: 1.6rem;
+  color: #b38f43;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.modal-divider {
+  width: 60px;
+  height: 3px;
+  background: #b38f43;
+  margin: 15px 0 20px 0;
+}
+
+.modal-info-side p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-meta-links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meta-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.meta-icon {
+  font-size: 1.3rem;
+}
+
+.meta-item strong {
+  display: block;
+  color: #b38f43;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.meta-item a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.meta-item span {
+  color: #bbb;
+  font-size: 0.88rem;
+}
+
+.modal-form-side {
+  flex: 1 1 450px;
+  padding: 40px;
+  background: #ffffff;
+}
+
+.modal-form-side h3 {
+  font-size: 1.4rem;
+  color: #111;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #b38f43;
+}
+
+.btn-modal-submit {
+  background: #111111;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btn-modal-submit:hover {
+  background-color: #b38f43;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO Y SOPORTE PARA MÓVILES (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .main-header {
+    height: auto !important; /* Libera los 70vh en celulares para un flujo correcto */
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .header-titulo-container {
+    position: relative !important;
+    transform: none !important;
+    margin: 15px 0;
+  }
+
+  .titulo-central {
+    flex-direction: column; /* Apilado vertical en pantallas pequeñas */
+    gap: 10px;
+  }
+
+  .palabra-izq,
+  .palabra-der {
+    font-size: 2rem;
+  }
+
+  .subtitulo-plata {
+    font-size: 1.3rem; /* Escala proporcional para celulares */
+    letter-spacing: 2px;
+    margin-top: 8px;
+  }
+
+  .moneda-destacada {
+    width: 100px;
+    height: 100px;
+  }
+
+  .carrusel-header {
+    position: relative;
+    margin-top: auto; /* Empuja el carrusel al fondo de la cabecera */
+    margin-bottom: 0;
+    padding: 8px 0;
+  }
+
+  .carrusel-track img {
+    height: 55px; /* Altura sutilmente más baja en dispositivos móviles */
+  }
+
+  .modal-info-side,
+  .modal-form-side {
+    padding: 30px 20px;
+  }
+
+  .lightbox-btn {
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+  .btn-prev {
+    left: 10px;
+  }
+  .btn-next {
+    right: 10px;
+  }
+  .lightbox-close {
+    top: 10px;
+    right: 20px;
+  }
+}
+
+/* --- ESTILO DEL CONTADOR DE VISITAS --- */
+.contador-footer {
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  color: #999; /* Gris suave por defecto */
+  margin-top: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.contador-footer strong {
+  color: #b38f43; /* El mismo dorado de tus pestañas y bordes */
+  font-weight: bold;
+  background: rgba(179, 143, 67, 0.1); /* Un sutil fondo dorado transparente */
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(179, 143, 67, 0.2);
+}
+/* --- Descripción de los Símbolos de los marcajes de una Barra Potosina 1621 --- */
+.contenedor-interactivo {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.contenedor-interactivo .responsive-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.punto-interactivo {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgba(212, 175, 55, 0.4);
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.punto-interactivo:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+  border-color: #ff0000;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* NUEVA CONFIGURACIÓN AJUSTADA PARA TEXTOS CORTOS */
+.tooltip-descripcion {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  /* Fuentes y estilo */
+  font-size: 11px;
+  line-height: 1.4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center; /* Centrado estético para títulos cortos */
+
+  /* Dimensiones dinámicas anti-vacío */
+  width: max-content;
+  max-width: 220px;
+  white-space: normal;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+  border: 1px solid #444;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 100;
+}
+
+.tooltip-descripcion::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1e1e1e transparent transparent transparent;
+}
+
+.punto-interactivo:hover .tooltip-descripcion {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- EFECTO DE RESALTADO AL HACER CLIC (ANCLAJE) --- */
+
+.marca-detalle-block {
+  scroll-margin-top: 50px; /* Espacio arriba para que no quede pegado al borde */
+  padding: 20px;
+  border-radius: 8px;
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease; /* Transición suave */
+  border: 1px solid transparent;
+}
+
+/* Cuando el bloque es el "blanco" (target) del clic de arriba */
+.marca-detalle-block:target {
+  background-color: #fcf8f2; /* Un fondo cálido/crema suave que resalta del resto */
+  border: 1px solid #8e744a; /* Borde dorado histórico */
+  box-shadow: 0 0 12px rgba(142, 116, 74, 0.2); /* Sutil brillo */
+  animation: pulsoResaltado 2s ease-in-out; /* Efecto visual de atención */
+}
+
+/* Animación opcional para que parpadee suavemente una vez al llegar */
+@keyframes pulsoResaltado {
+  0% {
+    background-color: #ffffff;
+  }
+  30% {
+    background-color: #f7ebd7;
+  } /* Punto más brillante del resalto */
+  100% {
+    background-color: #fcf8f2;
+  } /* Color en el que se queda */
+}
+
+.btn-regresar {
+  display: block;
+  width: fit-content; /* Ancho automático según texto en escritorio */
+  max-width: 100%; /* Evita que se salga de la pantalla en móviles */
+  margin: 15px auto 0 auto;
+  padding: 10px 16px; /* Un poco más de padding vertical para facilitar el toque táctil */
+  background-color: #8e744a;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center; /* Centra el texto si llega a dividirse en 2 líneas en pantallas muy angostas */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  transition: background-color 0.3s ease;
+}
+
+.btn-regresar:hover {
+  background-color: #6c5735;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 480px) {
+  .btn-regresar {
+    width: 90%; /* Ocupa el 90% del contenedor para verse bien proporcionado */
+    font-size: 0.85rem; /* Ligera reducción del texto para pantallas muy estrechas */
+  }
+}
+
+.marca-detalle-block h3 {
+  text-align: left;
+  color: #111111; /* Mantiene el tono dorado claro que definimos para el fondo del galeón */
+  margin-top: 0;
+  margin-bottom: 20px; /* Un poco de espacio extra antes de la imagen */
+
+  /* 📌 SOMBRA DE TEXTO AÑADIDA */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Justificar los parrafos y sangria de la pagina */
+p {
+  text-align: justify; /* 📌 Justifica absolutamente todos los párrafos */
+  text-indent: 30px; /* 📌 Agrega sangría a la primera línea */
+  line-height: 1.6;
+}
+
+/* Botón inferior de retorno */
+.container-regresar-home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-regresar-home {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #8e744a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-regresar-home:hover {
+  background-color: #f1dca7;
+  color: #141821;
+}
+
+/* --- BARRA FLOTANTE (ESTILO DE TU REFERENCIA AZUL) --- */
+
+/* Estilo para las imágenes .ico dentro de los botones */
+.icono-barra-flotante {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 🌟 EFECTO HOVER: AL PASAR EL CURSOR SOBRE EL CUADRO 🌟 */
+.macuquina-icon-btn:hover {
+  background-color: #3b6ca6;
+  border-color: #b38f43;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(59, 108, 166, 0.35);
+}
+
+/* Reacción del icono .ico cuando su cuadro contenedor sufre un hover */
+.macuquina-icon-btn:hover .icono-barra-flotante {
+  transform: scale(1.12) rotate(4deg); /* Crece un 15% y gira ligeramente */
+
+  /* OPCIONAL: Si tus iconos de "assets/ico/ico.ico" son de un color oscuro 
+     y deseas que se vuelvan blanco puro para que contrasten mágicamente 
+     con el fondo azul al hacer hover, descomenta la siguiente línea: */
+  /* filter: brightness(0) invert(1); */
+}
+
+/* --- EFECTO DE PULSACIÓN (CLICK) --- */
+.macuquina-icon-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurar que el botón albergue correctamente la imagen sin desbordarse */
+.macuquina-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remueve paddings que puedan desalinear la imagen */
+}
+
+.macuquina-floating-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  background-color: #3a2723; /* Azul de tu referencia */
+  border: 1px solid #433d2f;
+  border-radius: 12px;
+  padding: 6px 10px !important; /* Reduce la altura interna de la barra */
+  margin-bottom: 8px !important; /* Separa menos las barras entre sí */
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  align-items: center;
+}
+
+/* El cuadro contenedor de cada icono */
+.macuquina-icon-btn {
+  width: 64px;
+  height: 64px;
+  background-color: #ffffff;
+  border: 2px solid #433d2f;
+  border-radius: 14px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- VENTANA MODAL (FONDO OSCURECIDO CENTRADO) --- */
+.macuquina-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.macuquina-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Caja del contenido reducida */
+.macuquina-modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 460px;
+  border-radius: 8px;
+  border-top: 5px solid #b38f43;
+  padding: 15px 20px; /* Reducido ligeramente para ganar espacio */
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+
+  /* 📌 SOLUCIÓN PRINCIPAL: Evita que la tarjeta pase del alto de la pantalla */
+  max-height: 85vh !important;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto !important;
+}
+
+.macuquina-modal-content .modal-body {
+  /* 📌 SOLUCIÓN PRINCIPAL: Crea un scroll interno sutil si las alertas ocupan espacio de más */
+  overflow-y: auto;
+  padding-right: 5px; /* Evita que el scroll tape el contenido */
+}
+
+.macuquina-modal-content .modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.macuquina-modal-content .modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.macuquina-modal-content .modal-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.macuquina-modal-content .modal-body::-webkit-scrollbar-thumb:hover {
+  background: #b38f43;
+}
+
+/* Mensaje de error/advertencia debajo del campo */
+.error-container {
+  color: #ff4d4d; /* Color rojo brillante */
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 4px;
+  text-align: right;
+  width: 100%;
+}
+
+/* Asegura que el contenedor de error tome el ancho completo debajo del input */
+.conversion-row {
+  position: relative;
+  flex-wrap: wrap; /* Permite que el mensaje baje a la siguiente línea */
+}
+
+.error-mensaje-rojo {
+  width: 100%;
+  color: #d9534f;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 3px;
+  padding-left: 2px;
+  clear: both;
+}
+
+/* Borde y fondo destacado para el input con exceso */
+input.input-error {
+  border: 1.5px solid #d9534f !important;
+  background-color: rgba(217, 83, 79, 0.08) !important;
+  outline: none;
+}
+
+.total-label {
+  color: #3b6ca6;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.total-highlighted {
+  background-color: #eef4fa;
+  border-left: 3px solid #b38f43;
+  font-size: 0.9rem;
+}
+
+/* Botón Cerrar (X) reposicionado visiblemente */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #999;
+  cursor: pointer;
+  z-index: 10;
+}
+.modal-close-btn:hover {
+  color: #111;
+}
+
+/* Encabezado más pequeño */
+.modal-header h2 {
+  font-size: 1.05rem; /* 📌 Texto más sutil y compacto */
+  color: #111;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  padding-right: 30px;
+}
+.modal-header p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 15px 0;
+}
+
+/* Filas de cálculo compactadas */
+.conversion-row {
+  margin-bottom: 10px; /* 📌 Espacio entre filas reducido de 18px a 10px */
+}
+.conversion-row label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.82rem; /* 📌 Etiquetas de variables más pequeñas */
+  color: #222;
+  margin-bottom: 3px;
+}
+.calc-fields {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.calc-fields input {
+  width: 80px; /* 📌 Cajas numéricas más angostas */
+  padding: 5px 8px; /* 📌 Padding interno menor */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.math-operator {
+  font-size: 0.8rem;
+  color: #555;
+  white-space: nowrap;
+}
+.result-box {
+  flex-grow: 1;
+  background-color: #f4f6f9;
+  padding: 5px 10px;
+  border-left: 3px solid #3b6ca6;
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+  color: #222;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+/* Pie Referencial más pequeño */
+.modal-footer-ref {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px dashed #ddd;
+}
+.ref-main {
+  font-weight: bold;
+  color: #b38f43;
+  margin: 0 0 6px 0;
+  font-size: 0.78rem;
+  text-align: center;
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+  font-size: 0.72rem; /* 📌 Microtexto académico para las equivalencias */
+  color: #555;
+}
+
+@media (max-width: 500px) {
+  .total-combined-row .calc-fields div[style*="width"] {
+    display: none; /* Esconde el espacio vacío en móviles para que no rompa el diseño vertical */
+  }
+}
+
+/* Posicionamiento del contenedor en la cabecera */
+.main-header {
+  position: relative; /* Asegura que funcione el absolute de adentro */
+}
+
+.header-social-container {
+  position: absolute;
+  right: 4%; /* Lo empuja hacia el borde derecho, donde marcaste el cuadro */
+  top: 48%; /* Lo alinea verticalmente con la altura de "Barras de Plata" */
+  display: flex;
+  gap: 18px; /* Espacio elegante entre cada símbolo */
+  z-index: 10; /* Evita que quede oculto tras el overlay */
+}
+
+/* Estilos de los Símbolos */
+.social-icon {
+  color: #d4a373; /* Tono dorado colonial coincidente con tu estética */
+  font-size: 22px; /* Tamaño ideal y legible en monitores */
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Efecto Hover */
+.social-icon:hover {
+  color: #ffffff; /* Brillo blanco al pasar el cursor */
+  transform: scale(1.15); /* Efecto de crecimiento suave */
+}
+
+/* Responsivo: Si en celular se amontona, lo centramos debajo del subtítulo */
+@media (max-width: 768px) {
+  .header-social-container {
+    position: static;
+    margin: 10px auto;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL MODAL PROFESIONAL (CARLOS URDANETA) y (BERNARDO OLIVA)
+   ========================================================================= */
+
+/* Fondo oscuro translúcido que cubre toda la pantalla */
+.p-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75); /* Oscurece el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Asegura que flote sobre absolutamente todo */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Cuando el modal tiene la clase .active se muestra */
+.p-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* La tarjeta blanca/crema flotante (Estilo Base) */
+.p-modal-container {
+  background-color: #fcf8f2; /* Tono crema acorde a la web */
+  border: 2px solid #b38f43; /* Borde dorado colonial */
+  border-radius: 8px;
+  width: 90%;
+  max-width: 450px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+/* Modificadores de tamaño manteniendo la estética crema/dorada */
+.p-modal-lg {
+  max-width: 580px;
+}
+
+.p-modal-scrollable {
+  max-width: 720px;
+}
+
+/* Animación de entrada para la tarjeta */
+.p-modal-overlay.active .p-modal-container {
+  transform: translateY(0);
+}
+
+/* Botón de cerrar (X) */
+.p-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.p-modal-close:hover {
+  color: #dc3545;
+}
+
+/* Contenido interno */
+.p-modal-body h2 {
+  color: #2b1d0c; /* Marrón oscuro */
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-family: serif;
+}
+
+.p-modal-subtitle {
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.p-modal-body hr {
+  border: 0;
+  border-top: 1px solid #b38f43;
+  margin: 15px 0;
+  opacity: 0.4;
+}
+
+.p-modal-body p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de botones (WhatsApp y Email) */
+.p-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.p-modal-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.p-modal-buttons a:hover {
+  transform: translateY(-2px);
+}
+
+/* Botón específico de WhatsApp */
+.p-btn-whatsapp {
+  background-color: #25d366;
+  color: #fff !important;
+}
+
+.p-btn-whatsapp:hover {
+  background-color: #20ba5a;
+}
+
+/* Botón específico de Email */
+.p-btn-email {
+  background-color: #b38f43;
+  color: #fff !important;
+}
+
+.p-btn-email:hover {
+  background-color: #967635;
+}
+
+/* --- ESTILOS PARA LA FOTO DE PERFIL --- */
+.p-modal-avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.p-modal-avatar {
+  width: 100px; /* Tamaño ideal para la tarjeta */
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen completamente circular */
+  object-fit: cover; /* Evita que la foto se deforme o se estire */
+  border: 3px solid #b38f43; /* Lindo borde dorado colonial a juego */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  object-position: top; /* Ancla la imagen desde la parte superior */
+}
+
+#open-developer,
+#open-bernardo {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS: BERNARDO OLIVA & TRAYECTORIA (DISPOSICIÓN HORIZONTAL)
+   ========================================================================= */
+
+/* Botón para abrir Submodal Trayectoria */
+.p-btn-trayectoria {
+  background-color: #2b1d0c;
+  color: #fcf8f2;
+  border: 1px solid #b38f43;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-btn-trayectoria:hover {
+  background-color: #422b12;
+  transform: translateY(-2px);
+}
+
+/* Título de la sección de cargos */
+.cargos-title {
+  font-size: 15px;
+  color: #2b1d0c;
+  font-family: serif;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor principal: Disposición Horizontal */
+.cargos-lista-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite adaptarse en pantallas pequeñas */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px 15px; /* Espaciado entre columnas y filas */
+  margin-top: 15px;
+}
+
+/* Cada tarjeta individual */
+.cargo-item-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 130px; /* Ancho fijo para alineación uniforme */
+}
+
+/* Imagen / Moneda en Círculo Único */
+.cargo-img-h {
+  width: 90px; /* Tamaño único (ancho) */
+  height: 90px; /* Tamaño único (alto) */
+  border-radius: 50%; /* Hace la figura un círculo perfecto */
+  object-fit: cover; /* Ajusta la imagen al círculo sin deformarla */
+  object-position: center; /* Centra la imagen adentro */
+  overflow: hidden; /* Evita que cualquier parte se desborde */
+  border: 2px solid #b38f43; /* Borde dorado colonial uniforme */
+  background-color: #ffffff; /* Fondo blanco para imágenes con transparencia */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  margin-bottom: 8px;
+}
+
+/* Efecto Hover al pasar el cursor */
+.cargo-img-h:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Descripción / Cargo (ABAJO) */
+.cargo-desc-h {
+  font-size: 12px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Formato justificado para el texto largo de Trayectoria */
+.trayectoria-texto {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.trayectoria-texto p {
+  margin-bottom: 14px;
+  text-indent: 15px;
+}
+
+/* ==========================================================================
+   ESTILO PARA AMPLIAR IMÁGENES (VISOR GENERAL)
+   ========================================================================= */
+
+/* Cursor para indicar que la imagen es interactiva */
+.img-ampliable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.img-ampliable:hover {
+  transform: scale(1.01);
+}
+
+/* Fondo oscuro del modal */
+.modal-visor {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(4px); /* EFECTO DE DESENFOQUE DE FONDO */
+}
+
+/* Imagen dentro del modal */
+.modal-contenido {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: zoomModal 0.3s ease;
+}
+
+/* Leyenda descriptiva bajo la imagen */
+.modal-caption {
+  margin: 15px auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+/* Botón de cierre (X) */
+.modal-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.modal-cerrar:hover {
+  color: #b38f43;
+}
+
+/* Animación de apertura */
+@keyframes zoomModal {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .modal-contenido {
+    max-width: 95%;
+    max-height: 75vh;
+  }
+  .modal-cerrar {
+    top: 10px;
+    right: 15px;
+    font-size: 40px;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL MODAL PROFESIONAL (CARLOS URDANETA) y (BERNARDO OLIVA)
+   ========================================================================= */
+
+/* Tabla de Conversión Contenedor flotante para Oro */
+.oro-floating-bar {
+  display: flex;
+  gap: 12px;
+  background-color: #af5036;
+  padding: 10px 16px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 1. Aseguramos que la barra de oro se desplace hacia abajo */
+.oro-floating-bar,
+.macuquina-floating-bar-oro {
+  /* Si la barra de plata usa top: 20px (o similar), desplazamos la de oro */
+  margin-top: 95px !important; /* Ajusta según el alto de tu barra + separación */
+}
+
+/* Botones circulares con fondo blanco */
+.btn-conversor-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 2px solid #8c6d3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-conversor-icon:hover {
+  transform: scale(1.08);
+  border-color: #d4af37;
+}
+
+.btn-conversor-icon img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+/* Desplaza la barra de oro hacia arriba de la de plata */
+.oro-floating-bar,
+.macuquina-floating-bar-oro {
+  bottom: 115px !important; /* Pone la barra de oro por encima (20px de base + ~95px de desfase) */
+}
+
+/* ==========================================================================
+   ESTILOS VENTANA MODAL CONVERSORA (ESTILO BLANCO / VIRREINAL)
+   ========================================================================= */
+
+/* Fondo oscuro semitransparente (Overlay) */
+.macuquina-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.macuquina-modal-overlay.active,
+.macuquina-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tarjeta Blanca Principal */
+.macuquina-modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 580px;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #222222;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Botón de Cierre (X) */
+.macuquina-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #888888;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.macuquina-modal-close:hover {
+  color: #111111;
+}
+
+/* Encabezado */
+.macuquina-modal-title {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111111;
+  text-align: left;
+}
+
+.macuquina-modal-subtitle {
+  margin: 0 0 20px 0;
+  font-size: 13.5px;
+  color: #666666;
+  text-align: left;
+}
+
+/* Estructura del Formulario */
+.macuquina-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.macuquina-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.macuquina-input-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222222;
+}
+
+/* Envoltorio del Input + Operador + Resultado */
+.macuquina-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.macuquina-input-wrapper input {
+  width: 110px;
+  padding: 8px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.macuquina-input-wrapper input:focus {
+  border-color: #0056b3;
+}
+
+.macuquina-unit-label {
+  font-size: 13px;
+  color: #555555;
+  white-space: nowrap;
+}
+
+/* Caja de Resultado con borde azul a la izquierda */
+.macuquina-res-box {
+  background-color: #f2f4f8;
+  border-left: 3px solid #0056b3;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+  flex-grow: 1;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Fila doble: Grano + Total Combinado */
+.macuquina-input-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.macuquina-total-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.macuquina-total-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222222;
+}
+
+.macuquina-total-box {
+  background-color: #f2f4f8;
+  border-left: 3px solid #0056b3;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Mensajes de error */
+.macuquina-error {
+  color: #d9534f;
+  font-size: 12px;
+  min-height: 14px;
+  font-weight: bold;
+}
+
+/* Tarjeta Informativa Inferior con Borde Punteado */
+.macuquina-info-card {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1.5px dashed #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.macuquina-info-highlight {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: #b8860b; /* Color dorado tenue */
+}
+
+.macuquina-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: #555555;
+  text-align: left;
+}
+
+.barras-medina-floating-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+}
+
+/* Botones Inferiores */
+.macuquina-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.macuquina-btn-secondary {
+  background: #e4e6eb;
+  color: #333333;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.macuquina-btn-secondary:hover {
+  background: #d8dadf;
+}
+
+.macuquina-btn-primary {
+  background: #0056b3;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.macuquina-btn-primary:hover {
+  background: #004085;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 480px) {
+  .macuquina-input-group-row {
+    grid-template-columns: 1fr;
+  }
+  .macuquina-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================================================
+   CORRECCIÓN DE ALINEACIÓN Y ESTRUCTURA DE FORMULARIO
+   ========================================================================= */
+
+/* Subtítulos de Sección en su propia línea completa */
+.modal-section-title {
+  width: 100% !important;
+  flex-basis: 100% !important;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b38f43;
+  margin: 15px 0 10px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #d0d7de;
+  clear: both;
+}
+
+/* Grilla contenedora para los inputs */
+.pasta-inputs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Filas individuales de conversión alineadas horizontalmente */
+.conversion-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 45%; /* Distribuye en 2 columnas parejas */
+  min-width: 250px;
+}
+
+.conversion-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.calc-fields {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-fields input[type="number"] {
+  width: 70px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.math-operator {
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.result-box {
+  background-color: #f1f5f9;
+  border-left: 3px solid #b38f43;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+/* Corrección de alineación para la modal de Pasta */
+
+/* Fuerza que los subtítulos 1 y 2 ocupen toda la fila */
+.pasta-section-header {
+  width: 100% !important;
+  display: block !important;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b38f43;
+  margin: 18px 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e2e8f0;
+  clear: both;
+}
+
+/* Grilla contenedora para distribuir las entradas en 2 columnas parejas */
+.pasta-inputs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fila individual para cada unidad (Marcos, Onzas, etc.) */
+.conversion-row {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 18px); /* 2 columnas parejas */
+  min-width: 240px;
+  box-sizing: border-box;
+}
+
+.conversion-row label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+/* Alineación limpia de input, operador 'x 4608 =' y resultado */
+.calc-fields {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-fields input[type="number"] {
+  width: 75px;
+  height: 36px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.calc-fields input[type="number"]:focus {
+  border-color: #b38f43;
+}
+
+.math-operator {
+  font-size: 0.82rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.result-box {
+  background-color: #f1f5f9;
+  border-left: 3px solid #b38f43;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Subtítulos independientes */
+.pasta-section-header {
+  width: 100% !important;
+  display: block !important;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b38f43;
+  margin: 18px 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e2e8f0;
+  clear: both;
+}
+
+/* Grilla para las entradas de datos */
+.pasta-inputs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.conversion-row {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 18px);
+  min-width: 240px;
+  box-sizing: border-box;
+}
+
+.conversion-row label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.calc-fields {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-fields input[type="number"] {
+  width: 75px;
+  height: 36px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.math-operator {
+  font-size: 0.82rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.result-box {
+  background-color: #f1f5f9;
+  border-left: 3px solid #b38f43;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* Secciones inferiores: Tarjeta y Botones */
+.pasta-footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pasta-res-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pasta-actions-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.pasta-actions-bottom button,
+.pasta-actions-bottom .macuquina-btn-secondary,
+.pasta-actions-bottom .macuquina-btn-primary {
+  height: 38px !important;
+  padding: 0 20px !important;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mensajes de advertencia/exceso de sub-unidades en rojo */
+.warning-text {
+  color: #dc2626 !important; /* Rojo visible */
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Opcional: Resaltar el campo que genera la advertencia */
+.input-warning {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2;
+}
+
+/* Botón Flotante Principal (Escritorio / Base) */
+.fab-conversores-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #3e2723;
+  color: #f5e6c8;
+  border: 2px solid #b38f43;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.fab-conversores-trigger:hover {
+  transform: scale(1.08);
+  background-color: #4e342e;
+}
+
+/* ==========================================================================
+   RESPONSIVE PARA CELULARES
+   ========================================================================= */
+@media (max-width: 768px) {
+  .fab-conversores-trigger {
+    width: 68px; /* Aumenta el ancho del botón */
+    height: 68px; /* Aumenta el alto del botón */
+    font-size: 30px; /* Aumenta el tamaño del ícono interior */
+    right: 20px; /* Lo acerca al borde en pantallas pequeñas */
+    bottom: 20px; /* Distancia inferior */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Sombra un poco más pronunciada */
+  }
+
+  /* Feedback táctil al presionar en celular */
+  .fab-conversores-trigger:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Modal Overlay */
+.modal-conversores-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conversores-overlay.active {
+  display: flex;
+}
+
+/* Contenido del Modal */
+.modal-conversores-content {
+  position: relative;
+  background: #2b1f1d;
+  padding: 15px 20px !important; /* Reduce el relleno interno */
+  border-radius: 16px;
+  border: 1px solid #b38f43;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  max-width: 420px !important; /* Ajusta el ancho total del menú */
+  margin: auto;
+}
+
+/* 2. Título principal "MENÚS DE CONVERSIÓN" */
+#modal-conversores-title {
+  font-size: 1.1rem !important;
+  margin-bottom: 12px !important;
+}
+
+.modal-conversores-title {
+  color: #f5e6c8;
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-conversores-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #f5e6c8;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Contenedor flexible de las dos barras dentro del modal */
+.modal-conversores-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+/*INICIO BUSCADOR DE INFORMACIÓN */
+/* Overlay del Modal de Búsqueda */
+.search-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10001;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.search-modal-overlay.active {
+  display: flex;
+}
+
+/* Contenido del Buscador */
+.search-modal-content {
+  position: relative;
+  background: #2b1f1d;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  border: 1px solid #b38f43;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: #f5e6c8;
+}
+
+.search-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #f5e6c8;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Input de Búsqueda */
+#input-busqueda {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #b38f43;
+  background: #1a1211;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#input-busqueda:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Lista de Resultados */
+.search-results-list {
+  margin-top: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-item {
+  display: block;
+  padding: 12px;
+  background: #3e2723;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #f5e6c8;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.search-item:hover {
+  background: #4e342e;
+  border-color: #b38f43;
+  transform: translateX(4px);
+}
+
+.search-item-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #d4af37;
+}
+
+.search-item-cat {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background: #1a1211;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  color: #ccc;
+}
+
+.search-placeholder {
+  text-align: center;
+  color: #a09080;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+
+/* Resaltado de palabras clave en la búsqueda */
+/* Estilo forzado para el resaltado de búsqueda */
+mark.search-highlight,
+mark {
+  background-color: rgba(
+    212,
+    175,
+    55,
+    0.45
+  ) !important; /* Dorado con mayor opacidad */
+  color: #fff8e7 !important; /* Texto claro forzado */
+  font-weight: bold !important;
+  padding: 1px 4px !important;
+  border-radius: 3px !important;
+  border-bottom: 2px solid #d4af37 !important;
+  display: inline-block;
+}
+
+/*FINAL BUSCADOR DE INFORMACIÓN */
+
+/*INICIO CONVERSOR PASTA PLATA-ORO */
+/* Estilos Específicos para Modales de Pasta de Oro */
+.pasta-modal-theme {
+  max-width: 700px !important;
+  background: #181818 !important;
+  border: 1px solid #d4af37 !important;
+  color: #fff8e7;
+}
+
+.pasta-modal-header h2 {
+  color: #f3e5ab;
+  margin: 0;
+  font-size: 20px;
+}
+
+.pasta-modal-header .subtitle {
+  color: #aaa;
+  font-size: 13px;
+  margin: 4px 0 15px 0;
+}
+
+.pasta-fieldset {
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  background: #222;
+}
+
+.pasta-fieldset legend {
+  color: #d4af37;
+  font-weight: bold;
+  padding: 0 8px;
+  font-size: 14px;
+}
+
+.pasta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.pasta-grid .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pasta-grid label {
+  font-size: 12px;
+  color: #ddd;
+  margin-bottom: 4px;
+}
+
+.pasta-grid input {
+  background: #111;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.pasta-grid input:focus {
+  border-color: #d4af37;
+}
+
+.unit-warning {
+  color: #e67e22;
+  font-size: 10px;
+  margin-top: 3px;
+  display: block;
+}
+
+.unit-error {
+  color: #e74c3c;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 3px;
+  display: block;
+}
+
+.pasta-results-container {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.pasta-results-container h3 {
+  color: #d4af37;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 13px;
+  border-bottom: 1px dashed #2a2a2a;
+}
+
+.highlight-row {
+  color: #f3e5ab;
+  font-weight: bold;
+}
+
+.highlight-gold {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.highlight-final {
+  background: rgba(212, 175, 55, 0.15);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #d4af37;
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+/*FIN CONVERSOR PASTA PLATA-ORO */
+
+/* --- FIX: Centrado de Modal y Contención de Barras --- */
+
+/* 1. Asegura que el fondo oscuro del modal cubra toda la pantalla y solape correctamente */
+.modal-conversores-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conversores-overlay.active {
+  display: flex !important;
+}
+
+/* 2. Formato del recuadro del modal */
+.modal-conversores-content {
+  background: #2b1f1d;
+  border: 2px solid #b38f43;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 3. DESACTIVAR el 'position: fixed' de las barras cuando están dentro del modal */
+#conversor-flotante-dinamico {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+#conversor-flotante-dinamico .plata-floating-bar,
+#conversor-flotante-dinamico .oro-floating-bar,
+#conversor-flotante-dinamico .pasta-oro-floating-bar,
+#conversor-flotante-dinamico .macuquina-floating-bar {
+  position: static !important; /* Desactiva la posición fija flotante */
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 auto !important;
+  box-shadow: none !important;
+}
+
+.subtitulo-menu-barra {
+  color: #f5e6c8;
+  font-family: Georgia, serif;
+  font-size: 0.72rem !important; /* Letra más pequeña y fina */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin: 12px 0 6px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  margin-top: 6px !important; /* Reduce separación con la barra superior */
+  margin-bottom: 4px !important; /* Reduce separación con su propia barra */
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   ESTILO DORADO Y NEGRO PREMIUM PARA MODALES DE PRAGMÁTICAS
+   ========================================================================= */
+
+.macuquina-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.macuquina-modal-container {
+  background-color: #121212;
+  border: 1px solid #c5a059;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.9),
+    inset 0 0 2px #c5a059;
+  color: #d1d1d1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header principal */
+.modal-header-pragmatica {
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-header-pragmatica h2 {
+  color: #e5c158;
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-header-pragmatica p {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
+}
+
+/* Botón cerrar superior */
+.btn-close-modal {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaa;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-close-modal:hover {
+  background: #c33;
+  color: #fff;
+  border-color: #c33;
+}
+
+/* Grid interna de dos columnas */
+.modal-grid-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal-grid-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fieldsets e Inputs */
+.fieldset-pragmatica {
+  border: 1px solid #332d1d;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.fieldset-pragmatica legend {
+  color: #e5c158;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 8px;
+}
+
+.input-group-pragmatica {
+  margin-bottom: 10px;
+}
+
+.input-group-pragmatica label {
+  display: block;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.input-group-pragmatica input {
+  width: 100%;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.input-group-pragmatica input:focus {
+  border-color: #c5a059;
+  background: #222;
+}
+
+/* Panel Derecho de Resultados */
+.results-panel-pragmatica {
+  background: #161616;
+  border: 1px solid #332d1d;
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.results-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.results-row span:first-child {
+  color: #888;
+}
+
+.results-row span:last-child {
+  color: #fff;
+  font-weight: 600;
+}
+
+.results-row span.highlight {
+  color: #e5c158;
+}
+
+.result-box-final {
+  border: 1px solid #4d3e18;
+  background: #1a170e;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-box-final label {
+  display: block;
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.result-box-final .total-val {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Barra inferior de botones */
+.modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-action-outline {
+  background: transparent;
+  border: 1px solid #c5a059;
+  color: #c5a059;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-action-outline:hover {
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.btn-action-solid {
+  background: #0066cc;
+  border: none;
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-action-solid:hover {
+  background: #0052a3;
+}
+
+/* Layout elegante y flexible para los conversores de pasta */
+.modal-body-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 5px;
+}
+
+.m-row-upper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Campos de entrada tipo rejilla limpios */
+.grid-inputs-clean {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.campo-row label {
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.campo-row input {
+  width: 75px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Caja de Resultados Desglosados */
+.box-desglose {
+  background: #fdfbf7;
+  border: 1px dashed #b38f43;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.box-desglose .ref-main {
+  color: #b38f43;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Barra inferior unificada: Total a la izquierda, Botones a la derecha */
+.modal-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  gap: 15px;
+}
+
+.total-highlighted-box {
+  background-color: #f0f4f8;
+  border-left: 4px solid #b38f43;
+  padding: 8px 14px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.total-highlighted-box .total-label {
+  font-size: 0.75rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-highlighted-box strong {
+  font-size: 1.1rem;
+  color: #111;
+  display: block;
+}
+
+.actions-right {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-estilo-limpiar {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-estilo-cerrar {
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-estilo-limpiar:hover {
+  background-color: #cbd5e1;
+}
+.btn-estilo-cerrar:hover {
+  background-color: #004085;
+}
+
+/* Contenedor o botón con bordes redondeados pragmaticos*/
+.macuquina-icon-btn {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita que la imagen sobresalga del borde redondeado */
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Ajuste de la imagen dentro del botón */
+.macuquina-icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cambia a 'contain' si prefieres ver la imagen completa sin recortar */
+  border-radius: 10px;
+  display: block;
+}
+
+/* Contenedor principal o cuerpo del modal */
+#conversor-flotante-dinamico,
+.modal-conversor-content {
+  /* Ajusta a la clase/ID de tu tarjeta contenedora */
+  max-height: 85vh; /* Limita el alto máximo al 85% de la pantalla */
+  overflow-y: auto; /* Activa la barra de desplazamiento vertical */
+  padding-right: 10px; /* Espacio para que el scrollbar no tape el contenido */
+}
+
+/* Personalización de la barra de desplazamiento (estilo estético) */
+#conversor-flotante-dinamico::-webkit-scrollbar {
+  width: 8px;
+}
+
+#conversor-flotante-dinamico::-webkit-scrollbar-track {
+  background: #1a1412; /* Fondo oscuro alineado a tu paleta */
+  border-radius: 4px;
+}
+
+#conversor-flotante-dinamico::-webkit-scrollbar-thumb {
+  background: #c59b27; /* Tono dorado para combinar con el diseño */
+  border-radius: 4px;
+}
+
+#conversor-flotante-dinamico::-webkit-scrollbar-thumb:hover {
+  background: #e0b034;
+}
+
+/* BOTON PARA COPIAR ENLACE EN articulo.html */
+.btn-copiar-enlace {
+  background-color: #b38f43;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-copiar-enlace:hover {
+  background-color: #8c6f33;
+}
+
+.modal-email-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-email-overlay.active {
+  display: flex;
+}
+
+.modal-email-card {
+  background: #1a1816;
+  border: 1px solid #c5a059;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 420px;
+  width: 90%;
+  color: #f4f4f4;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.modal-email-card h3 {
+  color: #c5a059;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.modal-email-card p {
+  font-size: 0.88rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.opciones-email-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-email-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: #282420;
+  border: 1px solid #443e36;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-email-option:hover {
+  border-color: #c5a059;
+  background: #332d28;
+  transform: translateY(-2px);
+}
+
+.btn-email-option i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.btn-email-option.gmail i {
+  color: #ea4335;
+}
+.btn-email-option.outlook i {
+  color: #0078d4;
+}
+.btn-email-option.yahoo i {
+  color: #6001d2;
+}
+.btn-email-option.default i {
+  color: #c5a059;
+}

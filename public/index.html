@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/img (5).png" type="image/png" />
+    <title>Bienvenido - Monedas Macuquinas y Barras de Plata</title>
+    <!-- FontAwesome para los íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- CSS Principal de la Intro -->
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="pdK1g4TTJU01ovepiRFZugYXUgPe1g21crin6mgNkoI"
+    />
+  </head>
+
+  <body>
+    <!-- Overlay principal para capturar interacción -->
+    <div id="splash-container" class="splash-container">
+      <div class="intro-header">
+        <h1>BIENVENIDO A MONEDAS MACUQUINAS Y BARRAS DE PLATA</h1>
+        <p>Colección e Investigación Numismática</p>
+      </div>
+
+      <!-- Rejilla del Rompecabezas (12 Piezas Exactas) -->
+      <div class="puzzle-grid" id="puzzle-grid">
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle1.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/img/img (8).png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle2.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle3.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle7.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/img-_3_.ico&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle4.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/pusle5.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/barraplata.ico&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/img/cf(4).jpeg&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/ico/barrarara.png&quot;)"
+        ></div>
+        <div
+          class="puzzle-piece"
+          style="background-image: url(&quot;assets/img/img (4).png&quot;)"
+        ></div>
+      </div>
+
+      <!-- Área de Botones e Indicador -->
+      <div class="intro-footer">
+        <button id="btn-entrar" class="btn-entrar">
+          Entrar al Sitio <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- Botón del Modal movido dentro del footer -->
+        <button
+          type="button"
+          id="btn-about-project"
+          class="btn-about-trigger"
+          onclick="openAboutModal(event)"
+        >
+          📜 Acerca del Proyecto
+        </button>
+
+        <span class="click-hint"
+          >Haz clic en cualquier lugar para continuar</span
+        >
+      </div>
+    </div>
+
+    <!-- MODAL INFORMATIVO CON FOTO -->
+    <div
+      id="modal-about-project"
+      class="about-modal-overlay"
+      onclick="closeAboutOuter(event)"
+    >
+      <div class="about-modal-card">
+        <button
+          type="button"
+          class="about-modal-close"
+          onclick="closeAboutModal()"
+        >
+          &times;
+        </button>
+
+        <div class="about-modal-body">
+          <!-- Fotografía del Proyecto -->
+          <div class="about-image-container">
+            <img
+              src="assets/img/Foto-proyecto-monedas.jpg"
+              alt="Bernardo Oliva y Carlos Urdaneta"
+              class="about-project-img"
+            />
+          </div>
+
+          <!-- Contenido Reestructurado -->
+          <div class="about-text-content">
+            <h2 class="about-title">Monedas Macuquinas y Barras de Plata</h2>
+            <span class="about-subtitle"
+              >Origen Histórico y Desarrollo Tecnológico</span
+            >
+
+            <p class="about-paragraph">
+              Esta plataforma surge con el propósito de preservar, difundir y
+              facilitar el estudio de la historia monetaria colonial, de las
+              monedas y de las barras de plata, contribuyendo al conocimiento,
+              la investigación y la difusión de la numismática colonial.
+            </p>
+
+            <!-- Primer Plano: Bernardo Oliva -->
+            <div class="about-author-box">
+              <h3>
+                <i class="fa-solid fa-book-bookmark"></i> Investigación y Acervo
+                Numismático
+              </h3>
+              <p>
+                El pilar fundamental de este proyecto reside en la investigación
+                rigurosa de
+                <strong
+                  id="open-bernardo-intro"
+                  style="
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: #b38f43;
+                  "
+                >
+                  Bernardo Oliva Muñoz </strong
+                >, creador del contenido, historiador y facilitador del acervo
+                documental, datos numismáticos y piezas catalogadas que
+                sustentan el contenido y la rigurosidad académica de cada
+                sección de este portal.
+              </p>
+            </div>
+
+            <!-- Segundo Plano: Carlos Urdaneta -->
+            <div class="about-author-box">
+              <h3>
+                <i class="fa-solid fa-code"></i> Desarrollo Web e Ingeniería
+                Digital
+              </h3>
+              <p>
+                Aunado al valor histórico, la arquitectura técnica y el diseño
+                digital fueron llevados a cabo por
+                <strong
+                  id="open-developer-intro"
+                  style="
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: #b38f43;
+                  "
+                >
+                  Carlos Urdaneta </strong
+                >, enfocado en estructurar una experiencia web ágil, interactiva
+                e intuitiva, integrando módulos de metrología, equivalencias y
+                herramientas de búsqueda avanzada.
+              </p>
+            </div>
+
+            <p class="about-footer-text">
+              El resultado es una convergencia donde la historia colonial y la
+              tecnología moderna se unen al servicio de investigadores,
+              coleccionistas y apasionados de la numismática.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+      MODAL PERFIL DEL DESARROLLADOR (CARLOS URDANETA)
+      ========================================================================== -->
+    <div id="profile-modal" class="p-modal-overlay">
+      <div class="p-modal-container">
+        <button class="p-modal-close" title="Cerrar">&times;</button>
+        <div class="p-modal-body">
+          <div class="p-modal-avatar-container">
+            <img
+              src="/assets/img/Carlos_Urdaneta.png"
+              alt="Carlos Urdaneta Prato"
+              class="p-modal-avatar"
+            />
+          </div>
+          <h2>Carlos Urdaneta Prato</h2>
+          <p class="p-modal-subtitle">
+            Técnico Superior Universitario en Informática
+          </p>
+          <hr />
+          <p>Especialista en Desarrollo Web Front-End.</p>
+          <div class="p-modal-buttons">
+            <a
+              href="https://api.whatsapp.com/send?phone=56926920853"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-btn-whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=carlosurdanetaprato@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-btn-email"
+            >
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- ==========================================================================
+     MODAL PERFIL DEL DESARROLLADOR (CARLOS URDANETA)
+     ========================================================================== -->
+  <div id="profile-modal" class="p-modal-overlay">
+    <div class="p-modal-container">
+      <button class="p-modal-close" title="Cerrar">&times;</button>
+
+      <div class="p-modal-body">
+        <div class="p-modal-avatar-container">
+          <img
+            src="/assets/img/Carlos_Urdaneta.png"
+            alt="Carlos Urdaneta Prato"
+            class="p-modal-avatar"
+          />
+        </div>
+
+        <h2>Carlos Urdaneta Prato</h2>
+        <p class="p-modal-subtitle">
+          Técnico Superior Universitario en Informática
+        </p>
+        <hr />
+        <p>Especialista en Desarrollo Web Front-End.</p>
+
+        <div class="p-modal-buttons">
+          <a
+            href="https://api.whatsapp.com/send?phone=56926920853"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-btn-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=carlosurdanetaprato@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-btn-email"
+          >
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     MODAL PERFIL DE BERNARDO OLIVA
+     ========================================================================== -->
+  <div id="bernardo-modal" class="p-modal-overlay">
+    <div class="p-modal-container p-modal-lg">
+      <button class="p-modal-close" id="close-bernardo" title="Cerrar">
+        &times;
+      </button>
+
+      <div class="p-modal-body" style="text-align: center">
+        <!-- Avatar de Bernardo Oliva -->
+        <div class="p-modal-avatar-container">
+          <img
+            src="/assets/img/Bernardo.jpeg"
+            alt="Bernardo Oliva Muñoz"
+            class="p-modal-avatar"
+          />
+        </div>
+
+        <h2>Bernardo Oliva Muñoz</h2>
+        <p class="p-modal-subtitle">Investigador Numismático e Historiador</p>
+
+        <!-- Botón para abrir el submodal de Trayectoria -->
+        <div style="margin: 15px 0">
+          <button id="open-trayectoria" class="p-btn-trayectoria">
+            <i class="fa-solid fa-book-open"></i> Ver Trayectoria
+          </button>
+        </div>
+
+        <hr />
+
+        <!-- Cargos Ocupados -->
+        <h3 class="cargos-title">
+          Currently presido diversas ocupaciones dentro de la Numismática en
+          Latino América:
+        </h3>
+        <hr />
+
+        <!-- Disposición Vertical de Monedas / Insignias -->
+        <div class="cargos-lista-vertical">
+          <div class="cargo-item">
+            <p class="cargo-desc">
+              Presidente de la Asociación Numismática de Arica
+            </p>
+            <img
+              src="/assets/ico/moneda1png.png"
+              alt="Asociación Numismática de Arica"
+              class="cargo-img"
+            />
+          </div>
+          <hr />
+
+          <div class="cargo-item">
+            <p class="cargo-desc">
+              Administrador y creador del grupo en Facebook “Monedas Macuquinas”
+            </p>
+            <img
+              src="/assets/ico/moneda2.png"
+              alt="Grupo Monedas Macuquinas"
+              class="cargo-img"
+            />
+          </div>
+          <hr />
+
+          <div class="cargo-item">
+            <p class="cargo-desc">
+              Miembro del Instituto de Investigación Numismática Perú
+            </p>
+            <img
+              src="/assets/ico/moneda3.png"
+              alt="Instituto de Investigación Numismática Perú"
+              class="cargo-img"
+            />
+          </div>
+          <hr />
+
+          <div class="cargo-item">
+            <p class="cargo-desc">
+              Miembro de la Unión Americana de Numismática “UNAN”
+            </p>
+            <img
+              src="/assets/ico/moneda4.png"
+              alt="Unión Americana de Numismática UNAN"
+              class="cargo-img"
+            />
+          </div>
+          <hr />
+
+          <div class="cargo-item">
+            <p class="cargo-desc">
+              Miembro Punto de Encuentro Numismático Guatemala, Centro América
+            </p>
+            <img
+              src="/assets/ico/moneda5.png"
+              alt="Punto de Encuentro Numismático Guatemala"
+              class="cargo-img"
+            />
+          </div>
+          <hr />
+
+          <!-- Botones de Contacto (WhatsApp y Email) -->
+          <div class="p-modal-buttons">
+            <a
+              href="https://api.whatsapp.com/send?phone=56996781862"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-btn-whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=carlosurdanetaprato@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-btn-email"
+            >
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     SUBMODAL: TRAYECTORIA DE BERNARDO OLIVA
+     ========================================================================== -->
+  <div id="trayectoria-modal" class="p-modal-overlay">
+    <div class="p-modal-container p-modal-scrollable">
+      <button class="p-modal-close" id="close-trayectoria" title="Cerrar">
+        &times;
+      </button>
+
+      <div class="p-modal-body" style="text-align: center">
+        <!-- Avatar de Bernardo Oliva -->
+        <div class="p-modal-avatar-container">
+          <img
+            src="/assets/img/Bernardo.jpeg"
+            alt="Bernardo Oliva Muñoz"
+            class="p-modal-avatar"
+          />
+        </div>
+
+        <div class="p-modal-body text-left">
+          <h2 style="text-align: center; color: #d4af37">
+            Bernardo Oliva Muñoz
+          </h2>
+          <p class="p-modal-subtitle" style="text-align: center">
+            Trayectoria Numismática e Histórica
+          </p>
+          <hr />
+
+          <div class="trayectoria-texto">
+            <p>
+              Es investigador independiente especializado en numismática
+              colonial hispanoamericana, metrología monetaria e historia de las
+              cecas americanas durante el período virreinal. Su labor de
+              investigación se ha centrado en el estudio de las monedas
+              macuquinas, las barras de plata, los sistemas de ensaye y los
+              procesos tecnológicos de fabricación monetaria implementados en
+              las casas de moneda de América, con especial énfasis en las cecas
+              de Lima y Potosí.
+            </p>
+
+            <p>
+              Su trabajo se caracteriza por la integración del análisis
+              metrológico de piezas originales con la investigación documental
+              en archivos históricos, ordenanzas monetarias, pragmáticas reales
+              y manuscritos técnicos de época. Esta metodología le ha permitido
+              profundizar en aspectos relacionados con la legislación monetaria,
+              la composición metálica de las aleaciones, los sistemas de control
+              fiscal, las marcas de ensayadores y oficiales reales, la evolución
+              de los procedimientos de acuñación y la valoración intrínseca de
+              la moneda colonial.
+            </p>
+
+            <p>
+              Entre sus principales líneas de investigación destacan la
+              metrología aplicada a la moneda hispanoamericana, la
+              identificación y clasificación de barras de plata coloniales, la
+              interpretación de marcas y punzones oficiales, la evolución de las
+              técnicas de ensaye y refinación de metales preciosos, así como el
+              estudio de la transición desde la acuñación a martillo hacia la
+              acuñación mecanizada mediante volante. Asimismo, ha desarrollado
+              investigaciones orientadas a reconstruir los procesos
+              administrativos y productivos de las casas de moneda a partir de
+              documentación inédita conservada en archivos americanos y
+              europeos.
+            </p>
+
+            <p>
+              Los resultados de sus investigaciones han sido publicados en
+              diversas revistas especializadas de numismática e historia,
+              mediante artículos científicos y estudios técnicos que han
+              contribuido al conocimiento de la producción monetaria colonial
+              hispanoamericana. Del mismo modo, ha participado como
+              conferencista en congresos, simposios y encuentros internacionales
+              de numismática e historia económica, donde ha presentado
+              investigaciones originales sustentadas en el análisis de fuentes
+              documentales primarias y en el examen metrológico de piezas
+              numismáticas y barras de plata coloniales.
+            </p>
+
+            <p>
+              Sus investigaciones han aportado nuevas evidencias documentales
+              sobre diversos aspectos de la historia monetaria virreinal, entre
+              ellas la cronología de las últimas emisiones de monedas macuquinas
+              de plata de la Casa de Moneda de Lima, contribuyendo al debate
+              historiográfico mediante el análisis crítico de fuentes primarias
+              y registros administrativos de la época.
+            </p>
+
+            <p>
+              Paralelamente, desarrolla actividades de difusión científica
+              mediante publicaciones, conferencias, estudios técnicos y recursos
+              digitales orientados a promover el conocimiento de la historia
+              monetaria colonial. Es fundador y director del proyecto de
+              investigación y divulgación "Monedas Macuquinas y Barras de
+              Plata", iniciativa dedicada al estudio, documentación y difusión
+              del patrimonio numismático hispanoamericano. A través de este
+              proyecto impulsa la investigación especializada y la preservación
+              del conocimiento relacionado con la producción monetaria colonial,
+              poniendo a disposición de investigadores, instituciones culturales
+              y coleccionistas información basada en el análisis científico y en
+              la evidencia documental.
+            </p>
+
+            <p>
+              Asimismo, en la actualidad desarrolla diversos proyectos de
+              investigación sobre metrología monetaria y prepara la publicación
+              de obras especializadas destinadas a profundizar el conocimiento
+              de la tecnología, legislación y producción monetaria de las cecas
+              hispanoamericanas durante la época colonial.
+            </p>
+
+            <p>
+              Además de su actividad investigadora, desempeña una destacada
+              labor de promoción y difusión de la numismática en el ámbito
+              iberoamericano. Es Presidente de la Asociación Numismática de
+              Arica, fundador y administrador del grupo de Facebook "Monedas
+              Macuquinas", una de las principales comunidades de divulgación
+              dedicadas al estudio de la moneda colonial hispanoamericana, y
+              fundador del proyecto de investigación y divulgación "Monedas
+              Macuquinas y Barras de Plata", iniciativa orientada a la
+              documentación, preservación y difusión del patrimonio numismático.
+            </p>
+
+            <p>
+              Es, asimismo, miembro del Instituto de Investigación Numismática
+              del Perú, miembro de la Unión Americana de Numismática (UNAN) y
+              miembro de Punto de Encuentro Numismático Guatemala, Centro
+              América, instituciones y organizaciones dedicadas a la
+              investigación, estudio y difusión de la numismática en el ámbito
+              latinoamericano.
+            </p>
+
+            <p>
+              Sus investigaciones han aportado nuevas evidencias documentales
+              sobre diversos aspectos de la historia monetaria virreinal, entre
+              ellas la cronología de las últimas emisiones de monedas macuquinas
+              de plata de la Casa de Moneda de Lima, contribuyendo al debate
+              historiográfico mediante el análisis crítico de fuentes primarias,
+              registros administrativos de la época y el estudio metrológico de
+              ejemplares originales.
+            </p>
+
+            <p>
+              Actualmente desarrolla diversos proyectos de investigación sobre
+              metrología monetaria y prepara la publicación de obras
+              especializadas destinadas a profundizar el conocimiento de la
+              tecnología, legislación y producción monetaria de las cecas
+              hispanoamericanas durante la época colonial, contribuyendo al
+              fortalecimiento de la investigación numismática mediante la
+              publicación de estudios originales y la difusión del conocimiento
+              histórico entre especialistas, instituciones culturales y
+              coleccionistas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="assets/js/intro.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

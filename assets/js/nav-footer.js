@@ -1532,23 +1532,38 @@ function toggleFabMenu() {
 function iniciarContadorVisitas() {
   const c = document.getElementById("contador-visitas");
   
-  if (c) {
-    // Usamos un nuevo nombre ("visitas_macuquinas_v2") para forzar el reinicio desde 0
-    let visitas = localStorage.getItem("visitas_macuquinas_v2");
-    
-    if (visitas === null) {
-      visitas = 0; 
-    } else {
-      visitas = parseInt(visitas) + 1; 
-    }
-    
-    localStorage.setItem("visitas_macuquinas_v2", visitas);
-    c.innerHTML = `📖 Visitas: <strong>${Number(visitas).toLocaleString('es-CL')}</strong>`;
-  } else {
-    console.error("Error: No se encontró el elemento 'contador-visitas' en el HTML.");
+  if (!c) {
+    console.error("Error: No se encontró el elemento 'contador-visitas'.");
+    return;
   }
-}
 
+  // Creamos un nombre único a nivel mundial para la base de datos de tu proyecto
+  const idProyecto = "monedas_macuquinas_arica_2026_oficial";
+  
+  // sessionStorage recuerda si ESTE visitante ya sumó al contador hoy
+  const yaVisitado = sessionStorage.getItem("sesion_macuquinas_activa");
+
+  // Si NO ha visitado, llamamos a "hit" para sumarle 1 al contador global.
+  // Si YA visitó, llamamos a "get" para solo leer el número total sin sumar de nuevo.
+  const accionApi = yaVisitado ? 'get' : 'hit';
+  const url = `https://countapi.mileshilliard.com/api/v1/${accionApi}/${idProyecto}`;
+
+  fetch(url)
+    .then(r => r.json())
+    .then(d => {
+      // Al sumar la visita, marcamos la sesión como activa para que no vuelva a sumar si cambia de página
+      if (!yaVisitado) {
+        sessionStorage.setItem("sesion_macuquinas_activa", "true");
+      }
+      
+      // Imprimimos el valor real alojado en el servidor global (empezará en 1)
+      const visitasTotales = d.value;
+      c.innerHTML = `📖 Visitas: <strong>${Number(visitasTotales).toLocaleString('es-CL')}</strong>`;
+    })
+    .catch(e => {
+      console.error("Error al conectar con el servidor global de visitas:", e);
+    });
+}
 /* ==========================================================================
    CONTROL DEL MENÚ PRINCIPAL (CORREGIDO PARA CUALQUIER ESTADO)
    ========================================================================= */
